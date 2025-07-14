@@ -1,14 +1,11 @@
-const Main = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) => {
+import Switcher from "@/components/switcher/Switcher";
+
+const Home = () => {
   return (
     <div>
-      asdf
-      {children}
+      <Switcher />
     </div>
   );
 };
 
-export default Main;
+export default Home;

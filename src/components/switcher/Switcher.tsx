@@ -1,8 +1,7 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-
+import Moon from "@/assets/navbar/moon.svg";
+import Sun from "@/assets/navbar/sun.svg";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,16 +9,51 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Switcher = () => {
-  const { setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+      <DropdownMenuTrigger
+        asChild
+        className="w-auto h-auto border-none focus-visible:ring-0 focus-visible:bg-transparent hover:bg-transparent hover:shadow-none"
+      >
+        <Button
+          variant="outline"
+          size="icon"
+          className="hover:bg-transparent !bg-transparent"
+        >
+          {resolvedTheme === "light" && (
+            <Image
+              src={Sun}
+              alt="Sun icon"
+              width={25}
+              height={25}
+              className="w-[25px] h-[25px] object-contain"
+            />
+          )}
+          {resolvedTheme === "dark" && (
+            <Image
+              src={Moon}
+              alt="Moon icon"
+              width={25}
+              height={25}
+              className="w-[25px] h-[25px] object-contain"
+            />
+          )}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
