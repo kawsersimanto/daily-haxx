@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/providers/theme-provider";
+import { getDefaultMetadata } from "@/utils/seo";
 import type { Metadata } from "next";
 import { Space_Grotesk, Work_Sans } from "next/font/google";
 import "./globals.css";
@@ -13,16 +14,7 @@ const workSans = Work_Sans({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s - ${process.env.NEXT_PUBLIC_APP_NAME}`,
-    default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
-  },
-  description: "Insight you can trust, trusted by professionals word wide",
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-  },
-};
+export const metadata: Metadata = getDefaultMetadata();
 
 export default function RootLayout({
   children,
