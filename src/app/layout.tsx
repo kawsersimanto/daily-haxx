@@ -14,7 +14,10 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Daily Haxx",
+  title: {
+    template: `%s - ${process.env.NEXT_PUBLIC_APP_NAME}`,
+    default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
+  },
   description: "Insight you can trust, trusted by professionals word wide",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
