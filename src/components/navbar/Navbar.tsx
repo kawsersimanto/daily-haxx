@@ -1,6 +1,6 @@
 import DarkSearch from "@/assets/navbar/dark-search.svg";
 import Search from "@/assets/navbar/search.svg";
-import { DesktopMenu, MobileMenu, Subscribe } from "@/components/navbar";
+import { Account, DesktopMenu, MobileMenu } from "@/components/navbar";
 import Switcher from "@/components/switcher/Switcher";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,7 +51,8 @@ const Navbar = () => {
             </Link>
             <MobileMenu />
             <div className="sm:block hidden">
-              <Subscribe />
+              <Account />
+              {/* <Subscribe /> */}
             </div>
           </div>
         </div>
