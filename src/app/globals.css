@@ -8,6 +8,7 @@
   --foreground: #1a1a1a;
   --card: #ffffff;
   --card-foreground: #1a1a1a;
+  --surface-deep: #191818;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
   --primary: #004024;
@@ -60,6 +61,7 @@
   --foreground: #e6e6e6;
   --card: #212020;
   --card-foreground: #e6e6e6;
+  --surface-deep: #191818;
   --popover: #212020;
   --popover-foreground: #e6e6e6;
   --primary: #58bd91;
@@ -110,6 +112,7 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-surface-deep: var(--surface-deep);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
@@ -165,7 +168,7 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 1.25;
+  padding-inline: 1.25rem;
 }
 
 @layer base {
