@@ -1,5 +1,7 @@
+import DarkSearch from "@/assets/navbar/dark-search.svg";
 import Search from "@/assets/navbar/search.svg";
 import Switcher from "@/components/switcher/Switcher";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -37,12 +39,19 @@ const Navbar = () => {
                 alt="Search icon"
                 width={25}
                 height={25}
-                className="w-[25px] h-[25px] object-contain"
+                className="w-[25px] h-[25px] object-contain dark:hidden"
+              />
+              <Image
+                src={DarkSearch}
+                alt="Search icon"
+                width={25}
+                height={25}
+                className="w-[25px] h-[25px] object-contain not-dark:hidden"
               />
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-lg text-surface-dark hover:text-primary font-work-sans font-medium transition-colors duration-300 gap-2 outline-none border-2 border-primary rounded-xl px-4 py-2">
+              <DropdownMenuTrigger className="flex items-center text-lg text-surface-dark dark:text-primary hover:text-primary font-work-sans font-medium transition-colors duration-300 gap-2 outline-none border-2 border-primary rounded-xl px-4 py-2">
                 <Image
                   src="/plane.svg"
                   width={18}
@@ -51,13 +60,7 @@ const Navbar = () => {
                   className="w-[18px] h-[18px] object-contain"
                 />
                 <span>Subscribe</span>
-                <Image
-                  src="/chevron.svg"
-                  width={10}
-                  height={5}
-                  alt="Chevron"
-                  className="w-[15px] h-[8px] object-contain"
-                />
+                <ChevronDown className="w-[20px] object-contain" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[178px]">
                 <DropdownMenuItem className="font-medium" asChild>
