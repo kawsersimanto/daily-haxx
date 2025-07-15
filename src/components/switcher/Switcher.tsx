@@ -42,7 +42,7 @@ const Switcher = () => {
               alt="Sun icon"
               width={25}
               height={25}
-              className="w-[25px] h-[25px] object-contain"
+              className="xl:w-[25px] w-[20px] xl:h-[25px] h-[20px] object-contain"
             />
           )}
           {resolvedTheme === "dark" && (
@@ -51,7 +51,7 @@ const Switcher = () => {
               alt="Moon icon"
               width={25}
               height={25}
-              className="w-[25px] h-[25px] object-contain"
+              className="xl:w-[25px] w-[20px] xl:h-[25px] h-[20px] object-contain"
             />
           )}
           <span className="sr-only">Toggle theme</span>

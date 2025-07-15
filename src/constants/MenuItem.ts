@@ -34,3 +34,14 @@ export const MenuItem: TMenu[] = [
     ],
   },
 ];
+
+export const MobileMenuItem: TMenu[] = [
+  ...MenuItem,
+  {
+    label: "Subscribe",
+    children: [
+      { label: "Free", href: "/" },
+      { label: "Premium", href: "/" },
+    ],
+  },
+];

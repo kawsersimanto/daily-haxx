@@ -1,11 +1,5 @@
-import Switcher from "@/components/switcher/Switcher";
-
 const Home = () => {
-  return (
-    <div>
-      <Switcher />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;
