@@ -29,6 +29,7 @@
 
   --light-yellow: #fffbeb;
   --almond-yellow: #c7a21d;
+  --dark-primary: #00241c;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -163,6 +164,7 @@
   --color-surface-dark: var(--surface-dark);
   --color-light-yellow: var(--light-yellow);
   --color-almond-yellow: var(--almond-yellow);
+  --color-dark-primary: var(--dark-primary);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

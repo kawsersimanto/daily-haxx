@@ -1,4 +1,5 @@
-import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import { Navbar } from "@/components/navbar";
 
 const MainLayout = ({
   children,
@@ -8,7 +9,9 @@ const MainLayout = ({
   return (
     <>
       <Navbar />
+      <div className="min-h-screen"></div>
       {children}
+      <Footer />
     </>
   );
 };
