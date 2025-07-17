@@ -4,6 +4,7 @@ export type TMenu = {
   children?: {
     label: string;
     href?: string;
+    isButton?: boolean;
   }[];
 };
 
@@ -42,6 +43,15 @@ export const MobileMenuItem: TMenu[] = [
     children: [
       { label: "Free", href: "/" },
       { label: "Premium", href: "/" },
+    ],
+  },
+  {
+    label: "My Account",
+    children: [
+      { label: "Profile", href: "/" },
+      { label: "Billing", href: "/" },
+      { label: "Settings", href: "/" },
+      { label: "Logout", isButton: true },
     ],
   },
 ];

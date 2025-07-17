@@ -1,5 +1,6 @@
 "use client";
 
+import CrownIcon from "@/assets/navbar/crown.svg";
 import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -13,12 +14,16 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MobileMenuItem } from "@/constants/MenuItem";
 import Image from "next/image";
+import { Avatar, AvatarFallback } from "../ui/avatar";
+import { Badge } from "../ui/badge";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -34,6 +39,10 @@ export default function MobileMenu() {
 
   const handleLinkClick = () => {
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    console.log("Logout");
   };
 
   return (
@@ -93,16 +102,26 @@ export default function MobileMenu() {
                     </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href || "/"}
-                        onClick={handleLinkClick}
-                        className="block py-2 px-7 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    {item.children.map((child) =>
+                      child.isButton ? (
+                        <button
+                          key={child.label}
+                          onClick={handleLogout}
+                          className="block w-full text-left py-2 px-7 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                        >
+                          {child.label}
+                        </button>
+                      ) : (
+                        <Link
+                          key={child.label}
+                          href={child.href || "/"}
+                          onClick={handleLinkClick}
+                          className="block py-2 px-7 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      )
+                    )}
                   </CollapsibleContent>
                 </Collapsible>
               ) : (
@@ -117,6 +136,40 @@ export default function MobileMenu() {
             </div>
           ))}
         </nav>
+        <SheetDescription className="sr-only">
+          {process.env.NEXT_PUBLIC_APP_NAME} Off Canvas Menu
+        </SheetDescription>
+        <SheetFooter>
+          <div className="flex items-center gap-2 font-medium">
+            <Avatar className="text-secondary w-[40px] h-[40px]">
+              <AvatarFallback className="bg-primary text-inherit">
+                DA
+              </AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col">
+              <span>Hello, Danial</span>
+              <Badge
+                variant="outline"
+                className="border-almond-yellow text-[10px] text-almond-yellow bg-light-yellow py-1 px-1 sm:px-2.5 leading-[1em]"
+              >
+                <Image
+                  src={CrownIcon}
+                  width={11}
+                  height={11}
+                  alt="Crown Icon"
+                  className="md:w-[11px] w-[11px] md:h-[11px] object-contain"
+                />
+                Premium
+              </Badge>
+              {/* <Badge
+            variant="outline"
+            className="border-almond-yellow text-almond-yellow bg-light-yellow py-1.5 px-2.5 leading-[1em]"
+          >
+            Free
+          </Badge> */}
+            </div>
+          </div>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
