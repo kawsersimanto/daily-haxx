@@ -1,28 +1,41 @@
-import BannerImage from "@/assets/banner/banner.jpg";
 import { Card, CardContent } from "@/components/ui/card";
+import { INewsData } from "@/constants/news";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import Link from "next/link";
+dayjs.extend(relativeTime);
 
-const NewsCard = () => {
+const NewsCard = ({ data }: INewsData) => {
   return (
     <Link href="/">
       <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
-        <div className="overflow-hidden rounded h-[243px]">
+        <div className="overflow-hidden rounded xl:h-[243px] lg:h-[180px] md:h-[200px] sm:h-[243px] h-[200px]">
           <Image
-            src={BannerImage}
-            alt="COVID-19 vaccine vials"
-            className="object-cover w-full"
+            src={data?.image || "/placeholder.png"}
+            alt={data?.title}
+            width={800}
+            height={800}
+            className="object-cover w-full h-full"
           />
         </div>
         <CardContent className="p-0">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3.5 leading-5">
-            Moderna&apos;s rsv vaccine shows 84% efficacy in final-stage trial,
-            more to go!
+          <h2 className="text-lg font-semibold text-foreground mb-3.5 leading-6 line-clamp-2">
+            {data?.title || "No Title Found"}
           </h2>
           <div className="flex items-center text-sm text-light-muted gap-2">
-            <span>20min ago</span>
+            <span className="xl:text-sm lg:text-xs text-sm">
+              {dayjs(data?.createdAt).fromNow()}
+            </span>
             <span>•</span>
-            <span>Tedox Pharma</span>
+            {data?.publisher && (
+              <>
+                <span>•</span>
+                <span className="xl:text-sm lg:text-xs text-sm">
+                  {data?.publisher}
+                </span>
+              </>
+            )}
           </div>
         </CardContent>
       </Card>

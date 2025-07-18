@@ -34,6 +34,8 @@
   --silver-gray: #c5c5c5;
   --charcoal-black: #0e0e0e;
   --light-muted: #908f90;
+  --shamrock-green: #009a57;
+  --mint-cream: #e5fff4;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -92,6 +94,8 @@
   --light-yellow: #fffbeb;
   --almond-yellow: #c7a21d;
   --light-muted: #908f90;
+  --shamrock-green: #009a57;
+  --mint-cream: #e5fff4;
 
   --border: #343333;
   --input: #312e2e;
@@ -174,6 +178,8 @@
   --color-silver-gray: var(--silver-gray);
   --color-charcoal-black: var(--charcoal-black);
   --color-light-muted: var(--light-muted);
+  --color-shamrock-green: var(--shamrock-green);
+  --color-mint-cream: var(--mint-cream);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -200,6 +206,23 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 1.25rem;
+  max-width: 100%;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1064px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
 }
 
 @layer base {
@@ -219,6 +242,6 @@
   }
   input::placeholder,
   textarea::placeholder {
-    color: var(--placeholder-color);
+    color: var(--light-muted);
   }
 }
