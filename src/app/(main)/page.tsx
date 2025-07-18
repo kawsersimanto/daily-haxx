@@ -1,39 +1,30 @@
-import Banner from "@/components/banner/Banner";
 import ExclusiveSidebar from "@/components/exclusive-sidebar/ExclusiveSidebar";
-import Image from "next/image";
+import MainNews from "@/components/news/MainNews";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Home = () => {
   return (
-    <main className="pt-4 pb-10">
+    <main>
       <div className="container">
-        <div className="grid lg:grid-cols-[1fr_360px] gap-6">
-          <div>
-            <h2 className="text-lg font-semibold text-primary dark:text-foreground uppercase tracking-[2px] font-work-sans mb-4">
-              Latest
-            </h2>
-            <Banner />
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold text-primary dark:text-foreground uppercase tracking-[2px] font-work-sans mb-4 flex gap-2.5">
-              <Image
-                src="/crown-light.svg"
-                width={17}
-                height={16}
-                alt="Crown Icon"
-                className="object-contain dark:hidden"
-              />
-              <Image
-                src="/crown-dark.svg"
-                width={17}
-                height={16}
-                alt="Crown Icon"
-                className="object-contain not-dark:hidden"
-              />
-              Premium
-            </h2>
-            <ExclusiveSidebar />
-          </div>
-        </div>
+        <section className="grid lg:grid-cols-[1fr_360px] gap-6 pt-4 pb-10">
+          <MainNews />
+          <ExclusiveSidebar />
+        </section>
+        <section className="grid lg:grid-cols-[1fr_360px] gap-6 pt-10 pb-12.5">
+          <Card className="w-full p-5 rounded-xl shadow-none">
+            <div className="overflow-hidden rounded lg:h-[462px] h-[280px]">
+              {/* <Image
+            src={data?.image || "/placeholder.png"}
+            alt={data?.title}
+            width={800}
+            height={800}
+            className="object-cover w-full h-full"
+          /> */}
+            </div>
+            <CardContent className="p-0">asd</CardContent>
+          </Card>
+          <div>hello</div>
+        </section>
       </div>
     </main>
   );
