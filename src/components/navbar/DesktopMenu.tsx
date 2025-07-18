@@ -1,6 +1,6 @@
 "use client";
 
-import { MenuItem } from "@/constants/MenuItem";
+import { menu } from "@/constants/menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import {
 const DesktopMenu = () => {
   return (
     <div className="xl:flex hidden items-center gap-8">
-      {MenuItem.map((item) =>
+      {menu.map((item) =>
         item.children ? (
           <DropdownMenu key={item.label}>
             <DropdownMenuTrigger className="flex items-center text-lg text-surface-dark hover:text-primary font-work-sans font-medium transition-colors duration-300 gap-2 outline-none">

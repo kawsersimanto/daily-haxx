@@ -20,7 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MobileMenuItem } from "@/constants/MenuItem";
+import { mobileMenu } from "@/constants/menu";
 import Image from "next/image";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Badge } from "../ui/badge";
@@ -81,7 +81,7 @@ export default function MobileMenu() {
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col mt-12">
-          {MobileMenuItem.map((item) => (
+          {mobileMenu.map((item) => (
             <div key={item.label}>
               {item.children ? (
                 <Collapsible

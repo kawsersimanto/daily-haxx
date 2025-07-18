@@ -27,9 +27,12 @@
   --placeholder-color: #908f90;
   --ring: #12975d;
 
+  /* custom colors  */
   --light-yellow: #fffbeb;
   --almond-yellow: #c7a21d;
   --dark-primary: #00241c;
+  --silver-gray: #c5c5c5;
+  --charcoal-black: #0e0e0e;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -84,6 +87,7 @@
   --destructive: #ff6467;
   --destructive-foreground: #fafafa;
 
+  /* custom colors  */
   --light-yellow: #fffbeb;
   --almond-yellow: #c7a21d;
 
@@ -165,6 +169,8 @@
   --color-light-yellow: var(--light-yellow);
   --color-almond-yellow: var(--almond-yellow);
   --color-dark-primary: var(--dark-primary);
+  --color-silver-gray: var(--silver-gray);
+  --color-charcoal-black: var(--charcoal-black);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

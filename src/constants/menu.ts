@@ -8,7 +8,7 @@ export type TMenu = {
   }[];
 };
 
-export const MenuItem: TMenu[] = [
+export const menu: TMenu[] = [
   {
     label: "Newsletters",
     href: "/",
@@ -36,8 +36,8 @@ export const MenuItem: TMenu[] = [
   },
 ];
 
-export const MobileMenuItem: TMenu[] = [
-  ...MenuItem,
+export const mobileMenu: TMenu[] = [
+  ...menu,
   {
     label: "Subscribe",
     children: [
