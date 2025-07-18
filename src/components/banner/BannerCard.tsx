@@ -25,7 +25,6 @@ const BannerCard = ({ data }: INewsData) => {
           </h2>
           <div className="flex items-center text-sm text-light-muted gap-2">
             <span>{dayjs(data?.createdAt).fromNow()}</span>
-            <span>•</span>
             {data?.publisher && (
               <>
                 <span>•</span>

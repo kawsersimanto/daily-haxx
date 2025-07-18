@@ -27,7 +27,6 @@ const NewsCard = ({ data }: INewsData) => {
             <span className="xl:text-sm lg:text-xs text-sm">
               {dayjs(data?.createdAt).fromNow()}
             </span>
-            <span>•</span>
             {data?.publisher && (
               <>
                 <span>•</span>

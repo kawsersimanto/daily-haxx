@@ -36,6 +36,7 @@
   --light-muted: #908f90;
   --shamrock-green: #009a57;
   --mint-cream: #e5fff4;
+  --sea-green: #12975d;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -96,6 +97,7 @@
   --light-muted: #908f90;
   --shamrock-green: #009a57;
   --mint-cream: #e5fff4;
+  --sea-green: #12975d;
 
   --border: #343333;
   --input: #312e2e;
@@ -180,6 +182,7 @@
   --color-light-muted: var(--light-muted);
   --color-shamrock-green: var(--shamrock-green);
   --color-mint-cream: var(--mint-cream);
+  --color-sea-green: var(--sea-green);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
