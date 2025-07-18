@@ -33,6 +33,7 @@
   --dark-primary: #00241c;
   --silver-gray: #c5c5c5;
   --charcoal-black: #0e0e0e;
+  --light-muted: #908f90;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -90,6 +91,7 @@
   /* custom colors  */
   --light-yellow: #fffbeb;
   --almond-yellow: #c7a21d;
+  --light-muted: #908f90;
 
   --border: #343333;
   --input: #312e2e;
@@ -171,6 +173,7 @@
   --color-dark-primary: var(--dark-primary);
   --color-silver-gray: var(--silver-gray);
   --color-charcoal-black: var(--charcoal-black);
+  --color-light-muted: var(--light-muted);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

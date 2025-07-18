@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Brand = () => {
   return (
-    <div className="xs:col-span-1 col-span-2">
+    <div className="sm:col-span-1 col-span-2">
       <Link href="/">
         <Image
           src="/light-logo.svg"

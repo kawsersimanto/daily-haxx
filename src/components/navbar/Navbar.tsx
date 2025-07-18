@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <header className="lg:py-6 py-4 bg-background dark:bg-surface-deep sticky top-0 left-0 right-0 border-b border-b-border">
+    <header className="lg:py-6 py-4 bg-background dark:bg-surface-deep sticky top-0 left-0 right-0 border-b border-b-border z-50">
       <div className="container">
         <div className="flex items-center justify-between gap-2">
           <div>

@@ -6,7 +6,7 @@ import Brand from "./Brand";
 
 const Footer = () => {
   return (
-    <section className="lg:py-[90px] pt-[90px] pb-10 bg-dark-primary dark:bg-charcoal-black">
+    <footer className="lg:py-[90px] pt-[90px] pb-10 bg-dark-primary dark:bg-charcoal-black">
       <div className="container">
         <div className="max-w-[1180px] relative z-[1]">
           <Image
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
