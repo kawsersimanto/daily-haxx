@@ -14,6 +14,8 @@ type FormInputProps<T extends FieldValues> = {
   label?: string;
   placeholder?: string;
   type?: React.HTMLInputTypeAttribute;
+  className?: string;
+  labelClass?: string;
 };
 
 const FormInput = <T extends FieldValues>({
@@ -22,15 +24,22 @@ const FormInput = <T extends FieldValues>({
   label,
   placeholder,
   type = "text",
+  className,
+  labelClass,
 }: FormInputProps<T>) => (
   <FormField
     control={control}
     name={name}
     render={({ field }) => (
       <FormItem className="mb-0 gap-x-2.5">
-        {label && <FormLabel>{label}</FormLabel>}
+        {label && <FormLabel className={labelClass}>{label}</FormLabel>}
         <FormControl>
-          <Input type={type} placeholder={placeholder} {...field} />
+          <Input
+            type={type}
+            placeholder={placeholder}
+            {...field}
+            className={className}
+          />
         </FormControl>
         <FormMessage className="mb-2" />
       </FormItem>

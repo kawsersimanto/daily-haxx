@@ -37,6 +37,9 @@
   --shamrock-green: #009a57;
   --mint-cream: #e5fff4;
   --sea-green: #12975d;
+  --icy-green: #f2fff9;
+  --soft-mint: #cdffe9;
+  --bright-teal: #38d792;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -98,6 +101,7 @@
   --shamrock-green: #009a57;
   --mint-cream: #e5fff4;
   --sea-green: #12975d;
+  --bright-teal: #38d792;
 
   --border: #343333;
   --input: #312e2e;
@@ -183,6 +187,9 @@
   --color-shamrock-green: var(--shamrock-green);
   --color-mint-cream: var(--mint-cream);
   --color-sea-green: var(--sea-green);
+  --color-icy-green: var(--icy-green);
+  --color-soft-mint: var(--soft-mint);
+  --color-bright-teal: var(--bright-teal);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

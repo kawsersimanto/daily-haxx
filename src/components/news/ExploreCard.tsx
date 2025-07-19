@@ -9,7 +9,7 @@ const ExploreCard = ({ data }: INewsData) => {
   return (
     <Link
       href="/"
-      className="flex sm:flex-row flex-col items-center gap-7 not-first:pt-[30px] first:pt-0 pb-[30px] not-last:border-b not-last:xborder-border"
+      className="flex md:flex-row flex-col md:items-center gap-7 not-first:pt-[30px] first:pt-0 pb-[30px] not-last:border-b not-last:xborder-border"
     >
       <div className="overflow-hidden rounded-xl md:w-[218px] w-full h-[170px] border border-border shrink-0">
         <Image

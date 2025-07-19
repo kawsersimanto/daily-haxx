@@ -10,7 +10,7 @@ const BannerCard = ({ data }: INewsData) => {
   return (
     <Link href="/" className="md:col-span-3 col-span-1">
       <Card className="w-full p-3.5 rounded-xl gap-3.5 shadow-none">
-        <div className="overflow-hidden rounded lg:h-[462px] h-[280px]">
+        <div className="overflow-hidden rounded lg:h-[438px] h-[280px]">
           <Image
             src={data?.image || "/placeholder.png"}
             alt={data?.title}
