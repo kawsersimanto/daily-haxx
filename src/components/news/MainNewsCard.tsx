@@ -20,7 +20,7 @@ const BannerCard = ({ data }: INewsData) => {
           />
         </div>
         <CardContent className="p-0">
-          <h2 className="text-[28px] mb-4 line-clamp-2 text-foreground font-bold leading-[120%]">
+          <h2 className="sm:text-[28px] text-xl mb-4 line-clamp-2 text-foreground font-bold leading-[120%]">
             {data?.title || "No Title Found"}
           </h2>
           <div className="flex items-center text-sm text-light-muted gap-2">

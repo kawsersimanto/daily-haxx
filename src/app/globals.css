@@ -84,7 +84,7 @@
   --secondary: #1e2d1f;
   --secondary-foreground: #e6e6e6;
   --muted: #262626;
-  --muted-foreground: #a6a6a6;
+  --muted-foreground: #908f90;
   --surface-dark: #fff;
   --accent: #152116;
   --accent-foreground: #379c70;
@@ -220,11 +220,11 @@
   }
 
   @media (min-width: 1024px) {
-    max-width: 1064px;
+    max-width: 1024px;
   }
 
-  @media (min-width: 1280px) {
-    max-width: 1280px;
+  @media (min-width: 1200px) {
+    max-width: 1220px;
   }
 }
 

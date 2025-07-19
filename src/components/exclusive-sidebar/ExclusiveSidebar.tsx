@@ -29,7 +29,7 @@ const ExclusiveSidebar = () => {
             Exclusive Analysis
           </h2>
         </div>
-        {news.slice(0, 8).map((news, id) => (
+        {news.slice(0, 7).map((news, id) => (
           <ExclusiveCard key={id} data={news} />
         ))}
         <Link
