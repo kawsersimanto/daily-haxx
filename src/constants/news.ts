@@ -123,38 +123,38 @@ export const news: INews[] = [
       "Ai model predicts cancer relapse earlier than traditional diagnostics",
     category: "Pharma, FDA+",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/15.jpg",
   },
   {
     title:
       "Biotech stocks soar following breakthrough in universal flu vaccine",
     category: "R&D, Cell/Gene Tx",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/15.jpg",
+    image: "/news/16.jpg",
   },
   {
     title: "Who officially declares mpox outbreak no longer a global emergency",
     category: "R&D, Cell/Gene Tx",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/16.jpg",
+    image: "/news/17.jpg",
   },
   {
     title: "MRNA vaccine found effective in aggressive pancreatic cancer study",
     category: "Shorom, Pharma",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/17.jpg",
-  },
-  {
-    title: "Astrazeneca halts trial after rare but serious side effects emerge",
-    category: "Pharma",
-    createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/18.jpg",
+    image: "/news/7.jpg",
   },
   {
     title: "Astrazeneca halts trial after rare but serious side effects emerge",
     category: "Pharma",
     createdAt: "2025-07-18T09:30:00Z",
     image: "/news/19.jpg",
+  },
+  {
+    title: "Astrazeneca halts trial after rare but serious side effects emerge",
+    category: "Pharma",
+    createdAt: "2025-07-18T09:30:00Z",
+    image: "/news/20.jpg",
   },
   {
     title:
@@ -168,31 +168,31 @@ export const news: INews[] = [
       "Ai model predicts cancer relapse earlier than traditional diagnostics",
     category: "FA Pharma",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/banner.jpg",
   },
   {
     title:
       "Ai model predicts cancer relapse earlier than traditional diagnostics",
     category: "CNN, BBC",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/2.jpg",
   },
   {
     title: "WHO ends global emergency over mpox outbreak",
     publisher: "Tedox Pharma",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/3.jpg",
   },
   {
     title: "Gut bacteria linked to rising heart disease",
     publisher: "Tedox Pharma",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/4.jpg",
   },
   {
     title: "AI detects cancer earlier than traditional scans",
     publisher: "Tedox Pharma",
     createdAt: "2025-07-18T09:30:00Z",
-    image: "/news/mrna.jpg",
+    image: "/news/5.jpg",
   },
 ];
