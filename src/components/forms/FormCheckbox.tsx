@@ -23,11 +23,13 @@ const FormCheckbox = <T extends FieldValues>({
     control={control}
     name={name}
     render={({ field }) => (
-      <FormItem className="flex items-center gap-2 space-y-0">
-        <FormControl>
-          <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-        </FormControl>
-        {label && <FormLabel className="!m-0">{label}</FormLabel>}
+      <FormItem className="mb-0">
+        <div className="flex items-center gap-2">
+          <FormControl>
+            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+          </FormControl>
+          {label && <FormLabel className="!m-0">{label}</FormLabel>}
+        </div>
         <FormMessage />
       </FormItem>
     )}

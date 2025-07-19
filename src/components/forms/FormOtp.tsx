@@ -26,7 +26,7 @@ const FormOtp = <T extends FieldValues>({
     control={control}
     name={name}
     render={({ field }) => (
-      <FormItem>
+      <FormItem className="mb-0 gap-x-2.5">
         {label && <FormLabel>{label}</FormLabel>}
         <FormControl>
           <InputOTP
@@ -34,9 +34,13 @@ const FormOtp = <T extends FieldValues>({
             pattern={REGEXP_ONLY_DIGITS}
             {...field}
           >
-            <InputOTPGroup>
+            <InputOTPGroup className="gap-3.5">
               {[...Array(maxLength)].map((_, i) => (
-                <InputOTPSlot key={i} index={i} />
+                <InputOTPSlot
+                  key={i}
+                  index={i}
+                  className="w-12 h-12 border border-border rounded"
+                />
               ))}
             </InputOTPGroup>
           </InputOTP>

@@ -38,7 +38,7 @@ const FormSelect = <T extends FieldValues, K extends FieldPath<T>>({
     control={control}
     name={name}
     render={({ field }) => (
-      <FormItem>
+      <FormItem className="mb-0 gap-x-2.5">
         {label && <FormLabel>{label}</FormLabel>}
         <Select
           onValueChange={(value) => {

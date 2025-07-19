@@ -27,7 +27,7 @@ const FormTextArea = <T extends FieldValues>({
     control={control}
     name={name}
     render={({ field }) => (
-      <FormItem>
+      <FormItem className="mb-0 gap-x-2.5">
         {label && <FormLabel>{label}</FormLabel>}
         <FormControl>
           <Textarea
