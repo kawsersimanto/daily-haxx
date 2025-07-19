@@ -10,9 +10,12 @@ const Explore = () => {
       <SectionTitle>Explore More</SectionTitle>
       <Card className="w-full p-5 rounded-xl shadow-none">
         <CardContent className="p-0">
-          {news.slice(0, 8).map((news, id) => (
-            <ExploreCard key={id} data={news} />
-          ))}
+          {news
+            .slice(10, 18)
+            .map(
+              (news, id) =>
+                news.category && <ExploreCard key={id} data={news} />
+            )}
           <Link
             href="/"
             className="p-2.5 mt-7 uppercase text-center text-sm font-semibold leading-[130%] tracking-[2px] block bg-accent text-accent-foreground border border-border"
