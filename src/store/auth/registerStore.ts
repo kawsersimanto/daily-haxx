@@ -1,15 +1,16 @@
-import { EmailFormValues, OtpFormValues } from "@/schemas/authSchema";
+import { EmailFormValues } from "@/schemas/authSchema";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { createSelectors } from "../selector";
 
 type RegisterState = {
+  email: string;
   totalSteps: number;
   currentStep: number;
   progress: number;
   isHydrated: boolean;
-  setEmail: () => void;
+  setEmail: (email: string) => void;
   nextStep: () => void;
   prevStep: () => void;
   goToStep: (step: number) => void;
@@ -20,7 +21,7 @@ type RegisterState = {
   canGoPrev: () => boolean;
 };
 
-const initialState: EmailFormValues & OtpFormValues = {
+const initialState: EmailFormValues = {
   email: "",
 };
 
@@ -32,6 +33,12 @@ const registerStore = create<RegisterState>()(
       isHydrated: false,
       totalSteps: 3,
       progress: 0,
+
+      setEmail: (email) => {
+        set((state) => {
+          state.email = email;
+        });
+      },
 
       goToStep: (step) => {
         const { totalSteps } = get();
