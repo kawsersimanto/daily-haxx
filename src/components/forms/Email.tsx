@@ -31,19 +31,6 @@ const Email = () => {
           control={form.control}
           name="email"
           render={({ field }) => (
-            // <FormItem className="gap-2.5">
-            //   <FormLabel className="text-lg font-medium text-foreground leading-5">
-            //     Email address
-            //   </FormLabel>
-            //   <FormControl>
-            //     <Input
-            //       placeholder="Enter your email address"
-            //       {...field}
-            //       className="h-auto py-2.5 px-5 !text-base"
-            //     />
-            //   </FormControl>
-            //   <FormMessage className="mb-2" />
-            // </FormItem>
             <FormItem>
               <div className="relative">
                 <FormControl>
@@ -57,7 +44,7 @@ const Email = () => {
                   src={"/mail-2.svg"}
                   width={20}
                   height={16}
-                  className="absolute top-1/2 -translate-y-1/2 right-[10px] object-contain object-contain w-[20px] h-[16px]"
+                  className="absolute top-1/2 -translate-y-1/2 right-[10px] object-contain w-[20px] h-[16px]"
                   alt="Form Icon"
                 />
               </div>
