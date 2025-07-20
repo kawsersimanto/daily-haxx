@@ -1,13 +1,9 @@
 "use client";
 
+import { EmailFormValues, emailSchema } from "@/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import z from "zod";
-import {
-  NewsletterFormValues,
-  newsletterSchema,
-} from "../../schemas/newsletterSchema";
 import { Button } from "../ui/button";
 import {
   Form,
@@ -19,15 +15,15 @@ import {
 import { Input } from "../ui/input";
 
 const NewsletterForm = () => {
-  const form = useForm<NewsletterFormValues>({
-    resolver: zodResolver(newsletterSchema),
+  const form = useForm<EmailFormValues>({
+    resolver: zodResolver(emailSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  const onSubmit = (values: z.infer<typeof newsletterSchema>) => {
-    console.log(values);
+  const onSubmit = (data: EmailFormValues) => {
+    console.log(data);
   };
 
   return (
@@ -51,7 +47,7 @@ const NewsletterForm = () => {
                     src={"/mail.svg"}
                     width={14}
                     height={12}
-                    className="absolute top-1/2 -translate-y-1/2 left-[10px]"
+                    className="absolute top-1/2 -translate-y-1/2 left-[10px] object-contain"
                     alt="Form Icon"
                   />
                 </div>
