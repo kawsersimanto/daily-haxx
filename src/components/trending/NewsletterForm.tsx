@@ -1,12 +1,22 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import z from "zod";
-import FormIconInput from "../forms/FormIconInput";
+import {
+  NewsletterFormValues,
+  newsletterSchema,
+} from "../../schemas/newsletterSchema";
 import { Button } from "../ui/button";
-import { Form } from "../ui/form";
-import { NewsletterFormValues, newsletterSchema } from "./newsletterSchema";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
+import { Input } from "../ui/input";
 
 const NewsletterForm = () => {
   const form = useForm<NewsletterFormValues>({
@@ -24,12 +34,30 @@ const NewsletterForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex">
         <div className="grow relative">
-          <FormIconInput
+          <FormField
             control={form.control}
             name="email"
-            placeholder="Enter your email"
-            className="border-r-0 rounded-tr-[0] rounded-br-[0] bg-card h-[42px]"
-            position="start"
+            render={({ field }) => (
+              <FormItem>
+                <div className="relative">
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your email"
+                      {...field}
+                      className="border-r-0 rounded-tr-[0] rounded-br-[0] bg-card h-[42px] pt-2.5 pb-2.5 pe-2.5 ps-8"
+                    />
+                  </FormControl>
+                  <Image
+                    src={"/mail.svg"}
+                    width={14}
+                    height={12}
+                    className="absolute top-1/2 -translate-y-1/2 left-[10px]"
+                    alt="Form Icon"
+                  />
+                </div>
+                <FormMessage />
+              </FormItem>
+            )}
           />
         </div>
         <Button
