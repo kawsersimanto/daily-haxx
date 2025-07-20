@@ -1,0 +1,10 @@
+.register-slider .swiper-slide {
+  transition: opacity 300ms ease-in-out;
+}
+
+.register-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+.register-slider .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0;
+}

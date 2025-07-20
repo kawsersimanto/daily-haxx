@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { createSelectors } from "../selector";
+import { createSelectors } from "../createSelector";
 
 type AuthState = {
   token: string | null;

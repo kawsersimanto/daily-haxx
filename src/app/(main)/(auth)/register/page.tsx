@@ -23,15 +23,6 @@ const RegisterPage = () => {
             alt={`${process.env.NEXT_PUBLIC_APP_NAME}`}
           />
         </div>
-        <div className="mb-[38px] px-5">
-          <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center">
-            Welcome to
-          </h2>
-          <p className="text-center sm:text-base text-sm">
-            Enter your email address and we&apos;ll send you a verification code
-            to <strong>Sign in</strong>
-          </p>
-        </div>
         <Register />
       </CardDescription>
       <Button className="absolute top-6 right-6 p-0 h-auto" variant={"link"}>

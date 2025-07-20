@@ -1,14 +1,16 @@
-import { EmailFormValues } from "@/schemas/authSchema";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { createSelectors } from "../selector";
+import { createSelectors } from "../createSelector";
+
+type FormData = {
+  email: string;
+};
 
 type RegisterState = {
   email: string;
   totalSteps: number;
   currentStep: number;
-  progress: number;
   isHydrated: boolean;
   setEmail: (email: string) => void;
   nextStep: () => void;
@@ -21,18 +23,17 @@ type RegisterState = {
   canGoPrev: () => boolean;
 };
 
-const initialState: EmailFormValues = {
+const initialState = {
   email: "",
+  currentStep: 0,
+  isHydrated: false,
+  totalSteps: 2,
 };
 
-const registerStore = create<RegisterState>()(
+export const useRegisterStore = create<RegisterState>()(
   persist(
     immer((set, get) => ({
       ...initialState,
-      currentStep: 0,
-      isHydrated: false,
-      totalSteps: 3,
-      progress: 0,
 
       setEmail: (email) => {
         set((state) => {
@@ -43,38 +44,47 @@ const registerStore = create<RegisterState>()(
       goToStep: (step) => {
         const { totalSteps } = get();
         if (step < totalSteps && step >= 0) {
-          set({ currentStep: step });
+          set((state) => {
+            state.currentStep = step;
+          });
         }
       },
 
       nextStep: () => {
         const { currentStep, totalSteps } = get();
         if (currentStep < totalSteps - 1) {
-          set({ currentStep: currentStep + 1 });
+          set((state) => {
+            state.currentStep = currentStep + 1;
+          });
         }
       },
 
       prevStep: () => {
         const { currentStep } = get();
-
-        if (currentStep >= 0) {
-          set({ currentStep: currentStep - 1 });
+        if (currentStep > 0) {
+          set((state) => {
+            state.currentStep = currentStep - 1;
+          });
         }
       },
 
       setHydrated: (hydrated) => {
-        set({ isHydrated: hydrated });
+        set((state) => {
+          state.isHydrated = hydrated;
+        });
       },
 
       resetForm: () => {
-        set({
-          ...initialState,
-          currentStep: 0,
+        set((state) => {
+          state.email = "";
+          state.currentStep = 0;
         });
       },
 
       updateFormData: (data) => {
-        set((state) => ({ ...state, ...data }));
+        set((state) => {
+          if (data.email !== undefined) state.email = data.email;
+        });
       },
 
       canGoNext: () => {
@@ -86,16 +96,16 @@ const registerStore = create<RegisterState>()(
       canGoPrev: () => {
         const { currentStep } = get();
 
-        return currentStep <= 0;
+        return currentStep > 0;
       },
     })),
     {
       name: "register",
-      onRehydrateStorage: (state) => {
+      onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);
       },
     }
   )
 );
 
-export const useRegisterStore = createSelectors(registerStore);
+export const useRegisterSelector = createSelectors(useRegisterStore);
