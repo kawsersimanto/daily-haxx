@@ -19,8 +19,6 @@ type RegisterState = {
   updateFormData: (data: Partial<FormData>) => void;
   resetForm: () => void;
   setHydrated: (hydrated: boolean) => void;
-  canGoNext: () => boolean;
-  canGoPrev: () => boolean;
 };
 
 const initialState = {
@@ -85,18 +83,6 @@ export const useRegisterStore = create<RegisterState>()(
         set((state) => {
           if (data.email !== undefined) state.email = data.email;
         });
-      },
-
-      canGoNext: () => {
-        const { totalSteps, currentStep } = get();
-
-        return currentStep < totalSteps - 1;
-      },
-
-      canGoPrev: () => {
-        const { currentStep } = get();
-
-        return currentStep > 0;
       },
     })),
     {
