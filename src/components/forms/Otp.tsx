@@ -70,21 +70,21 @@ const Otp = () => {
               </FormItem>
             )}
           />
-          <div className="mt-5">
+          <div className="flex justify-center mt-7 gap-3.5">
             <Button
               onClick={(e) => {
                 e.preventDefault();
                 prevStep();
               }}
               variant={"outline"}
-              className="w-full md:text-lg text-sm font-medium h-auto py-2.5 border-primary text-primary"
+              className="md:text-lg text-sm font-medium h-auto py-2.5 border-primary text-primary grow"
             >
               Previous
             </Button>
             <Button
               disabled={!form.formState.isValid}
               type="submit"
-              className="w-full md:text-lg text-sm font-medium text-background h-auto py-2.5"
+              className="md:text-lg text-sm font-medium text-background h-auto py-2.5 grow"
             >
               Verify
             </Button>

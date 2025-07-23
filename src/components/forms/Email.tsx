@@ -30,9 +30,9 @@ const Email = () => {
   });
 
   const onSubmit = (data: EmailFormValues) => {
-    console.log(data);
     setEmail(data?.email);
     nextStep();
+    console.log(data);
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Email = () => {
   }, [isHydrated, email, form]);
 
   return (
-    <div>
+    <div className="max-w-[380px] mx-auto">
       <div className="mb-[38px] px-5">
         <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center">
           Welcome to
@@ -64,7 +64,7 @@ const Email = () => {
                     <Input
                       placeholder="Enter your email"
                       {...field}
-                      className="h-auto py-2.5 px-5 !text-base"
+                      className="h-auto py-2.5 px-5 md:!text-base text-sm"
                       autoFocus={false}
                     />
                   </FormControl>
@@ -82,7 +82,7 @@ const Email = () => {
           />
           <Button
             type="submit"
-            className="w-full mt-5 text-lg font-medium text-background h-auto py-2.5"
+            className="w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
           >
             Next
           </Button>

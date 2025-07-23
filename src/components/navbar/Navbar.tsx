@@ -4,6 +4,7 @@ import { Account, DesktopMenu, MobileMenu } from "@/components/navbar";
 import Switcher from "@/components/switcher/Switcher";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "../logo/Logo";
 
 const Navbar = () => {
   return (
@@ -12,20 +13,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between gap-2">
           <div>
             <Link href="/">
-              <Image
-                src="/logo.svg"
-                width={180}
-                height={40}
-                className="xl:w-[180px] xs:w-[140px] w-[120px] h-auto lg:h-[40px] object-contain dark:hidden"
-                alt={`${process.env.NEXT_PUBLIC_APP_NAME}`}
-              />
-              <Image
-                src="/dark-logo.svg"
-                width={180}
-                height={40}
-                className="xl:w-[180px] xs:w-[140px] w-[120px] h-auto lg:h-[40px] object-contain not-dark:hidden"
-                alt={`${process.env.NEXT_PUBLIC_APP_NAME}`}
-              />
+              <Logo />
             </Link>
           </div>
           <div>

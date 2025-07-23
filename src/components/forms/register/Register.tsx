@@ -31,9 +31,10 @@ const Register = () => {
       allowTouchMove={false}
       onSwiper={(swiper) => (swiperRef.current = swiper)}
       onSlideChange={(swiper) => goToStep(swiper.activeIndex)}
-      className="register-slider w-full"
+      className="register-slider max-w-[440px] !px-5"
       focusableElements={`[data-slot="form-control"]`}
       modules={[Navigation, Pagination]}
+      effect="fade"
     >
       <SwiperSlide key="email">
         <Email />
