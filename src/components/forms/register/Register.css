@@ -1,10 +1,7 @@
 .register-slider .swiper-slide {
-  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
 }
 
 .register-slider .swiper-slide.swiper-slide-active {
-  opacity: 1;
-}
-.register-slider .swiper-slide:not(.swiper-slide-active) {
-  opacity: 0;
+  pointer-events: auto;
 }

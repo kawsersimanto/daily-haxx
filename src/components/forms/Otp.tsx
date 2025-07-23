@@ -23,7 +23,7 @@ const Otp = () => {
     defaultValues: {
       otp: "",
     },
-    mode: "onChange",
+    mode: "onTouched",
   });
 
   const onSubmit = (data: OtpFormValues) => {
@@ -31,7 +31,7 @@ const Otp = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="mb-[38px] px-5">
         <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center">
           Verify your email
@@ -52,6 +52,7 @@ const Otp = () => {
                   <InputOTP
                     maxLength={6}
                     pattern={REGEXP_ONLY_DIGITS}
+                    autoFocus={false}
                     {...field}
                   >
                     <InputOTPGroup className="md:gap-3.5 gap-2">
@@ -69,25 +70,28 @@ const Otp = () => {
               </FormItem>
             )}
           />
-          <div className="flex gap-3.5 items-center mt-5 max-w-[280px] justify-center mx-auto">
+          <div className="mt-5">
             <Button
-              onClick={prevStep}
+              onClick={(e) => {
+                e.preventDefault();
+                prevStep();
+              }}
               variant={"outline"}
-              className="w-full md:text-lg text-sm font-medium h-auto py-2.5 border-primary text-primary shrink grow basis-[50%]"
+              className="w-full md:text-lg text-sm font-medium h-auto py-2.5 border-primary text-primary"
             >
               Previous
             </Button>
             <Button
               disabled={!form.formState.isValid}
               type="submit"
-              className="w-full md:text-lg text-sm font-medium text-background h-auto py-2.5 shrink grow basis-[50%]"
+              className="w-full md:text-lg text-sm font-medium text-background h-auto py-2.5"
             >
               Verify
             </Button>
           </div>
         </form>
       </Form>
-    </>
+    </div>
   );
 };
 

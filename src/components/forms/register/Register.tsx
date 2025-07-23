@@ -5,6 +5,9 @@ import { useRegisterSelector } from "@/store/auth/registerStore";
 import { useEffect, useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./Register.css";
 
@@ -13,12 +16,11 @@ const Register = () => {
 
   const currentStep = useRegisterSelector.use.currentStep();
   const isHydrated = useRegisterSelector.use.isHydrated();
+  const goToStep = useRegisterSelector.use.goToStep();
 
   useEffect(() => {
-    if (isHydrated) {
-      if (swiperRef.current && swiperRef.current.activeIndex !== currentStep) {
-        swiperRef.current.slideTo(currentStep);
-      }
+    if (isHydrated && swiperRef.current) {
+      swiperRef.current.slideTo(currentStep);
     }
   }, [currentStep, isHydrated]);
 
@@ -28,12 +30,15 @@ const Register = () => {
       slidesPerView={1}
       allowTouchMove={false}
       onSwiper={(swiper) => (swiperRef.current = swiper)}
-      className="!px-5 register-slider"
+      onSlideChange={(swiper) => goToStep(swiper.activeIndex)}
+      className="register-slider w-full"
+      focusableElements={`[data-slot="form-control"]`}
+      modules={[Navigation, Pagination]}
     >
-      <SwiperSlide>
+      <SwiperSlide key="email">
         <Email />
       </SwiperSlide>
-      <SwiperSlide className="!me-0">
+      <SwiperSlide key="otp">
         <Otp />
       </SwiperSlide>
     </Swiper>

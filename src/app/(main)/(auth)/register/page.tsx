@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const RegisterPage = () => {
   return (
-    <Card className="max-w-[530px] w-full mx-auto py-12 md:px-[74px] relative">
+    <Card className="mx-auto py-12 relative">
       <CardDescription>
         <div className="flex justify-center mb-[38px]">
           <Image

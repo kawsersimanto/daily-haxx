@@ -42,7 +42,7 @@ const Email = () => {
   }, [isHydrated, email, form]);
 
   return (
-    <>
+    <div>
       <div className="mb-[38px] px-5">
         <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center">
           Welcome to
@@ -65,13 +65,14 @@ const Email = () => {
                       placeholder="Enter your email"
                       {...field}
                       className="h-auto py-2.5 px-5 !text-base"
+                      autoFocus={false}
                     />
                   </FormControl>
                   <Image
                     src={"/mail-2.svg"}
                     width={20}
                     height={16}
-                    className="absolute top-1/2 -translate-y-1/2 right-[10px] object-contain w-[20px] h-[16px]"
+                    className="absolute top-1/2 -translate-y-1/2 right-[10px] object-contain w-[20px] h-[16px] pointer-events-none"
                     alt="Form Icon"
                   />
                 </div>
@@ -87,7 +88,7 @@ const Email = () => {
           </Button>
         </form>
       </Form>
-    </>
+    </div>
   );
 };
 
