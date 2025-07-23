@@ -7,8 +7,7 @@ type FormData = {
   email: string;
 };
 
-type RegisterState = {
-  email: string;
+type RegisterState = FormData & {
   totalSteps: number;
   currentStep: number;
   isHydrated: boolean;
@@ -19,6 +18,7 @@ type RegisterState = {
   updateFormData: (data: Partial<FormData>) => void;
   resetForm: () => void;
   setHydrated: (hydrated: boolean) => void;
+  clearStorage: () => void;
 };
 
 const initialState = {
@@ -83,6 +83,10 @@ export const useRegisterStore = create<RegisterState>()(
         set((state) => {
           if (data.email !== undefined) state.email = data.email;
         });
+      },
+
+      clearStorage: () => {
+        useRegisterStore.persist.clearStorage();
       },
     })),
     {

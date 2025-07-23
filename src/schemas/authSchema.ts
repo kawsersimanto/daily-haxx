@@ -62,6 +62,12 @@ export const otpSchema = authSchema.pick({
   otp: true,
 });
 
+export const personalInfo = authSchema.pick({
+  firstName: true,
+  lastName: true,
+});
+
 export type OtpFormValues = z.infer<typeof otpSchema>;
 export type AuthFormValues = z.infer<typeof authSchema>;
 export type EmailFormValues = z.infer<typeof emailSchema>;
+export type PersonalInfoFormValues = z.infer<typeof personalInfo>;

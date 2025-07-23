@@ -70,7 +70,7 @@ const Otp = () => {
               </FormItem>
             )}
           />
-          <div className="flex justify-center mt-7 gap-3.5">
+          <div className="flex justify-center mt-7 gap-3.5 mb-7">
             <Button
               onClick={(e) => {
                 e.preventDefault();
@@ -87,6 +87,15 @@ const Otp = () => {
               className="md:text-lg text-sm font-medium text-background h-auto py-2.5 grow"
             >
               Verify
+            </Button>
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <p className="md:text-lg text-sm">Didn&apos;t receive the code?</p>
+            <Button
+              variant={"link"}
+              className="h-auto p-0 font-semibold md:text-lg text-sm text-foreground"
+            >
+              Resend code
             </Button>
           </div>
         </form>

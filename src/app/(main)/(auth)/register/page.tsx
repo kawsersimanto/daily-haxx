@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const RegisterPage = () => {
   return (
-    <Card className="mx-auto py-12 relative">
+    <Card className="max-w-[530px] mx-auto py-12 relative">
       <CardDescription>
         <div className="flex justify-center mb-[38px]">
           <Logo />
