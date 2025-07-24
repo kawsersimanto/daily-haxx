@@ -1,9 +1,11 @@
-import ExclusiveSidebar from "@/components/exclusive-sidebar/ExclusiveSidebar";
 import SidebarLayout from "@/components/layout/SidebarLayout";
-import { Explore } from "@/components/news";
 import SectorNewsletter from "@/components/sector-newsletter/SectorNewsletter";
 import Trending from "@/components/trending/Trending";
-import { ArticlesSection } from "@/features/article/components";
+import {
+  ArticlesSection,
+  ExploreSection,
+  SidebarArticle,
+} from "@/features/article/components/sections";
 
 const Home = () => {
   return (
@@ -11,10 +13,10 @@ const Home = () => {
       <div className="container">
         <SidebarLayout>
           <ArticlesSection />
-          <ExclusiveSidebar />
+          <SidebarArticle />
         </SidebarLayout>
         <SidebarLayout>
-          <Explore />
+          <ExploreSection />
           <Trending />
         </SidebarLayout>
         <section className="pt-10 pb-20">

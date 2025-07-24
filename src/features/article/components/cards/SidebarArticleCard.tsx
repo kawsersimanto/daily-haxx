@@ -1,13 +1,13 @@
-import { IArticleProps } from "@/features/article/types";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
+import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const ExclusiveCard = ({ data }: IArticleProps) => {
+const SidebarArticleCard = ({ data }: IArticleProps) => {
   return (
     <Link
-      href="/"
+      href={`/article/${"pfizer-acquires"}`}
       className="py-[18px] px-6 flex flex-col gap-2 not-last:border-b border-border"
     >
       <h2 className="text-lg font-medium leading-[120%] line-clamp-3">
@@ -30,4 +30,4 @@ const ExclusiveCard = ({ data }: IArticleProps) => {
   );
 };
 
-export default ExclusiveCard;
+export default SidebarArticleCard;

@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/section-title/SectionTitle";
-import { Article } from "@/features/article/components";
+import { Article } from "@/features/article/components/cards";
 import { articles } from "@/features/article/constants/articles";
 
 const SectorNewsletter = () => {

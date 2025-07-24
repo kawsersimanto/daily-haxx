@@ -1,5 +1,5 @@
 import { articles } from "@/features/article/constants/articles";
-import { Article, LatestArticle } from "./";
+import { Article, LatestArticle } from "../cards";
 
 const ArticlesSection = () => {
   return (

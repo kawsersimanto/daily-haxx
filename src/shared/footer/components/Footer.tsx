@@ -14,7 +14,7 @@ const Footer = () => {
             alt={`${process.env.NEXT_PUBLIC_APP_NAME}`}
             width={144}
             height={147}
-            className="w-[144px] h-[147px] object-contain absolute right-0 xs:top-0 bottom-[15%]"
+            className="w-[144px] h-[147px] object-contain absolute right-0 xs:top-0 xs:bottom-[15%]"
           />
           <div className="max-w-[940px]">
             <div className="grid lg:grid-cols-[345px_1fr_1fr_1fr] grid-cols-2 sm:gap-21 gap-x-8 gap-y-14">

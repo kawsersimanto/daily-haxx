@@ -3,12 +3,15 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import Link from "next/link";
-import { IArticleProps } from "../types";
+import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
 const LatestArticle = ({ data }: IArticleProps) => {
   return (
-    <Link href="/" className="md:col-span-3 col-span-1">
+    <Link
+      href={`/article/${"pfizer-acquires"}`}
+      className="md:col-span-3 col-span-1"
+    >
       <Card className="w-full p-3.5 rounded-xl gap-3.5 shadow-none">
         <div className="overflow-hidden rounded lg:h-[438px] h-[280px]">
           <Image
