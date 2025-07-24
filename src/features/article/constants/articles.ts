@@ -1,18 +1,6 @@
-export interface INews {
-  title: string;
-  description?: string;
-  category?: string;
-  publisher?: string;
-  date?: string;
-  createdAt: string;
-  image?: string;
-}
+import { IArticle } from "../types";
 
-export interface INewsData {
-  data: INews;
-}
-
-export const news: INews[] = [
+export const articles: IArticle[] = [
   {
     title:
       "Moderna's rsv vaccine shows 84% efficacy in final-stage trial, more to go!",

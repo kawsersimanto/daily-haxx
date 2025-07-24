@@ -1,4 +1,4 @@
-import { INewsData } from "@/constants/news";
+import { INewsData } from "@/features/article/constants/articles";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";

@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { INewsData } from "@/constants/news";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import Link from "next/link";
+import { IArticleProps } from "../types";
 dayjs.extend(relativeTime);
 
-const BannerCard = ({ data }: INewsData) => {
+const LatestArticle = ({ data }: IArticleProps) => {
   return (
     <Link href="/" className="md:col-span-3 col-span-1">
       <Card className="w-full p-3.5 rounded-xl gap-3.5 shadow-none">
@@ -38,4 +38,4 @@ const BannerCard = ({ data }: INewsData) => {
   );
 };
 
-export default BannerCard;
+export default LatestArticle;

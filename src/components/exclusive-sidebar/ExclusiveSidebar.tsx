@@ -1,4 +1,4 @@
-import { news } from "@/constants/news";
+import { articles } from "@/features/article/constants/articles";
 import Image from "next/image";
 import Link from "next/link";
 import ExclusiveCard from "./ExclusiveCard";
@@ -29,8 +29,8 @@ const ExclusiveSidebar = () => {
             Exclusive Analysis
           </h2>
         </div>
-        {news.slice(0, 7).map((news, id) => (
-          <ExclusiveCard key={id} data={news} />
+        {articles.slice(0, 7).map((article, id) => (
+          <ExclusiveCard key={id} data={article} />
         ))}
         <Link
           href="/"

@@ -1,5 +1,5 @@
 import { ExploreCard } from "@/components/news";
-import { news } from "@/constants/news";
+import { articles } from "@/features/article/constants/articles";
 import Link from "next/link";
 import SectionTitle from "../section-title/SectionTitle";
 import { Card, CardContent } from "../ui/card";
@@ -10,11 +10,11 @@ const Explore = () => {
       <SectionTitle>Explore More</SectionTitle>
       <Card className="w-full p-5 rounded-xl shadow-none">
         <CardContent className="p-0">
-          {news
+          {articles
             .slice(10, 18)
             .map(
-              (news, id) =>
-                news.category && <ExploreCard key={id} data={news} />
+              (article, id) =>
+                article.category && <ExploreCard key={id} data={article} />
             )}
           <Link
             href="/"
