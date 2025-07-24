@@ -12,10 +12,10 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Label } from "../ui/label";
 
 const Email = () => {
   const email = useRegisterSelector.use.email();
@@ -60,9 +60,9 @@ const Email = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <Label htmlFor="email" className="text-lg text-foreground">
+                <FormLabel className="md:text-lg text-sm text-foreground">
                   Email Address
-                </Label>
+                </FormLabel>
                 <div className="relative">
                   <FormControl>
                     <Input
@@ -70,7 +70,6 @@ const Email = () => {
                       {...field}
                       className="h-auto py-2.5 px-5 md:!text-base text-sm"
                       autoFocus={false}
-                      id="email"
                     />
                   </FormControl>
                   <Image

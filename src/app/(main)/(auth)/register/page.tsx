@@ -10,7 +10,7 @@ const RegisterPage = () => {
     <Card className="max-w-[530px] mx-auto py-12 relative">
       <CardDescription>
         <div className="flex justify-center mb-[38px]">
-          <Logo />
+          <Logo className="w-[140px]" />
         </div>
         <Register />
       </CardDescription>

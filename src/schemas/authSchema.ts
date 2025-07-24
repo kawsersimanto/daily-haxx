@@ -1,29 +1,5 @@
 import { z } from "zod";
 
-export const JobLevelEnum = z.enum([
-  "Entry Level",
-  "Mid Level",
-  "Senior Level",
-  "Executive",
-]);
-
-export const JobFunctionEnum = z.enum([
-  "Engineering",
-  "Marketing",
-  "Sales",
-  "HR",
-  "Operations",
-]);
-
-export const CompanySizeEnum = z.enum([
-  "1-10",
-  "11-50",
-  "51-200",
-  "201-500",
-  "501-1000",
-  "1000+",
-]);
-
 export const IndustryEnum = z.enum([
   "Technology",
   "Healthcare",
@@ -42,11 +18,17 @@ export const authSchema = z.object({
     }),
   firstName: z.string().trim().min(1, { message: "First name is required" }),
   lastName: z.string().trim().min(1, { message: "Last name is required" }),
-  jobLevel: JobLevelEnum,
-  jobFunction: JobFunctionEnum,
+  jobLevel: z.string().trim().min(1, { message: "Job level is required" }),
+  jobFunction: z
+    .string()
+    .trim()
+    .min(1, { message: "Job Function is required" }),
   company: z.string().trim().min(1, { message: "Company is required" }),
-  companySize: CompanySizeEnum,
-  industry: IndustryEnum,
+  companySize: z
+    .string()
+    .trim()
+    .min(1, { message: "Company Size is required" }),
+  industry: z.string().trim().min(1, { message: "Industry Size is required" }),
   postalCode: z
     .string()
     .trim()
@@ -62,12 +44,19 @@ export const otpSchema = authSchema.pick({
   otp: true,
 });
 
-export const personalInfo = authSchema.pick({
+export const personalInfoSchema = authSchema.pick({
   firstName: true,
   lastName: true,
+});
+
+export const jobDetailsSchema = authSchema.pick({
+  jobLevel: true,
+  jobFunction: true,
+  company: true,
 });
 
 export type OtpFormValues = z.infer<typeof otpSchema>;
 export type AuthFormValues = z.infer<typeof authSchema>;
 export type EmailFormValues = z.infer<typeof emailSchema>;
-export type PersonalInfoFormValues = z.infer<typeof personalInfo>;
+export type PersonalInfoFormValues = z.infer<typeof personalInfoSchema>;
+export type JobDetailsFormValues = z.infer<typeof jobDetailsSchema>;

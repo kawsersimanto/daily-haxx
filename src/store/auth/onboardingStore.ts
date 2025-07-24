@@ -14,11 +14,15 @@ type FormData = {
   postalCode: string;
 };
 
-type OnBoardingState = FormData & {
+type State = {
   totalSteps: number;
   currentStep: number;
   isHydrated: boolean;
   progress: number;
+  formData: FormData;
+};
+
+type Actions = {
   nextStep: () => void;
   prevStep: () => void;
   goToStep: (step: number) => void;
@@ -28,31 +32,24 @@ type OnBoardingState = FormData & {
   clearStorage: () => void;
 };
 
-const initialState: Omit<
-  OnBoardingState,
-  | "nextStep"
-  | "prevStep"
-  | "goToStep"
-  | "updateFormData"
-  | "resetForm"
-  | "setHydrated"
-  | "clearStorage"
-> = {
-  firstName: "",
-  lastName: "",
-  jobLevel: "",
-  jobFunction: "",
-  company: "",
-  industry: "",
-  companySize: "",
-  postalCode: "",
+const initialState: State = {
+  formData: {
+    firstName: "",
+    lastName: "",
+    jobLevel: "",
+    jobFunction: "",
+    company: "",
+    industry: "",
+    companySize: "",
+    postalCode: "",
+  },
   currentStep: 0,
   isHydrated: false,
   totalSteps: 3,
   progress: 0,
 };
 
-const useOnBoardingStore = create<OnBoardingState>()(
+const useOnBoardingStore = create<State & Actions>()(
   persist(
     immer((set, get) => ({
       ...initialState,
@@ -99,7 +96,7 @@ const useOnBoardingStore = create<OnBoardingState>()(
 
       updateFormData: (data) => {
         set((state) => {
-          Object.assign(state, data);
+          Object.assign(state.formData, data);
         });
       },
 
