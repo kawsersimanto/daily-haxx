@@ -16,7 +16,7 @@ import { Progress } from "@/components/ui/progress";
 import {
   PersonalInfoFormValues,
   personalInfoSchema,
-} from "@/schemas/authSchema";
+} from "@/features/auth/schemas/authSchema";
 import { useOnBoardingSelector } from "@/store/auth/onboardingStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";

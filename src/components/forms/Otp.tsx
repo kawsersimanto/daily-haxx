@@ -1,6 +1,6 @@
 "use client";
 
-import { OtpFormValues, otpSchema } from "@/schemas/authSchema";
+import { OtpFormValues, otpSchema } from "@/features/auth/schemas/authSchema";
 import { useRegisterSelector } from "@/store/auth/registerStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { REGEXP_ONLY_DIGITS } from "input-otp";

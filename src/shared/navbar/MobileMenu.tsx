@@ -20,10 +20,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { mobileMenu } from "@/constants/menu";
+import { mobileMenu } from "@/shared/navbar/constants/menu";
 import Image from "next/image";
-import { Avatar, AvatarFallback } from "../ui/avatar";
-import { Badge } from "../ui/badge";
+import { Avatar, AvatarFallback } from "../../components/ui/avatar";
+import { Badge } from "../../components/ui/badge";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);

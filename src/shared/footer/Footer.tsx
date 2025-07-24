@@ -1,5 +1,5 @@
 import footerBg from "@/assets/footer/footer-bg.svg";
-import { footerSections, policy } from "@/constants/footer";
+import { footerSections, policy } from "@/shared/footer/constants/footer";
 import Image from "next/image";
 import Link from "next/link";
 import Brand from "./Brand";

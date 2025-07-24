@@ -1,4 +1,4 @@
-import { ReactQueryClientProvider } from "@/providers/ReactQueryClientProvider";
+import { QueryClient } from "@/providers/QueryClient";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { getDefaultMetadata } from "@/utils/seo";
 import type { Metadata } from "next";
@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${workSans.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <ThemeProvider>
-          <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+          <QueryClient>{children}</QueryClient>
         </ThemeProvider>
       </body>
     </html>

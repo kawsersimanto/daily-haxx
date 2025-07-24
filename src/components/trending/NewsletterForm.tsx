@@ -1,6 +1,9 @@
 "use client";
 
-import { EmailFormValues, emailSchema } from "@/schemas/authSchema";
+import {
+  EmailFormValues,
+  emailSchema,
+} from "@/features/auth/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";

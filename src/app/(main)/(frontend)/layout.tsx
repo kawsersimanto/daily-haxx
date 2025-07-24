@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/Footer";
-import { Navbar } from "@/components/navbar";
+import Footer from "@/shared/footer/Footer";
+import { Navbar } from "@/shared/navbar";
 
 const MainLayout = ({
   children,

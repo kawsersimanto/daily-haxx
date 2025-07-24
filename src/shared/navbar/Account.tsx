@@ -5,14 +5,14 @@ import CrownIcon from "@/assets/navbar/crown.svg";
 import { ChevronDown, CreditCard, LogOut, Settings, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
+import { Badge } from "../../components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "../../components/ui/dropdown-menu";
 
 const Account = () => {
   const handleLogout = () => {

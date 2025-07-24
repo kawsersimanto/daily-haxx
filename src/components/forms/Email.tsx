@@ -1,6 +1,9 @@
 "use client";
 
-import { EmailFormValues, emailSchema } from "@/schemas/authSchema";
+import {
+  EmailFormValues,
+  emailSchema,
+} from "@/features/auth/schemas/authSchema";
 import { useRegisterSelector } from "@/store/auth/registerStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";

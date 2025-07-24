@@ -1,10 +1,10 @@
 import DarkSearch from "@/assets/navbar/dark-search.svg";
 import Search from "@/assets/navbar/search.svg";
-import { Account, DesktopMenu, MobileMenu } from "@/components/navbar";
 import Switcher from "@/components/switcher/Switcher";
+import { Account, DesktopMenu, MobileMenu } from "@/shared/navbar";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../logo/Logo";
+import Logo from "../../components/logo/Logo";
 
 const Navbar = () => {
   return (

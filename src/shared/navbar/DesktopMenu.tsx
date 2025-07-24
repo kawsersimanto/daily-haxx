@@ -1,6 +1,6 @@
 "use client";
 
-import { menu } from "@/constants/menu";
+import { menu } from "@/shared/navbar/constants/menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import {
@@ -8,7 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "../../components/ui/dropdown-menu";
 
 const DesktopMenu = () => {
   return (
