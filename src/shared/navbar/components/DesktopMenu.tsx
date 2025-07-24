@@ -1,14 +1,14 @@
 "use client";
 
-import { menu } from "@/shared/navbar/constants/menu";
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
+import { menu } from "@/shared/navbar/constants/menu";
+import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const DesktopMenu = () => {
   return (

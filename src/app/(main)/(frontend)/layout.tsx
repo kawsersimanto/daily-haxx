@@ -1,4 +1,4 @@
-import Footer from "@/shared/footer/Footer";
+import { Footer } from "@/shared/footer";
 import { Navbar } from "@/shared/navbar";
 
 const MainLayout = ({

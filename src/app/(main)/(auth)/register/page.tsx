@@ -1,7 +1,7 @@
 import Register from "@/components/forms/register/Register";
-import Logo from "@/components/logo/Logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription } from "@/components/ui/card";
+import Logo from "@/shared/navbar/components/Logo";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -2,17 +2,17 @@
 
 import AccountIcon from "@/assets/navbar/account.svg";
 import CrownIcon from "@/assets/navbar/crown.svg";
-import { ChevronDown, CreditCard, LogOut, Settings, User } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "../../components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown, CreditCard, LogOut, Settings, User } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Account = () => {
   const handleLogout = () => {

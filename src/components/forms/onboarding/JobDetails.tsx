@@ -1,6 +1,5 @@
 "use client";
 
-import Logo from "@/components/logo/Logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription } from "@/components/ui/card";
 import {
@@ -25,6 +24,7 @@ import {
   JobDetailsFormValues,
   jobDetailsSchema,
 } from "@/features/auth/schemas/authSchema";
+import Logo from "@/shared/navbar/components/Logo";
 import { useOnBoardingSelector } from "@/store/auth/onboardingStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";

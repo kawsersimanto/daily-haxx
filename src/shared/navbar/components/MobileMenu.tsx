@@ -5,6 +5,8 @@ import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -22,8 +24,6 @@ import {
 } from "@/components/ui/sheet";
 import { mobileMenu } from "@/shared/navbar/constants/menu";
 import Image from "next/image";
-import { Avatar, AvatarFallback } from "../../components/ui/avatar";
-import { Badge } from "../../components/ui/badge";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);

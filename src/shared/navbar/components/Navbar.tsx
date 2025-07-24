@@ -4,7 +4,7 @@ import Switcher from "@/components/switcher/Switcher";
 import { Account, DesktopMenu, MobileMenu } from "@/shared/navbar";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../components/logo/Logo";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
