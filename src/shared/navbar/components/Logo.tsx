@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-const Logo = ({ className }: { className?: string }) => {
+export const Logo = ({ className }: { className?: string }) => {
   return (
     <div>
       <Image
@@ -27,5 +27,3 @@ const Logo = ({ className }: { className?: string }) => {
     </div>
   );
 };
-
-export default Logo;

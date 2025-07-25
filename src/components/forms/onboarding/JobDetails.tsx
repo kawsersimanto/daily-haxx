@@ -24,7 +24,7 @@ import {
   JobDetailsFormValues,
   jobDetailsSchema,
 } from "@/features/auth/schemas/authSchema";
-import Logo from "@/shared/navbar/components/Logo";
+import { Logo } from "@/shared";
 import { useOnBoardingSelector } from "@/store/auth/onboardingStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";

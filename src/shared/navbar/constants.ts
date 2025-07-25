@@ -1,14 +1,6 @@
-export type TMenu = {
-  label: string;
-  href?: string;
-  children?: {
-    label: string;
-    href?: string;
-    isButton?: boolean;
-  }[];
-};
+import { IMenu } from "./";
 
-export const menu: TMenu[] = [
+export const menu: IMenu[] = [
   {
     label: "Newsletters",
     href: "/",
@@ -36,7 +28,7 @@ export const menu: TMenu[] = [
   },
 ];
 
-export const mobileMenu: TMenu[] = [
+export const mobileMenu: IMenu[] = [
   ...menu,
   {
     label: "Subscribe",

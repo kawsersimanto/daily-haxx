@@ -4,9 +4,9 @@ import Switcher from "@/components/switcher/Switcher";
 import { Account, DesktopMenu, MobileMenu } from "@/shared/navbar";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "./Logo";
+import { Logo } from "./";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <header className="lg:py-6 py-4 bg-background dark:bg-surface-deep sticky top-0 left-0 right-0 border-b border-b-border z-50">
       <div className="container">
@@ -48,5 +48,3 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;

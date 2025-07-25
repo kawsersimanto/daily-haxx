@@ -22,10 +22,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { mobileMenu } from "@/shared/navbar/constants/menu";
 import Image from "next/image";
+import { mobileMenu } from "../";
 
-export default function MobileMenu() {
+export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const [openItems, setOpenItems] = useState<string[]>([]);
 
@@ -173,4 +173,4 @@ export default function MobileMenu() {
       </SheetContent>
     </Sheet>
   );
-}
+};

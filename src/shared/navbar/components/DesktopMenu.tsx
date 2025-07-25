@@ -6,11 +6,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { menu } from "@/shared/navbar/constants/menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { menu } from "../";
 
-const DesktopMenu = () => {
+export const DesktopMenu = () => {
   return (
     <div className="xl:flex hidden items-center gap-8">
       {menu.map((item) =>
@@ -45,5 +45,3 @@ const DesktopMenu = () => {
     </div>
   );
 };
-
-export default DesktopMenu;

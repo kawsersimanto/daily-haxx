@@ -1,7 +1,7 @@
 import footerBg from "@/assets/footer/footer-bg.svg";
-import { footerSections, policy } from "@/shared/footer/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { footerSections, policy } from "../";
 import { Brand } from "./";
 
 export const Footer = () => {

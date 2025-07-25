@@ -14,7 +14,7 @@ import { ChevronDown, CreditCard, LogOut, Settings, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Account = () => {
+export const Account = () => {
   const handleLogout = () => {
     console.log("Logout");
   };
@@ -105,5 +105,3 @@ const Account = () => {
     </DropdownMenu>
   );
 };
-
-export default Account;
