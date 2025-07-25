@@ -1,10 +1,10 @@
 import footerBg from "@/assets/footer/footer-bg.svg";
-import { footerSections, policy } from "@/shared/footer/constants/footer";
+import { footerSections, policy } from "@/shared/footer/constants";
 import Image from "next/image";
 import Link from "next/link";
-import Brand from "./Brand";
+import { Brand } from "./";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="lg:py-[90px] pt-[90px] pb-10 bg-dark-primary dark:bg-charcoal-black">
       <div className="container">
@@ -67,5 +67,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

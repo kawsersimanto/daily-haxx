@@ -2,7 +2,7 @@ import { social } from "@/constants/social";
 import Image from "next/image";
 import Link from "next/link";
 
-const Brand = () => {
+export const Brand = () => {
   return (
     <div className="sm:col-span-1 col-span-2">
       <Link href="/">
@@ -45,5 +45,3 @@ const Brand = () => {
     </div>
   );
 };
-
-export default Brand;

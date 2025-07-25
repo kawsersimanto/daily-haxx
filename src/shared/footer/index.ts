@@ -1,1 +1,3 @@
-export { default as Footer } from "./components/Footer";
+export * from "./components/";
+export * from "./constants";
+export * from "./types";

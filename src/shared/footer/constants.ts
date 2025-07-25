@@ -1,7 +1,4 @@
-interface IFooter {
-  title: string;
-  links: { label: string; href: string }[];
-}
+import { IFooter } from "./types";
 
 export const Join: IFooter = {
   title: "Join",
