@@ -1,9 +1,10 @@
-// import { create } from "zustand";
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+import { create } from "zustand";
 
-// interface ArticleState {
-//   // state
-// }
+interface ArticleState {
+  // state
+}
 
-// export const useArticleStore = create<ArticleState>(() => ({
-//   // initial state
-// }));
+export const useArticleStore = create<ArticleState>(() => ({
+  // initial state
+}));

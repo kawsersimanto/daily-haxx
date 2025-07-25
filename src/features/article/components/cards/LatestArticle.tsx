@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const LatestArticle = ({ data }: IArticleProps) => {
+export const LatestArticle = ({ data }: IArticleProps) => {
   return (
     <Link
       href={`/article/${"pfizer-acquires"}`}
@@ -40,5 +40,3 @@ const LatestArticle = ({ data }: IArticleProps) => {
     </Link>
   );
 };
-
-export default LatestArticle;

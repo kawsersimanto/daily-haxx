@@ -4,7 +4,7 @@ import Link from "next/link";
 import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const SidebarArticleCard = ({ data }: IArticleProps) => {
+export const SidebarArticleCard = ({ data }: IArticleProps) => {
   return (
     <Link
       href={`/article/${"pfizer-acquires"}`}
@@ -29,5 +29,3 @@ const SidebarArticleCard = ({ data }: IArticleProps) => {
     </Link>
   );
 };
-
-export default SidebarArticleCard;

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const ExploreArticleCard = ({ data }: IArticleProps) => {
+export const ExploreArticleCard = ({ data }: IArticleProps) => {
   return (
     <Link
       href="/"
@@ -41,5 +41,3 @@ const ExploreArticleCard = ({ data }: IArticleProps) => {
     </Link>
   );
 };
-
-export default ExploreArticleCard;

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const Article = ({ data }: IArticleProps) => {
+export const Article = ({ data }: IArticleProps) => {
   return (
     <Link href={`/article/${"pfizer-acquires"}`}>
       <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
@@ -44,5 +44,3 @@ const Article = ({ data }: IArticleProps) => {
     </Link>
   );
 };
-
-export default Article;

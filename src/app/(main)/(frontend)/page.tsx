@@ -5,7 +5,7 @@ import {
   SectorNewsletter,
   SidebarArticle,
   TrendingSection,
-} from "@/features/article/components/sections";
+} from "@/features/article";
 
 const Home = () => {
   return (

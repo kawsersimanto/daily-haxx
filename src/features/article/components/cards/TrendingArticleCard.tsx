@@ -4,9 +4,12 @@ import Link from "next/link";
 import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
-const TrendingArticleCard = ({ data }: IArticleProps) => {
+export const TrendingArticleCard = ({ data }: IArticleProps) => {
   return (
-    <Link href="/" className="py-[18px] px-6 flex flex-col gap-2">
+    <Link
+      href={`/article/${"pfizer-acquires"}`}
+      className="py-[18px] px-6 flex flex-col gap-2"
+    >
       <h2 className="text-lg font-medium leading-[120%] line-clamp-3">
         {data?.title || "No title found"}
       </h2>
@@ -26,5 +29,3 @@ const TrendingArticleCard = ({ data }: IArticleProps) => {
     </Link>
   );
 };
-
-export default TrendingArticleCard;
