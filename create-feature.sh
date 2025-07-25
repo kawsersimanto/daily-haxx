@@ -37,16 +37,17 @@ export function use${FeaturePascal}() {
 }
 EOF
 
+  # Commented-out Zustand store template
   cat <<EOF > "$store/${feature}Store.ts"
-import { create } from "zustand";
+// import { create } from "zustand";
 
-interface ${FeaturePascal}State {
-  // state
-}
+// interface ${FeaturePascal}State {
+//   // define your state fields here
+// }
 
-export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
-  // initial state
-}));
+// export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
+//   // initial state
+// }));
 EOF
 
   cat <<EOF > "$base/api.ts"
