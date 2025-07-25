@@ -1,3 +1,3 @@
-export default function AuthCard() {
+export const AuthCard = () => {
   return <div>AuthCard</div>;
-}
+};

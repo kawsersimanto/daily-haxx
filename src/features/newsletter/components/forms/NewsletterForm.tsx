@@ -9,10 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  EmailFormValues,
-  emailSchema,
-} from "@/features/auth/schemas/authSchema";
+import { EmailFormValues, emailSchema } from "@/features/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
