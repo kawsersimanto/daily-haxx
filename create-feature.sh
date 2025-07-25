@@ -19,43 +19,84 @@ for arg in "$@"; do
   components="$base/components"
   hooks="$base/hooks"
   store="$base/store"
+  schema="$base/schema"
+  mocks="$base/mocks"
 
   # Create folder structure
-  mkdir -p "$components" "$hooks" "$store"
+  mkdir -p "$components" "$hooks" "$store" "$schema" "$mocks"
 
-  # Create files
-  cat <<EOF > "$components/${FeaturePascal}Card.tsx"
-export default function ${FeaturePascal}Card() {
-  return <div>${FeaturePascal}Card</div>;
-}
+  # --- Create Files ---
+
+  ## Constants
+  cat <<EOF > "$base/constants.ts"
+export const ${FeaturePascal}Constants = {
+  SAMPLE_KEY: "sample-value",
+};
 EOF
 
+  ## Schema (Zod validation)
+  cat <<EOF > "$schema/${feature}Schema.ts"
+import { z } from "zod";
+
+export const ${FeaturePascal}Schema = z.object({
+  // Example field
+  title: z.string().min(1, "Title is required"),
+});
+
+export type ${FeaturePascal}SchemaType = z.infer<typeof ${FeaturePascal}Schema>;
+EOF
+
+  ## Mock data
+  cat <<EOF > "$mocks/${feature}.mock.ts"
+import { ${FeaturePascal} } from "../types";
+
+export const mock${FeaturePascal}s: ${FeaturePascal}[] = [
+  {
+    id: "1",
+    // sample fields
+  },
+  {
+    id: "2",
+    // sample fields
+  },
+];
+EOF
+
+  ## Component (arrow function, named export)
+  cat <<EOF > "$components/${FeaturePascal}Card.tsx"
+export const ${FeaturePascal}Card = () => {
+  return <div>${FeaturePascal}Card</div>;
+};
+EOF
+
+  ## Hook (arrow function, named export)
   cat <<EOF > "$hooks/use${FeaturePascal}.ts"
-export function use${FeaturePascal}() {
+export const use${FeaturePascal} = () => {
   // React Query hook logic here
   return {};
-}
+};
 EOF
 
-  # Commented-out Zustand store template
+  ## Commented-out Zustand store with ESLint disable
   cat <<EOF > "$store/${feature}Store.ts"
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 // import { create } from "zustand";
 
-// interface ${FeaturePascal}State {
-//   // define your state fields here
-// }
+// export interface ${FeaturePascal}State {}
 
 // export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
 //   // initial state
 // }));
 EOF
 
+  ## API
   cat <<EOF > "$base/api.ts"
-export async function get${FeaturePascal}() {
+export const get${FeaturePascal} = async () => {
   // API logic here
-}
+};
 EOF
 
+  ## Types
   cat <<EOF > "$base/types.ts"
 export interface ${FeaturePascal} {
   id: string;
@@ -63,5 +104,24 @@ export interface ${FeaturePascal} {
 }
 EOF
 
-  echo "Feature '$feature' structure created successfully."
+  # --- Barrels ---
+
+  ## Components barrel
+  cat <<EOF > "$components/index.ts"
+export * from "./${FeaturePascal}Card";
+EOF
+
+  ## Feature barrel (includes mocks + schema)
+  cat <<EOF > "$base/index.ts"
+export * from "./constants";
+export * from "./schema/${feature}Schema";
+export * from "./api";
+export * from "./types";
+export * from "./mocks/${feature}.mock";
+export * from "./hooks/use${FeaturePascal}";
+export * from "./store/${feature}Store";
+export * from "./components";
+EOF
+
+  echo "Feature '$feature' structure created successfully with constants, schema, mocks, and arrow functions."
 done
