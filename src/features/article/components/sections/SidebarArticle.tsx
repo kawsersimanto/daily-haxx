@@ -1,9 +1,8 @@
-import { articles } from "@/features/article/constants/articles";
+import { articles, SidebarArticleCard } from "@/features/article";
 import Image from "next/image";
 import Link from "next/link";
-import { SidebarArticleCard } from "../cards";
 
-const SidebarArticle = () => {
+export const SidebarArticle = () => {
   return (
     <aside>
       <h2 className="text-lg font-semibold text-primary dark:text-foreground uppercase tracking-[2px] font-work-sans mb-4 flex gap-2.5">
@@ -42,5 +41,3 @@ const SidebarArticle = () => {
     </aside>
   );
 };
-
-export default SidebarArticle;

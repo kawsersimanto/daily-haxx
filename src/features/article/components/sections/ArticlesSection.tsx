@@ -1,7 +1,6 @@
-import { articles } from "@/features/article/constants/articles";
-import { Article, LatestArticle } from "../cards";
+import { Article, articles, LatestArticle } from "@/features/article";
 
-const ArticlesSection = () => {
+export const ArticlesSection = () => {
   return (
     <div>
       <h2 className="text-lg font-semibold text-primary dark:text-foreground uppercase tracking-[2px] font-work-sans mb-4">
@@ -21,5 +20,3 @@ const ArticlesSection = () => {
     </div>
   );
 };
-
-export default ArticlesSection;

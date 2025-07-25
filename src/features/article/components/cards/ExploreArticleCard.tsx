@@ -1,8 +1,8 @@
+import { IArticleProps } from "@/features/article";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import Link from "next/link";
-import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
 export const ExploreArticleCard = ({ data }: IArticleProps) => {

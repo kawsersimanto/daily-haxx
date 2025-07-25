@@ -1,7 +1,7 @@
+import { IArticleProps } from "@/features/article";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
-import { IArticleProps } from "../../types";
 dayjs.extend(relativeTime);
 
 export const TrendingArticleCard = ({ data }: IArticleProps) => {

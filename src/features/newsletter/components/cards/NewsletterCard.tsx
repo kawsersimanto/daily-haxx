@@ -1,10 +1,10 @@
 import inboxDarkIcon from "@/assets/trending/inbox-dark.svg";
 import inboxIcon from "@/assets/trending/inbox.svg";
 import { Card, CardDescription } from "@/components/ui/card";
+import { NewsletterForm } from "@/features/newsletter";
 import Image from "next/image";
-import { NewsletterForm } from "../forms";
 
-const NewsletterCard = () => {
+export const NewsletterCard = () => {
   return (
     <Card className="bg-icy-green dark:bg-card py-6 px-5">
       <CardDescription>
@@ -39,5 +39,3 @@ const NewsletterCard = () => {
     </Card>
   );
 };
-
-export default NewsletterCard;

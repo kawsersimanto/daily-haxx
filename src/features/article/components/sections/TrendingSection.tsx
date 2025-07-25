@@ -1,9 +1,8 @@
 import SectionTitle from "@/components/section-title/SectionTitle";
-import { NewsletterCard } from "@/features/newsletter/components/cards";
-import { articles } from "../../constants/articles";
-import { TrendingArticleCard } from "../cards";
+import { articles, TrendingArticleCard } from "@/features/article";
+import { NewsletterCard } from "@/features/newsletter";
 
-const TrendingSection = () => {
+export const TrendingSection = () => {
   return (
     <aside>
       <div className="sticky top-16">
@@ -20,5 +19,3 @@ const TrendingSection = () => {
     </aside>
   );
 };
-
-export default TrendingSection;

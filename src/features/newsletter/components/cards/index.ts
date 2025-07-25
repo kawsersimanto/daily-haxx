@@ -1,1 +1,1 @@
-export { default as NewsletterCard } from "./NewsletterCard";
+export * from "./NewsletterCard";

@@ -1,4 +1,4 @@
-import { IArticle } from "../types";
+import { IArticle } from "@/features/article";
 
 export const articles: IArticle[] = [
   {

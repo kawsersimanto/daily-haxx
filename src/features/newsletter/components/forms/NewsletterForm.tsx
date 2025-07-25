@@ -1,5 +1,14 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
   EmailFormValues,
   emailSchema,
@@ -7,17 +16,8 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../../components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "../../../../components/ui/form";
-import { Input } from "../../../../components/ui/input";
 
-const NewsletterForm = () => {
+export const NewsletterForm = () => {
   const form = useForm<EmailFormValues>({
     resolver: zodResolver(emailSchema),
     defaultValues: {
@@ -69,5 +69,3 @@ const NewsletterForm = () => {
     </Form>
   );
 };
-
-export default NewsletterForm;

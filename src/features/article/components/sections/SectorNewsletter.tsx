@@ -1,8 +1,7 @@
 import SectionTitle from "@/components/section-title/SectionTitle";
-import { Article } from "@/features/article/components/cards";
-import { articles } from "@/features/article/constants/articles";
+import { Article, articles } from "@/features/article";
 
-const SectorNewsletter = () => {
+export const SectorNewsletter = () => {
   return (
     <div>
       <SectionTitle>Sector Newsletter</SectionTitle>
@@ -14,5 +13,3 @@ const SectorNewsletter = () => {
     </div>
   );
 };
-
-export default SectorNewsletter;

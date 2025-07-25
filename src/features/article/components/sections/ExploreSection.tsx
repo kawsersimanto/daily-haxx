@@ -1,10 +1,9 @@
 import SectionTitle from "@/components/section-title/SectionTitle";
 import { Card, CardContent } from "@/components/ui/card";
-import { articles } from "@/features/article/constants/articles";
+import { articles, ExploreArticleCard } from "@/features/article";
 import Link from "next/link";
-import { ExploreArticleCard } from "../cards";
 
-const ExploreSection = () => {
+export const ExploreSection = () => {
   return (
     <div>
       <SectionTitle>Explore More</SectionTitle>
@@ -29,5 +28,3 @@ const ExploreSection = () => {
     </div>
   );
 };
-
-export default ExploreSection;
