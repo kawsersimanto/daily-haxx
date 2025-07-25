@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/section-title/SectionTitle";
-import NewsletterCard from "@/features/newsletter/components/NewsletterCard";
+import { NewsletterCard } from "@/features/newsletter/components/cards";
 import { articles } from "../../constants/articles";
 import { TrendingArticleCard } from "../cards";
 

@@ -1,8 +1,8 @@
 import inboxDarkIcon from "@/assets/trending/inbox-dark.svg";
 import inboxIcon from "@/assets/trending/inbox.svg";
+import { Card, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
-import { Card, CardDescription } from "../ui/card";
-import NewsletterForm from "./NewsletterForm";
+import { NewsletterForm } from "../forms";
 
 const NewsletterCard = () => {
   return (

@@ -1,10 +1,10 @@
 import SidebarLayout from "@/components/layout/SidebarLayout";
-import SectorNewsletter from "@/components/sector-newsletter/SectorNewsletter";
-import Trending from "@/components/trending/Trending";
 import {
   ArticlesSection,
   ExploreSection,
+  SectorNewsletter,
   SidebarArticle,
+  TrendingSection,
 } from "@/features/article/components/sections";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         </SidebarLayout>
         <SidebarLayout>
           <ExploreSection />
-          <Trending />
+          <TrendingSection />
         </SidebarLayout>
         <section className="pt-10 pb-20">
           <SectorNewsletter />
