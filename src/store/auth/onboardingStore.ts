@@ -36,8 +36,8 @@ const initialState: State = {
   formData: {
     firstName: "",
     lastName: "",
-    jobLevel: "",
-    jobFunction: "",
+    jobLevel: "Entry Level",
+    jobFunction: "Design",
     company: "",
     industry: "",
     companySize: "",
@@ -96,7 +96,10 @@ const useOnBoardingStore = create<State & Actions>()(
 
       updateFormData: (data) => {
         set((state) => {
-          Object.assign(state.formData, data);
+          state.formData = {
+            ...state.formData,
+            ...data,
+          };
         });
       },
 

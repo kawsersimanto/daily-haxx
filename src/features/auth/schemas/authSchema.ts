@@ -1,5 +1,26 @@
 import { z } from "zod";
 
+export const jobLevelEnum = z.enum([
+  "Intern",
+  "Entry Level",
+  "Mid Level",
+  "Senior Level",
+  "Manager",
+  "Director",
+  "Executive",
+]);
+
+export const jobFunctionEnum = z.enum([
+  "Engineering",
+  "Design",
+  "Marketing",
+  "Sales",
+  "Product",
+  "Human Resources",
+  "Finance",
+  "Operations",
+]);
+
 export const authSchema = z.object({
   email: z.string().trim().email({ message: "Invalid email address" }),
   otp: z
@@ -10,11 +31,8 @@ export const authSchema = z.object({
     }),
   firstName: z.string().trim().min(1, { message: "First name is required" }),
   lastName: z.string().trim().min(1, { message: "Last name is required" }),
-  jobLevel: z.string().trim().min(1, { message: "Job level is required" }),
-  jobFunction: z
-    .string()
-    .trim()
-    .min(1, { message: "Job Function is required" }),
+  jobLevel: jobLevelEnum,
+  jobFunction: jobFunctionEnum,
   company: z.string().trim().min(1, { message: "Company is required" }),
   companySize: z
     .string()
@@ -52,3 +70,6 @@ export type AuthFormValues = z.infer<typeof authSchema>;
 export type EmailFormValues = z.infer<typeof emailSchema>;
 export type PersonalInfoFormValues = z.infer<typeof personalInfoSchema>;
 export type JobDetailsFormValues = z.infer<typeof jobDetailsSchema>;
+
+export const jobLevels = jobLevelEnum.options;
+export const jobFunctions = jobFunctionEnum.options;

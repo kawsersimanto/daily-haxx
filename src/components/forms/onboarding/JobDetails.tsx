@@ -40,8 +40,8 @@ const JobDetails = () => {
   const form = useForm<JobDetailsFormValues>({
     resolver: zodResolver(jobDetailsSchema),
     defaultValues: {
-      jobLevel: "",
-      jobFunction: "",
+      jobLevel: "Entry Level",
+      jobFunction: "Design",
       company: "",
     },
     mode: "onChange",
@@ -63,8 +63,8 @@ const JobDetails = () => {
 
     if (isHydrated && (jobLevel || jobFunction || company)) {
       form.reset({
-        jobLevel: jobLevel || "",
-        jobFunction: jobFunction || "",
+        jobLevel: jobLevel as JobDetailsFormValues["jobLevel"],
+        jobFunction: jobFunction as JobDetailsFormValues["jobFunction"],
         company: company || "",
       });
     }
