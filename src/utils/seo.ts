@@ -6,7 +6,7 @@ const APP_DESCRIPTION =
   "Insight you can trust, trusted by professionals worldwide.";
 const APP_IMAGE = "/social.png";
 
-export function getDefaultMetadata(overrides?: Partial<Metadata>): Metadata {
+export const getDefaultMetadata = (overrides?: Partial<Metadata>): Metadata => {
   const title = overrides?.title ?? APP_NAME;
 
   return {
@@ -49,4 +49,4 @@ export function getDefaultMetadata(overrides?: Partial<Metadata>): Metadata {
     },
     ...overrides,
   };
-}
+};

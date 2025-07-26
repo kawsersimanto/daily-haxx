@@ -20,10 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { jobFunctions, jobLevels } from "@/constants/onboarding";
-import {
-  JobDetailsFormValues,
-  jobDetailsSchema,
-} from "@/features/auth/schemas/authSchema";
+import { JobDetailsFormValues, jobDetailsSchema } from "@/features/auth/";
 import { Logo } from "@/shared";
 import { useOnBoardingSelector } from "@/store/auth/onboardingStore";
 import { zodResolver } from "@hookform/resolvers/zod";
