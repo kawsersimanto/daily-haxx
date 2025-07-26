@@ -19,20 +19,33 @@ export const useAuthStore = create<AuthStore>()(
       setEmail: (email) => set({ email }),
       setToken: (token) => set({ token }),
       setUser: (user) => set({ user }),
+
       nextStep: () =>
         set((state) =>
           state.currentStep < state.totalSteps - 1
             ? { currentStep: state.currentStep + 1 }
             : state
         ),
+
       prevStep: () =>
         set((state) =>
           state.currentStep > 0 ? { currentStep: state.currentStep - 1 } : state
         ),
+
+      goToStep: (step) =>
+        set((state) => {
+          if (step >= 0 && step < state.totalSteps) {
+            return { currentStep: step };
+          }
+          return state;
+        }),
+
       reset: () =>
         set({
           ...initialState,
+          hydrated: true,
         }),
+
       setHydrated: (value) => set({ hydrated: value }),
     }),
     {
@@ -40,6 +53,9 @@ export const useAuthStore = create<AuthStore>()(
       partialize: (state) => ({
         token: state.token,
         user: state.user,
+        email: state.email,
+        currentStep: state.currentStep,
+        totalSteps: state.totalSteps,
       }),
       onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);

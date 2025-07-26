@@ -21,6 +21,7 @@ export interface AuthActions {
   prevStep: () => void;
   reset: () => void;
   setHydrated: (value: boolean) => void;
+  goToStep: (step: number) => void;
 }
 
 export type AuthStore = AuthState & AuthActions;

@@ -1,13 +1,5 @@
 import { z } from "zod";
 
-export const IndustryEnum = z.enum([
-  "Technology",
-  "Healthcare",
-  "Finance",
-  "Education",
-  "Other",
-]);
-
 export const authSchema = z.object({
   email: z.string().trim().email({ message: "Invalid email address" }),
   otp: z
