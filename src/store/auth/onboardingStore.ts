@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { createSelectors } from "../createSelector";
+import { createSelectors } from "../../lib/createSelector";
 
 type FormData = {
   firstName: string;
