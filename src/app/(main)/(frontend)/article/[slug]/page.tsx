@@ -1,5 +1,9 @@
 import SidebarLayout from "@/components/layout/SidebarLayout";
-import { ArticleDetailsCard, SidebarArticle } from "@/features/article";
+import {
+  ArticleDetailsCard,
+  articles,
+  SidebarArticle,
+} from "@/features/article";
 
 const ArticleDetails = async ({
   params,
@@ -12,7 +16,7 @@ const ArticleDetails = async ({
     <main>
       <div className="container">
         <SidebarLayout>
-          <ArticleDetailsCard />
+          <ArticleDetailsCard data={articles[0]} />
           <SidebarArticle />
         </SidebarLayout>
       </div>
