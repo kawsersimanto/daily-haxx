@@ -1,6 +1,10 @@
 "use client";
 
-import { LoginEmailStep, LoginOtpStep, useAuthSelector } from "@/features/auth";
+import {
+  SignInEmailStep,
+  SignInOtpStep,
+  useAuthSelector,
+} from "@/features/auth";
 import { useEffect, useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -9,7 +13,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export const LoginForm = () => {
+export const SignInForm = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const currentStep = useAuthSelector.use.currentStep();
@@ -34,10 +38,10 @@ export const LoginForm = () => {
       modules={[Navigation, Pagination]}
     >
       <SwiperSlide key="email">
-        <LoginEmailStep />
+        <SignInEmailStep />
       </SwiperSlide>
       <SwiperSlide key="otp">
-        <LoginOtpStep />
+        <SignInOtpStep />
       </SwiperSlide>
     </Swiper>
   );

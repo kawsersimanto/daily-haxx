@@ -21,7 +21,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-export const LoginEmailStep = () => {
+export const SignInEmailStep = () => {
   const { email, setEmail, hydrated: emailHydrated } = useAuthEmail();
   const { nextStep } = useAuthSteps();
 
