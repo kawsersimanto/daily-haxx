@@ -25,9 +25,9 @@ export const ExploreArticleCard = ({ data }: IArticleProps) => {
         <h2 className="text-xl font-bold text-foreground leading-6 max-w-[434px] line-clamp-2">
           {data?.title || "No Title Found"}
         </h2>
-        <p className="text-muted-foreground md:text-base text-sm line-clamp-2">
+        {/* <p className="text-muted-foreground md:text-base text-sm line-clamp-2">
           {data?.description || "Not Available"}
-        </p>
+        </p> */}
         <div className="flex items-center text-sm text-light-muted gap-2">
           <span className="xl:text-sm sm:text-xs text-sm">
             {dayjs(data?.date).format("MMMM D, YYYY")}
