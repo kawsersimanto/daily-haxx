@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription } from "@/components/ui/card";
-import { LoginForm } from "@/features/auth";
+import { SignInForm } from "@/features/auth";
 import { Logo } from "@/shared";
 import Image from "next/image";
 import Link from "next/link";
 
-const LoginPage = () => {
+const SignInPage = () => {
   return (
     <Card className="max-w-[530px] mx-auto py-12 relative">
       <CardDescription>
         <div className="flex justify-center mb-[38px]">
           <Logo className="w-[140px]" />
         </div>
-        <LoginForm />
+        <SignInForm />
       </CardDescription>
       <Button
         className="absolute top-6 right-6 p-0 h-auto"
@@ -33,4 +33,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignInPage;

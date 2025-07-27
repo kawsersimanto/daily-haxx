@@ -80,13 +80,13 @@ EOF
   ## Commented-out Zustand store with ESLint disable
   cat <<EOF > "$store/${feature}Store.ts"
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-// import { create } from "zustand";
+import { create } from "zustand";
 
-// export interface ${FeaturePascal}State {}
+export interface ${FeaturePascal}State {}
 
-// export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
-//   // initial state
-// }));
+export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
+  initial state
+}));
 EOF
 
   ## API
