@@ -40,6 +40,10 @@
   --icy-green: #f2fff9;
   --soft-mint: #cdffe9;
   --bright-teal: #38d792;
+  --mint-white: #f9fffc;
+  --forest-green: rgba(0, 64, 36, 0.27);
+  --golden-sand: #bb9451;
+  --mustard-yellow: #ddb75a;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -102,6 +106,10 @@
   --mint-cream: #e5fff4;
   --sea-green: #12975d;
   --bright-teal: #38d792;
+  --mint-white: #f9fffc;
+  --forest-green: rgba(0, 64, 36, 0.27);
+  --golden-sand: #bb9451;
+  --mustard-yellow: #ddb75a;
 
   --border: #343333;
   --input: #312e2e;
@@ -190,6 +198,10 @@
   --color-icy-green: var(--icy-green);
   --color-soft-mint: var(--soft-mint);
   --color-bright-teal: var(--bright-teal);
+  --color-mint-white: var(--mint-white);
+  --color-forest-green: var(--forest-green);
+  --color-golden-sand: var(--golden-sand);
+  --color-mustard-yellow: var(--mustard-yellow);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
