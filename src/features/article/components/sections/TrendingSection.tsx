@@ -1,6 +1,6 @@
+import { NewsletterCard } from "@/components/newsletter/NewsletterCard";
 import SectionTitle from "@/components/section-title/SectionTitle";
 import { articles, TrendingArticleCard } from "@/features/article";
-import { NewsletterCard } from "@/features/newsletter";
 
 export const TrendingSection = () => {
   return (
