@@ -1,36 +1,50 @@
-import Register from "@/components/forms/register/Register";
-import { Button } from "@/components/ui/button";
-import { Card, CardDescription } from "@/components/ui/card";
-import { Logo } from "@/shared";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const RegisterPage = () => {
+import {
+  SignInEmailStep,
+  SignInOtpStep,
+  useAuthSelector,
+} from "@/features/auth";
+import { useEffect, useRef } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const SignInForm = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  const currentStep = useAuthSelector.use.currentStep();
+  const hydrated = useAuthSelector.use.hydrated();
+  const goToStep = useAuthSelector.use.goToStep();
+
+  useEffect(() => {
+    if (hydrated && swiperRef.current) {
+      swiperRef.current.slideTo(currentStep);
+    }
+  }, [currentStep, hydrated]);
+
   return (
-    <Card className="max-w-[530px] mx-auto py-12 relative">
-      <CardDescription>
-        <div className="flex justify-center mb-[38px]">
-          <Logo className="w-[140px]" />
-        </div>
-        <Register />
-      </CardDescription>
-      <Button
-        className="absolute top-6 right-6 p-0 h-auto"
-        variant={"link"}
-        asChild
-      >
-        <Link href="/">
-          <Image
-            src="/close.svg"
-            height={12}
-            width={12}
-            className="w-2.5 h-2.5 object-contain"
-            alt="Close Icon"
-          />
-        </Link>
-      </Button>
-    </Card>
+    <Swiper
+      spaceBetween={20}
+      slidesPerView={1}
+      allowTouchMove={false}
+      onSwiper={(swiper) => (swiperRef.current = swiper)}
+      onSlideChange={(swiper) => goToStep(swiper.activeIndex)}
+      className="register-slider max-w-[440px] !px-5"
+      focusableElements={`[data-slot="form-control"]`}
+      modules={[Navigation, Pagination]}
+    >
+      <SwiperSlide key="email">
+        <SignInEmailStep />
+      </SwiperSlide>
+      <SwiperSlide key="otp">
+        <SignInOtpStep />
+      </SwiperSlide>
+    </Swiper>
   );
 };
 
-export default RegisterPage;
+export default SignInForm;

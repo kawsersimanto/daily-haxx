@@ -46,13 +46,14 @@ export const Step3 = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Just one last step
+    <div>
+      <div className="mb-[38px]">
+        <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center leading-tight">
+          Let&apos;s get know you better!
         </h2>
-        <p className="text-gray-600">
-          {"Just a few more questions, you're almost done!"}
+        <p className="text-center sm:text-base text-sm">
+          Nice to meet you! Tell us a little about your job to help us cover
+          topics most relevant to you.
         </p>
       </div>
 
@@ -63,10 +64,12 @@ export const Step3 = () => {
             name="companyIndustry"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{"What's your company's industry?*"}</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  {"What's your company's industry?*"}
+                </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="!h-auto py-2.5 !px-5 md:text-base text-sm">
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                   </FormControl>
@@ -88,10 +91,12 @@ export const Step3 = () => {
             name="companySize"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>How big is your company?*</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  How big is your company?*
+                </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="!h-auto py-2.5 !px-5 md:text-base text-sm">
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                   </FormControl>
@@ -113,9 +118,15 @@ export const Step3 = () => {
             name="postalCode"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your postal code?</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  Your postal code?
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="12345" {...field} />
+                  <Input
+                    className="h-auto py-2.5 px-5 md:!text-base text-sm"
+                    placeholder="1204"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -127,13 +138,13 @@ export const Step3 = () => {
               type="button"
               variant="outline"
               onClick={previousStep}
-              className="flex-1 bg-transparent"
+              className="flex-1 w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-foreground h-auto py-2.5"
             >
               Previous
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-green-700 hover:bg-green-800"
+              className="flex-1 w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
             >
               Complete
             </Button>

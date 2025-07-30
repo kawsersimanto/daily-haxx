@@ -1,7 +1,0 @@
-.register-slider .swiper-slide {
-  pointer-events: none;
-}
-
-.register-slider .swiper-slide.swiper-slide-active {
-  pointer-events: auto;
-}

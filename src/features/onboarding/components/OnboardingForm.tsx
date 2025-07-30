@@ -1,5 +1,6 @@
 "use client";
 
+import { Card, CardDescription } from "@/components/ui/card";
 import {
   ProgressBar,
   Step1,
@@ -7,6 +8,7 @@ import {
   Step3,
   useOnboardingStore,
 } from "@/features/onboarding";
+import { Logo } from "@/shared";
 
 export const OnboardingForm = () => {
   const { currentStep } = useOnboardingStore();
@@ -25,26 +27,21 @@ export const OnboardingForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-green-600 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">H</span>
-            </div>
-            <span className="font-semibold text-gray-900">HEXX Daily</span>
+    <>
+      <Card className=" max-w-[440px] !px-5 mx-auto py-12 relative">
+        <CardDescription>
+          <div className="flex justify-center mb-[38px]">
+            <Logo />
           </div>
-        </div>
+          {/* Progress Bar */}
+          <div className="mb-8">
+            <ProgressBar currentStep={currentStep} totalSteps={3} />
+          </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8">
-          <ProgressBar currentStep={currentStep} totalSteps={3} />
-        </div>
-
-        {/* Step Content */}
-        {renderStep()}
-      </div>
-    </div>
+          {/* Step Content */}
+          {renderStep()}
+        </CardDescription>
+      </Card>
+    </>
   );
 };

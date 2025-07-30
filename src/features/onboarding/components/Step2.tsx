@@ -45,12 +45,12 @@ export const Step2 = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          {"Let's get know you better!"}
+    <div>
+      <div className="mb-[38px]">
+        <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center leading-tight">
+          Let&apos;s get know you better!
         </h2>
-        <p className="text-gray-600">
+        <p className="text-center sm:text-base text-sm">
           Nice to meet you! Tell us a little about your job to help us cover
           topics most relevant to you.
         </p>
@@ -62,11 +62,13 @@ export const Step2 = () => {
             control={form.control}
             name="jobLevel"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>{"What's your current job level?*"}</FormLabel>
+              <FormItem className="mb-[22px]">
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  {"What's your current job level?*"}
+                </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="!h-auto py-2.5 !px-5 md:text-base text-sm">
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                   </FormControl>
@@ -88,10 +90,12 @@ export const Step2 = () => {
             name="jobFunction"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>What is your day-to-day job function?*</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  What is your day-to-day job function?*
+                </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="!h-auto py-2.5 !px-5 md:text-base text-sm">
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                   </FormControl>
@@ -113,9 +117,15 @@ export const Step2 = () => {
             name="companyName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>What company do you work for?</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  What company do you work for?
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Company name" {...field} />
+                  <Input
+                    className="h-auto py-2.5 px-5 md:!text-base text-sm"
+                    placeholder="Company name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -127,13 +137,13 @@ export const Step2 = () => {
               type="button"
               variant="outline"
               onClick={previousStep}
-              className="flex-1 bg-transparent"
+              className="flex-1 w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-foreground h-auto py-2.5"
             >
               Previous
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-green-700 hover:bg-green-800"
+              className="flex-1 w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
             >
               Next
             </Button>

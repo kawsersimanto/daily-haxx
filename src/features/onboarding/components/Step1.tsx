@@ -36,27 +36,38 @@ export const Step1 = () => {
 
   return (
     <div className="space-y-6">
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Welcome to the <span className="text-green-600">HexxDaily</span>{" "}
-          Community
-        </h2>
-        <p className="text-gray-600">
-          Get the latest updates and insights delivered straight to your inbox.
-          Start by telling us your name.
-        </p>
+      <div>
+        <div className="mb-[38px]">
+          <h2 className="text-[28px] mb-3.5 font-bold text-foreground text-center leading-tight">
+            Welcome to the{" "}
+            <span className="text-primary">
+              {process.env.NEXT_PUBLIC_APP_NAME}
+            </span>{" "}
+            Community
+          </h2>
+          <p className="text-center sm:text-base text-sm">
+            Get the latest updates and insights delivered straight to your
+            inbox. Start by telling us your name.
+          </p>
+        </div>
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
             name="firstName"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>First name</FormLabel>
+              <FormItem className="mb-[22px]">
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  First name
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your first name" {...field} />
+                  <Input
+                    className="h-auto py-2.5 px-5 md:!text-base text-sm"
+                    placeholder="Enter your first name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -68,9 +79,15 @@ export const Step1 = () => {
             name="lastName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Last name</FormLabel>
+                <FormLabel className="md:text-lg text-sm text-foreground">
+                  Last name
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your last name" {...field} />
+                  <Input
+                    className="h-auto py-2.5 px-5 md:!text-base text-sm"
+                    placeholder="Enter your last name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,7 +96,7 @@ export const Step1 = () => {
 
           <Button
             type="submit"
-            className="w-full bg-green-700 hover:bg-green-800"
+            className="w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
           >
             Next
           </Button>
