@@ -1,5 +1,7 @@
+import { Pricing } from "@/features/pricing";
+
 const PricingPage = () => {
-  return <div>PricingPage</div>;
+  return <Pricing />;
 };
 
 export default PricingPage;
