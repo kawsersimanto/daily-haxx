@@ -11,3 +11,8 @@ export interface PlanCardProps {
   plan: Plan;
   buttonVariant?: "default" | "outline";
 }
+
+export interface PlanToggleProps {
+  isYearly: boolean;
+  onToggle: () => void;
+}
