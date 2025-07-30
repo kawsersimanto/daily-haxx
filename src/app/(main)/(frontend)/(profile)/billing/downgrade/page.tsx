@@ -1,5 +1,11 @@
+import { Downgrade } from "@/features/billing";
+
 const DowngradePage = () => {
-  return <div>DowngradePage</div>;
+  return (
+    <section>
+      <Downgrade />
+    </section>
+  );
 };
 
 export default DowngradePage;
