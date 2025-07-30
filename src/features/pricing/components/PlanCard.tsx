@@ -9,8 +9,8 @@ export const PlanCard = ({ plan, buttonVariant }: PlanCardProps) => {
         <h3 className="text-2xl font-bold uppercase leading-6">{plan.name}</h3>
         <p className="text-[40px] leading-10 font-medium font-space-grotesk flex items-center gap-2.5">
           ${plan.price}
-          <span className="block h-[37px] w-[1px] bg-white"></span>
-          <span className="text-sm">{plan.duration}</span>
+          <span className="block md:h-[37px] h-7 w-[1px] bg-white"></span>
+          <span className="md:text-[22px] text-lg">{plan.duration}</span>
         </p>
         {plan.discount && (
           <span className="bg-soft-green top-5 right-10 text-black text-sm font-medium px-2.5 py-1.5 rounded-[40px] absolute">

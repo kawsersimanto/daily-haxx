@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 export const PlanToggle = ({ isYearly, onToggle }: PlanToggleProps) => {
   return (
     <div className="flex justify-center mb-8">
-      <div className="flex bg-background rounded-[8px] p-2.5 border border-border">
+      <div className="flex bg-background rounded-[8px] md:p-2.5 p-1.5 border border-border">
         <button
           onClick={onToggle}
           className={cn(
-            `px-4 py-2 rounded-md text-sm font-medium ${
+            `md:px-8.5 px-6 md:py-2.5 py-1.5 rounded-md text-sm font-medium cursor-pointer font-space-grotesk ${
               !isYearly ? "bg-primary text-white" : "text-gray-700"
             }`
           )}
@@ -18,7 +18,7 @@ export const PlanToggle = ({ isYearly, onToggle }: PlanToggleProps) => {
         <button
           onClick={onToggle}
           className={cn(
-            `px-4 py-2 rounded-md text-sm font-medium ${
+            `md:px-8.5 px-6 md:py-2.5 py-1.5 rounded-md text-sm font-medium cursor-pointer font-space-grotesk ${
               isYearly ? "bg-primary text-white" : "text-gray-700"
             }`
           )}

@@ -1,8 +1,4 @@
-import { Plan, PlanCard } from "@/features/pricing";
-
-interface PlanListProps {
-  plans: Plan[];
-}
+import { PlanCard, PlanListProps } from "@/features/pricing";
 
 export const PlanList = ({ plans }: PlanListProps) => {
   return (

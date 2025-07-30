@@ -16,3 +16,7 @@ export interface PlanToggleProps {
   isYearly: boolean;
   onToggle: () => void;
 }
+
+export interface PlanListProps {
+  plans: Plan[];
+}

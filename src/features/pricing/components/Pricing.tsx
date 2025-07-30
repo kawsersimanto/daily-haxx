@@ -14,7 +14,7 @@ export const Pricing = () => {
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold text-center text-green-900">
+      <h1 className="md:text-6xl text-4xl font-bold text-center text-primary">
         Choose Your Plan
       </h1>
       <p className="text-center text-gray-600 mt-2 mb-6">
