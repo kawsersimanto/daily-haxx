@@ -6,12 +6,12 @@ import {
   Step1,
   Step2,
   Step3,
-  useOnboardingStore,
+  useOnboardingStep,
 } from "@/features/onboarding";
 import { Logo } from "@/shared";
 
 export const OnboardingForm = () => {
-  const { currentStep } = useOnboardingStore();
+  const { currentStep } = useOnboardingStep();
 
   const renderStep = () => {
     switch (currentStep) {
@@ -28,17 +28,14 @@ export const OnboardingForm = () => {
 
   return (
     <>
-      <Card className=" max-w-[440px] !px-5 mx-auto py-12 relative">
-        <CardDescription>
+      <Card className="max-w-[590px] !px-5 mx-auto py-12 relative">
+        <CardDescription className="max-w-[440px] mx-auto">
           <div className="flex justify-center mb-[38px]">
             <Logo />
           </div>
-          {/* Progress Bar */}
           <div className="mb-8">
             <ProgressBar currentStep={currentStep} totalSteps={3} />
           </div>
-
-          {/* Step Content */}
           {renderStep()}
         </CardDescription>
       </Card>

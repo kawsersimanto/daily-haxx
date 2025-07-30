@@ -1,4 +1,5 @@
 import { OnboardingData, OnboardingStore } from "@/features/onboarding";
+import { createSelectors } from "@/lib/createSelector";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
@@ -47,3 +48,5 @@ export const useOnboardingStore = create<OnboardingStore>()(
     }
   )
 );
+
+export const useOnboardingSelector = createSelectors(useOnboardingStore);

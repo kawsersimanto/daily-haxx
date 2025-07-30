@@ -13,13 +13,15 @@ import { Input } from "@/components/ui/input";
 import {
   Step1Data,
   step1Schema,
-  useOnboardingStore,
+  useOnboardingData,
+  useOnboardingStep,
 } from "@/features/onboarding";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 export const Step1 = () => {
-  const { data, updateData, nextStep } = useOnboardingStore();
+  const { data, updateData } = useOnboardingData();
+  const { nextStep } = useOnboardingStep();
 
   const form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),

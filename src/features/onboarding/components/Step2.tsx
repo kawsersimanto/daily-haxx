@@ -22,13 +22,15 @@ import {
   jobLevels,
   Step2Data,
   step2Schema,
-  useOnboardingStore,
+  useOnboardingData,
+  useOnboardingStep,
 } from "@/features/onboarding";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 export const Step2 = () => {
-  const { data, updateData, nextStep, previousStep } = useOnboardingStore();
+  const { nextStep, previousStep } = useOnboardingStep();
+  const { data, updateData } = useOnboardingData();
 
   const form = useForm<Step2Data>({
     resolver: zodResolver(step2Schema),

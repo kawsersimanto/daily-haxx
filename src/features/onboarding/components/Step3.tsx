@@ -22,13 +22,15 @@ import {
   industries,
   Step3Data,
   step3Schema,
-  useOnboardingStore,
+  useOnboardingData,
+  useOnboardingStep,
 } from "@/features/onboarding";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 export const Step3 = () => {
-  const { data, updateData, previousStep, resetForm } = useOnboardingStore();
+  const { previousStep } = useOnboardingStep();
+  const { data, updateData, resetForm } = useOnboardingData();
 
   const form = useForm<Step3Data>({
     resolver: zodResolver(step3Schema),
