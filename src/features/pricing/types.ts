@@ -6,3 +6,8 @@ export interface Plan {
   discount?: string;
   cta: string;
 }
+
+export interface PlanCardProps {
+  plan: Plan;
+  buttonVariant?: "default" | "outline";
+}
