@@ -85,7 +85,7 @@ import { create } from "zustand";
 export interface ${FeaturePascal}State {}
 
 export const use${FeaturePascal}Store = create<${FeaturePascal}State>(() => ({
-  initial state
+  // initial state
 }));
 EOF
 

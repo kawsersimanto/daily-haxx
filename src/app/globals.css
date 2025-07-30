@@ -47,6 +47,7 @@
   --gradient-lock: 180deg, rgba(255, 255, 255, 0) -7.79%, #ffffff 97.84%;
   --brand: #004024;
   --soft-green: #edfff7;
+  --danger: #e53d00;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -115,6 +116,7 @@
   --mustard-yellow: #ddb75a;
   --brand: #004024;
   --soft-green: #edfff7;
+  --danger: #e53d00;
 
   --gradient-lock: 180deg, rgba(0, 0, 0, 0) -7.79%, #000000 97.84%;
 
@@ -211,6 +213,7 @@
   --color-mustard-yellow: var(--mustard-yellow);
   --color-brand: var(--brand);
   --color-soft-green: var(--soft-green);
+  --color-danger: var(--danger);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -379,4 +382,8 @@
   p {
     @apply my-4 empty:hidden;
   }
+}
+
+.cancel-left-column {
+  padding-left: max(22px, calc((100vw - 1220px) / 2));
 }
