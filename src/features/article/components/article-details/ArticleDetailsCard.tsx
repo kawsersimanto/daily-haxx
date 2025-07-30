@@ -23,11 +23,13 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
           </div>
           <div className="flex items-center justify-between mt-3.5">
             <div className="flex items-center gap-3">
-              <p className="text-light-muted text-base">
+              <p className="text-light-muted md:text-base text-sm">
                 {dayjs(data?.createdAt).fromNow()}
               </p>
               <span className="text-light-muted">•</span>
-              <span className="text-light-muted text-base">Newsletter Pro</span>
+              <span className="text-light-muted md:text-base text-sm">
+                Newsletter Pro
+              </span>
             </div>
             <div className="flex items-center gap-5">
               <Button variant={"link"} className="p-0 h-auto">

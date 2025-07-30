@@ -21,7 +21,7 @@ export const ArticleUnlockCard = () => {
             newsletters to get straight to your inbox.
           </p>
         </div>
-        <div className="flex items-center gap-7.5">
+        <div className="flex md:flex-row flex-col md:items-center items-start md:gap-7.5 gap-5">
           <div className="flex items-center gap-2">
             <Image
               src="/check-mark.svg"
@@ -53,7 +53,7 @@ export const ArticleUnlockCard = () => {
             <p className="font-medium">Full story access</p>
           </div>
         </div>
-        <div className="flex gap-3.5">
+        <div className="flex md:flex-row flex-col gap-3.5">
           <Button
             className="uppercase bg-transparent px-13.5 border-primary text-primary border-2 py-3 font-semibold text-sm leading-[150%] h-auto"
             variant={"outline"}
