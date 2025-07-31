@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const ArticleUnlockCard = () => {
   return (
-    <div className="p-7.5 border border-forest-green bg-mint-white rounded-lg mt-3.5">
+    <div className="md:p-7.5 p-4 border border-forest-green bg-mint-white rounded-lg mt-3.5">
       <div className="flex items-center gap-3 mb-8.5">
         <Logo className="w-[140px] h-[40px]" />
         <Separator orientation="vertical" className="!h-[35px]" />
@@ -55,12 +55,12 @@ export const ArticleUnlockCard = () => {
         </div>
         <div className="flex md:flex-row flex-col gap-3.5">
           <Button
-            className="uppercase bg-transparent px-13.5 border-primary text-primary border-2 py-3 font-semibold text-sm leading-[150%] h-auto"
+            className="uppercase bg-transparent md:px-13.5 px-5 border-primary text-primary border-2 py-3 font-semibold text-sm leading-[150%] h-auto"
             variant={"outline"}
           >
             Join For Free
           </Button>
-          <Button className="py-3 px-10 font-semibold text-sm leading-[150%] h-auto uppercase text-mustard-yellow">
+          <Button className="py-3 md:px-10 px-5 font-semibold text-sm leading-[150%] h-auto uppercase text-mustard-yellow">
             Become a premium subscriber
           </Button>
         </div>
