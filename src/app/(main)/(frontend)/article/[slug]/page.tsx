@@ -17,7 +17,11 @@ const ArticleDetails = async ({
       <div className="container">
         <SidebarLayout>
           <ArticleDetailsCard data={articles[0]} />
-          <SidebarArticle />
+          <div>
+            <div className="sticky top-28">
+              <SidebarArticle />
+            </div>
+          </div>
         </SidebarLayout>
       </div>
     </main>
