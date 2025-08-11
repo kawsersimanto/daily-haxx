@@ -10,3 +10,17 @@ export interface NewsletterQueryParams {
   search: string;
   filter: string;
 }
+
+export interface NewsletterState {
+  search: string;
+  page: number;
+  filter: string;
+}
+
+export interface NewsletterActions {
+  setSearch: (value: string) => void;
+  setPage: (value: number) => void;
+  setFilter: (value: string) => void;
+}
+
+export type NewsletterStore = NewsletterState & NewsletterActions;

@@ -1,10 +1,14 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
+import { NewsletterStore } from "@/features/newsletter";
+import { createSelectors } from "@/lib/createSelector";
 import { create } from "zustand";
 
-interface NewsletterState {
-  // state
-}
-
-export const useNewsletterStore = create<NewsletterState>(() => ({
-  // initial state
+export const useNewsletterStore = create<NewsletterStore>((set) => ({
+  search: "",
+  page: 1,
+  filter: "",
+  setSearch: (search) => set({ search, page: 1 }),
+  setPage: (page) => set({ page }),
+  setFilter: (filter) => set({ filter, page: 1 }),
 }));
+
+export const useNewsletterSelector = createSelectors(useNewsletterStore);
