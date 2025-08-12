@@ -6,7 +6,7 @@ import {
 
 const NewsletterPage = () => {
   return (
-    <section className="pt-[60px] pb-[160px]">
+    <section className="pt-15 md:pb-40 pb-20">
       <div className="container">
         <SectionHeader title="Newsletter">
           Read our previous insight-driven newsletters covering business,
@@ -16,7 +16,7 @@ const NewsletterPage = () => {
           <div className="grow">
             <NewsletterSearchBar />
           </div>
-          <div className="basis-[200px]">
+          <div className="md:basis-[200px]">
             <NewsletterFilterDropdown />
           </div>
         </div>
