@@ -1,4 +1,4 @@
-export interface Newsletter {
+export interface INewsletter {
   id: string;
   // define fields
 }
