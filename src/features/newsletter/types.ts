@@ -1,6 +1,8 @@
 export interface INewsletter {
   id: string;
-  // define fields
+  title: string;
+  summary: string;
+  createdAt: string;
 }
 
 export interface NewsletterQueryParams {
