@@ -48,6 +48,7 @@
   --brand: #004024;
   --soft-green: #edfff7;
   --danger: #e53d00;
+  --sage-gray: #aeadae;
 
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
@@ -117,6 +118,7 @@
   --brand: #004024;
   --soft-green: #edfff7;
   --danger: #e53d00;
+  --sage-gray: #aeadae;
 
   --gradient-lock: 180deg, rgba(0, 0, 0, 0) -7.79%, #000000 97.84%;
 
@@ -214,6 +216,7 @@
   --color-brand: var(--brand);
   --color-soft-green: var(--soft-green);
   --color-danger: var(--danger);
+  --color-sage-gray: var(--sage-gray);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

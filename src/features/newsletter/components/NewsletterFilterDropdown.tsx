@@ -14,7 +14,7 @@ export const NewsletterFilterDropdown = () => {
 
   return (
     <Select value={category} onValueChange={setCategory}>
-      <SelectTrigger className="w-[200px]">
+      <SelectTrigger className="!h-auto py-4">
         <SelectValue placeholder="All Newsletters" />
       </SelectTrigger>
       <SelectContent>
