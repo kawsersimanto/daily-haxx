@@ -14,13 +14,13 @@ export interface NewsletterQueryParams {
 export interface NewsletterState {
   search: string;
   page: number;
-  filter: string;
+  category: string;
 }
 
 export interface NewsletterActions {
   setSearch: (value: string) => void;
   setPage: (value: number) => void;
-  setFilter: (value: string) => void;
+  setCategory: (value: string) => void;
 }
 
 export type NewsletterStore = NewsletterState & NewsletterActions;
