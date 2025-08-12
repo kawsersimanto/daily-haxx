@@ -1,25 +1,10 @@
-import { SectionHeader } from "@/components/section-header/SectionHeader";
-import {
-  NewsletterFilterDropdown,
-  NewsletterSearchBar,
-} from "@/features/newsletter";
+import { Newsletter } from "@/features/newsletter";
 
 const NewsletterPage = () => {
   return (
     <section className="pt-15 md:pb-40 pb-20">
       <div className="container">
-        <SectionHeader title="Newsletter">
-          Read our previous insight-driven newsletters covering business,
-          finance, economics and tech.
-        </SectionHeader>
-        <div className="flex md:flex-row flex-col justify-center md:gap-6 gap-3 max-w-[780px] mx-auto">
-          <div className="grow">
-            <NewsletterSearchBar />
-          </div>
-          <div className="md:basis-[200px]">
-            <NewsletterFilterDropdown />
-          </div>
-        </div>
+        <Newsletter />
       </div>
     </section>
   );
