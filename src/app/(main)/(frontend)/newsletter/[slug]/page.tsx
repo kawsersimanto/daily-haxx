@@ -1,5 +1,5 @@
 const NewsletterDetails = () => {
-  return <div>NewsletterDetails</div>;
+  return <section className="pt-12 pb-20">NewsletterDetails</section>;
 };
 
 export default NewsletterDetails;
