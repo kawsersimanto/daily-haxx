@@ -6,7 +6,7 @@ export const useNewsletterStore = create<NewsletterStore>((set) => ({
   search: "",
   page: 1,
   filter: "",
-  setSearch: (search) => set({ search, page: 1 }),
+  setSearch: (search) => set({ search: search.trim(), page: 1 }),
   setPage: (page) => set({ page }),
   setFilter: (filter) => set({ filter, page: 1 }),
 }));
