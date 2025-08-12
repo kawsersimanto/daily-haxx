@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionHeader } from "@/components/section-header/SectionHeader";
 import {
   PlanList,
   plans,
@@ -14,12 +15,9 @@ export const Pricing = () => {
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1 className="md:text-6xl text-4xl font-bold text-center text-primary">
-        Choose Your Plan
-      </h1>
-      <p className="text-center text-gray-600 mt-2 mb-6">
+      <SectionHeader title="Choose Your Plan">
         Stay informed. Go deeper. Pick your access.
-      </p>
+      </SectionHeader>
 
       <PlanToggle isYearly={isYearly} onToggle={togglePricing} />
       <PlanList plans={currentPlans} />
