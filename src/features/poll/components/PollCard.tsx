@@ -1,14 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { IArticleProps } from "@/features/article";
+import { IPollProps } from "@/features/poll";
 import { formatDate } from "@/utils/date";
 import Image from "next/image";
 import Link from "next/link";
 
-export const Article = ({ data }: IArticleProps) => {
+export const PollCard = ({ data }: IPollProps) => {
   return (
-    <Link href={`/article/${"pfizer-acquires"}`}>
-      <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
-        <div className="overflow-hidden rounded xl:h-[163px] lg:h-[180px] md:h-[200px] sm:h-[243px] h-[200px]">
+    <Link href={`/poll/${"pfizer-acquires"}`}>
+      <Card className="w-full p-2 rounded-[6px] gap-3.5 shadow-none">
+        <div className="overflow-hidden rounded xl:h-[248px] lg:h-[240px] md:h-[200px] sm:h-[243px] h-[200px]">
           <Image
             src={data?.image || "/placeholder.png"}
             alt={data?.title}
@@ -18,6 +18,9 @@ export const Article = ({ data }: IArticleProps) => {
           />
         </div>
         <CardContent className="p-0">
+          <h3 className="text-primary text-sm uppercase font-work-sans font-medium mb-2">
+            {data?.category || "Category Not Found"}
+          </h3>
           <h2 className="text-[17px] font-medium text-foreground mb-3.5 leading-6 line-clamp-2">
             {data?.title || "No Title Found"}
           </h2>
@@ -25,17 +28,6 @@ export const Article = ({ data }: IArticleProps) => {
             <span className="xl:text-sm lg:text-xs text-sm capitalize">
               {formatDate(data?.createdAt)}
             </span>
-            {data?.publisher && (
-              <>
-                <span>•</span>
-                <span className="xl:text-sm lg:text-xs text-sm block lg:hidden xl:block">
-                  {data?.publisher}
-                </span>
-                <span className="xl:text-sm lg:text-xs text-sm hidden lg:block xl:hidden">
-                  {data?.publisher?.split(" ")[0]}
-                </span>
-              </>
-            )}
           </div>
         </CardContent>
       </Card>
