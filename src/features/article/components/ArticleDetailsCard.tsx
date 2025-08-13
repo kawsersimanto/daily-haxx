@@ -2,10 +2,8 @@ import { ArticleUnlockCard } from "@/components/article-unlock-card/ArticleUnloc
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { IArticleProps } from "@/features/article";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import { formatDate } from "@/utils/date";
 import Image from "next/image";
-dayjs.extend(relativeTime);
 
 export const ArticleDetailsCard = ({ data }: IArticleProps) => {
   return (
@@ -22,16 +20,16 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
             />
           </div>
           <div className="flex items-center justify-between mt-3.5">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center sm:gap-3 gap-2">
               <p className="text-light-muted md:text-base text-sm">
-                {dayjs(data?.createdAt).fromNow()}
+                {formatDate(data?.createdAt)}
               </p>
               <span className="text-light-muted">•</span>
               <span className="text-light-muted md:text-base text-sm">
                 Newsletter Pro
               </span>
             </div>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center sm:gap-5 gap-2">
               <Button variant={"link"} className="p-0 h-auto">
                 <Image
                   src="/facebook-share.svg"
@@ -63,7 +61,7 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
           </div>
         </div>
         <CardContent className="p-0 relative">
-          <h2 className="sm:text-4xl text-xl mb-4 line-clamp-2 text-foreground font-bold leading-[120%] pb-5 border-b border-border">
+          <h2 className="sm:text-4xl text-xl mb-4 text-foreground font-bold leading-[120%] pb-5 border-b border-border">
             {data?.title || "No Title Found"}
           </h2>
           <div className="relative">
