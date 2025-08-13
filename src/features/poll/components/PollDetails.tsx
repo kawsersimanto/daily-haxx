@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export const PollDetails = () => {
@@ -29,7 +30,11 @@ export const PollDetails = () => {
                   AI detects cancer earlier than traditional scans?
                 </h1>
                 <div className="flex flex-col gap-3.5">
-                  <div className="py-4.5 px-5 rounded border border-border cursor-pointer relative">
+                  <div
+                    className={cn(
+                      "py-4.5 px-5 rounded border border-border cursor-pointer relative before:content-[''] before:w-[6px] before:h-full before:absolute before:block before:left-0 before:top-0 before:bottom-0 before:right-auto before:bg-primary overflow-hidden"
+                    )}
+                  >
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center gap-5 justify-between">
                         <p className="font-foreground font-work-sans font-medium">
@@ -40,24 +45,32 @@ export const PollDetails = () => {
                       <Progress value={30} />
                     </div>
                   </div>
-                  <div className="py-4.5 px-5 rounded border border-border cursor-pointer">
+                  <div
+                    className={cn(
+                      "py-4.5 px-5 rounded border border-border cursor-pointer relative before:content-[''] before:w-[6px] before:h-full before:absolute before:block before:left-0 before:top-0 before:bottom-0 before:right-auto before:bg-transparent overflow-hidden"
+                    )}
+                  >
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center gap-5 justify-between">
                         <p className="font-foreground font-work-sans font-medium">
-                          No
+                          Yes
                         </p>
                         <p className="text-lg font-medium">30%</p>
                       </div>
                       <Progress value={30} />
                     </div>
                   </div>
-                  <div className="py-4.5 px-5 rounded border border-border cursor-pointer">
+                  <div
+                    className={cn(
+                      "py-4.5 px-5 rounded border border-border cursor-pointer relative before:content-[''] before:w-[6px] before:h-full before:absolute before:block before:left-0 before:top-0 before:bottom-0 before:right-auto before:bg-transparent overflow-hidden"
+                    )}
+                  >
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center gap-5 justify-between">
                         <p className="font-foreground font-work-sans font-medium">
-                          Other
+                          Yes
                         </p>
-                        <p className="text-lg font-medium">20%</p>
+                        <p className="text-lg font-medium">30%</p>
                       </div>
                       <Progress value={30} />
                     </div>
