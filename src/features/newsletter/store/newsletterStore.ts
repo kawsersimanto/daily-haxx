@@ -5,7 +5,7 @@ import { create } from "zustand";
 export const useNewsletterStore = create<NewsletterStore>((set) => ({
   search: "",
   page: 1,
-  category: "All",
+  category: "All Newsletters",
   setSearch: (search) => set({ search: search.trim(), page: 1 }),
   setPage: (page) => set({ page }),
   setCategory: (category) => set({ category, page: 1 }),

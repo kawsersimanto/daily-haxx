@@ -2,12 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useNewsletterSearch } from "@/features/newsletter";
 import { Search } from "lucide-react";
 
-export const NewsletterSearchBar = () => {
-  const { term, setTerm, triggerSearch } = useNewsletterSearch();
+interface SearchBarProps {
+  term: string;
+  setTerm: (e: string) => void;
+  triggerSearch: () => void;
+}
 
+export const SearchBar = ({ term, setTerm, triggerSearch }: SearchBarProps) => {
   return (
     <div className="flex w-full">
       <div className="relative w-full">
