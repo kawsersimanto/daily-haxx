@@ -1,5 +1,11 @@
-const PollDetails = () => {
-  return <div>PollDetails</div>;
+import { PollDetails } from "@/features/poll/components/PollDetails";
+
+const PollDetailsPage = () => {
+  return (
+    <>
+      <PollDetails />
+    </>
+  );
 };
 
-export default PollDetails;
+export default PollDetailsPage;
