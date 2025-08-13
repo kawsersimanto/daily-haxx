@@ -80,7 +80,7 @@ export const MobileMenu = () => {
             </div>
           </SheetTitle>
         </SheetHeader>
-        <nav className="flex flex-col mt-12">
+        <nav className="flex flex-col mt-12 h-[400px] overflow-y-auto">
           {mobileMenu.map((item) => (
             <div key={item.label}>
               {item.children ? (
