@@ -1,18 +1,7 @@
-import { SectionHeader } from "@/components/section-header/SectionHeader";
+import { AllArticles } from "@/features/article";
 
 const ArticlePage = () => {
-  return (
-    <section className="pt-15 md:pb-40 pb-20">
-      <div className="container">
-        <div>
-          <SectionHeader title="Articles">
-            Read our previous insight-driven newsletters covering business,
-            finance, economics and tech.
-          </SectionHeader>
-        </div>
-      </div>
-    </section>
-  );
+  return <AllArticles />;
 };
 
 export default ArticlePage;

@@ -24,7 +24,7 @@ export const Article = ({ data }: IArticleProps) => {
             {data?.title || "No Title Found"}
           </h2>
           <div className="flex items-center text-sm text-light-muted gap-2">
-            <span className="xl:text-sm lg:text-xs text-sm">
+            <span className="xl:text-sm lg:text-xs text-sm capitalize">
               {dayjs(data?.createdAt).fromNow()}
             </span>
             {data?.publisher && (

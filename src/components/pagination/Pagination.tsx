@@ -48,7 +48,7 @@ export function Pagination({
   };
 
   return (
-    <div className="flex items-center justify-center md:mt-10 mt-5">
+    <div className="flex items-center justify-center">
       <div className="flex items-center rounded-lg md:gap-4 gap-0">
         <Button
           variant="ghost"

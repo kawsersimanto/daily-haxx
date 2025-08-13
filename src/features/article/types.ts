@@ -11,3 +11,17 @@ export interface IArticle {
 export interface IArticleProps {
   data: IArticle;
 }
+
+export interface ArticleState {
+  search: string;
+  page: number;
+  category: string;
+}
+
+export interface ArticleActions {
+  setSearch: (value: string) => void;
+  setPage: (value: number) => void;
+  setCategory: (value: string) => void;
+}
+
+export type ArticleStore = ArticleState & ArticleActions;
