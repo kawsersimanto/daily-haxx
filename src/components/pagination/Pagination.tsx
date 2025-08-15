@@ -30,10 +30,8 @@ export function Pagination({
       setIsMobile(event.matches);
     };
 
-    // Listen for changes
     mediaQuery.addEventListener("change", handler);
 
-    // Cleanup listener on unmount
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
