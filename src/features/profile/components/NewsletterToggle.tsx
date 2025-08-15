@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { NewsletterToggleProps } from "@/features/profile";
 import { cn } from "@/lib/utils";
@@ -12,14 +13,17 @@ export const NewsletterToggle = ({
   isPremium = false,
 }: NewsletterToggleProps) => {
   return (
-    <div className="flex items-center justify-between bg-card">
+    <div className="flex items-center justify-between bg-card gap-4">
       <div className="flex-1">
         <div className="flex items-center gap-2 mb-1">
-          <h3 className="text-base font-medium text-gray-900">{title}</h3>
+          <h3 className="text-xl font-medium text-primary">{title}</h3>
           {isPremium && (
-            <span className="px-2 py-0.5 text-xs font-medium text-orange-600 bg-orange-100 rounded">
+            <Badge
+              variant="outline"
+              className="border-almond-yellow text-almond-yellow bg-light-yellow py-0 px-2.5 leading-[1em] rounded-[40px] text-sm font-medium md:block hidden"
+            >
               Premium
-            </span>
+            </Badge>
           )}
         </div>
         <p className="text-sm text-gray-600">{description}</p>

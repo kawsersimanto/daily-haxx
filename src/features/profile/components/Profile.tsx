@@ -10,7 +10,7 @@ export const Profile = () => {
         <p>Manage your profile and subscription preferences</p>
       </div>
       <SidebarLayout className="py-0">
-        <div>
+        <div className="flex flex-col gap-6">
           <Card className="p-5">
             <CardContent className="p-0">
               <div className="flex flex-col gap-1 mb-8">
@@ -18,9 +18,9 @@ export const Profile = () => {
                 <p>Upgrade your personal details from here</p>
               </div>
               <ProfileForm />
-              <Preference />
             </CardContent>
           </Card>
+          <Preference />
         </div>
         <div>
           <Card className="p-5">

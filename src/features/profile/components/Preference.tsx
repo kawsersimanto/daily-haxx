@@ -1,8 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { usePreference } from "@/features/profile";
-import { NewsletterToggle } from "./NewsletterToggle";
+import { NewsletterToggle, usePreference } from "@/features/profile";
 
 export const Preference = () => {
   const {
@@ -12,9 +11,9 @@ export const Preference = () => {
     toggleWeeklyNewsletter,
   } = usePreference();
   return (
-    <div>
-      <Card>
-        <CardContent>
+    <div className="flex flex-col gap-6">
+      <Card className="p-5">
+        <CardContent className="p-0">
           <NewsletterToggle
             enabled={weeklyNewsletter}
             onToggle={toggleWeeklyNewsletter}
