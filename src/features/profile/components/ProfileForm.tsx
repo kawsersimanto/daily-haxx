@@ -10,24 +10,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { ProfileFormValues, ProfileSchema } from "@/features/profile";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useProfileForm } from "@/features/profile";
 
 export const ProfileForm = () => {
-  const form = useForm<ProfileFormValues>({
-    resolver: zodResolver(ProfileSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      postCode: "",
-    },
-  });
-
-  const onSubmit = (data: ProfileFormValues) => {
-    console.log(data);
-  };
+  const { form, onSubmit } = useProfileForm();
 
   return (
     <Form {...form}>
@@ -70,6 +56,7 @@ export const ProfileForm = () => {
           <FormField
             control={form.control}
             name="email"
+            disabled={true}
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-foreground">Email</FormLabel>
@@ -103,10 +90,10 @@ export const ProfileForm = () => {
             )}
           />
         </div>
-        <div className="mt-10">
+        <div className="mt-5">
           <Button
             type="submit"
-            className="w-auto md:text-lg text-sm font-medium text-background h-auto py-2.5"
+            className="w-auto text-sm font-medium text-background h-auto py-2.5"
           >
             Save Changes
           </Button>
