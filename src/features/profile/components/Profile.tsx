@@ -1,6 +1,7 @@
 import SidebarLayout from "@/components/layout/SidebarLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Preference, ProfileForm, SubscriptionCard } from "@/features/profile";
+import { Preference, ProfileForm } from "@/features/profile";
+import { PremiumCard } from "./PremiumCard";
 
 export const Profile = () => {
   return (
@@ -22,7 +23,8 @@ export const Profile = () => {
           </Card>
           <Preference />
         </div>
-        <SubscriptionCard />
+        {/* <FreeCard /> */}
+        <PremiumCard />
       </SidebarLayout>
     </div>
   );

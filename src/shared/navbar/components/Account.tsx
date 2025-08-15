@@ -39,7 +39,7 @@ export const Account = () => {
           </span>
           <Badge
             variant="outline"
-            className="border-almond-yellow text-almond-yellow bg-light-yellow py-1.5 px-2.5 leading-[1em]"
+            className="border-almond-yellow text-almond-yellow bg-almond-yellow/[13%] py-1.5 px-2.5 leading-[1em]"
           >
             <Image
               src={CrownIcon}

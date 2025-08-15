@@ -1,21 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { UserRound } from "lucide-react";
+import Link from "next/link";
 
-export const SubscriptionCard = () => {
+export const FreeCard = () => {
   return (
     <Card className="py-3.5 px-5 sticky top-[120px]">
       <CardContent className="p-0">
         <div className="flex flex-col">
           <div>
             <h2 className="text-xl">Subscriptions</h2>
-            <p>You are currently on free plan</p>
+            <p>You are currently on a premium plan</p>
           </div>
           <div className="flex flex-col justify-center items-center my-12 gap-3.5">
             <div className="w-23 h-23 rounded-full flex items-center justify-center bg-flash-white">
               <UserRound className="w-8 h-10 object-contain" />
             </div>
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-1">
               <h3 className="font-semibold text-xl">Free Plan</h3>
               <p>Access to basic newsletters</p>
               <p className="font-semibold text-lg">$29.99/ month</p>
@@ -26,8 +27,9 @@ export const SubscriptionCard = () => {
             <Button
               variant={"outline"}
               className="border !border-danger text-danger bg-pale-red hover:bg-pale-red hover:text-danger py-3 h-auto"
+              asChild
             >
-              Unsubscribe
+              <Link href="/billing/unsubscribe">Unsubscribe</Link>
             </Button>
           </div>
         </div>

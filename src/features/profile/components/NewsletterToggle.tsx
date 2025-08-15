@@ -20,13 +20,13 @@ export const NewsletterToggle = ({
           {isPremium && (
             <Badge
               variant="outline"
-              className="border-almond-yellow text-almond-yellow bg-light-yellow py-0 px-2.5 leading-[1em] rounded-[40px] text-sm font-medium md:block hidden"
+              className="border-almond-yellow text-almond-yellow bg-almond-yellow/[13%] py-0 px-2.5 leading-[1em] rounded-[40px] text-sm font-medium md:block hidden"
             >
               Premium
             </Badge>
           )}
         </div>
-        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-sm">{description}</p>
       </div>
 
       <Switch
