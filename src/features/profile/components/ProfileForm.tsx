@@ -18,7 +18,7 @@ export const ProfileForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
           <FormField
             control={form.control}
             name="firstName"

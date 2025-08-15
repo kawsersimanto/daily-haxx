@@ -5,12 +5,12 @@ import { Preference, ProfileForm } from "@/features/profile";
 export const Profile = () => {
   return (
     <div>
-      <div className="flex flex-col gap-2 mb-7.5">
-        <h1 className="md:text-[28px] text-primary">Hey, Danial Smith!</h1>
+      <div className="flex flex-col gap-2 md:mb-7.5 mb-4">
+        <h1 className="text-[28px] text-primary">Hey, Danial Smith!</h1>
         <p>Manage your profile and subscription preferences</p>
       </div>
-      <SidebarLayout className="py-0">
-        <div className="flex flex-col gap-6">
+      <SidebarLayout className="py-0 md:gap-6 gap-4">
+        <div className="flex flex-col md:gap-6 gap-4">
           <Card className="p-5">
             <CardContent className="p-0">
               <div className="flex flex-col gap-1 mb-8">

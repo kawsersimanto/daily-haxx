@@ -50,6 +50,11 @@
   --danger: #e53d00;
   --sage-gray: #aeadae;
 
+  /* toggle switch shadow */
+  --toggle-active-color: #f2c748;
+  --toggle-switch-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 3px 8px 0 rgba(0, 0, 0, 0.15), 0 3px 1px 0 rgba(0, 0, 0, 0.06);
+
   --chart-1: #ddfff0;
   --chart-2: #aff4d6;
   --chart-3: #1ebc77;
@@ -217,6 +222,7 @@
   --color-soft-green: var(--soft-green);
   --color-danger: var(--danger);
   --color-sage-gray: var(--sage-gray);
+  --color-toggle-active-color: var(--toggle-active-color);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -235,6 +241,7 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+  --shadow-toggle-switch-shadow: var(--toggle-switch-shadow);
 
   --shadow-md-soft: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
     0px 2px 4px -2px rgba(0, 0, 0, 0.1);

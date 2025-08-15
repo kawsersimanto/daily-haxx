@@ -33,8 +33,8 @@ export const NewsletterToggle = ({
         checked={enabled}
         onCheckedChange={onToggle}
         className={cn(
-          "data-[state=checked]:bg-orange-400",
-          enabled ? "bg-orange-400" : ""
+          "data-[state=checked]:bg-toggle-active-color",
+          enabled ? "bg-toggle-active-color" : ""
         )}
       />
     </div>

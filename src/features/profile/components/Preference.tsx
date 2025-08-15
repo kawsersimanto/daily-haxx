@@ -11,7 +11,7 @@ export const Preference = () => {
     toggleWeeklyNewsletter,
   } = usePreference();
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col md:gap-6 gap-4">
       <Card className="p-5">
         <CardContent className="p-0">
           <NewsletterToggle
