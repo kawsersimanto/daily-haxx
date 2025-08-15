@@ -1,8 +1,14 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
+import { PreferenceStore } from "@/features/profile";
+import { createSelectors } from "@/lib/createSelector";
 import { create } from "zustand";
 
-export interface ProfileState {}
-
-export const useProfileStore = create<ProfileState>(() => ({
-  // initial state
+export const usePreferenceStore = create<PreferenceStore>((set) => ({
+  weeklyNewsletter: false,
+  dailyNewsletter: false,
+  toggleWeeklyNewsletter: () =>
+    set((state) => ({ weeklyNewsletter: !state.weeklyNewsletter })),
+  toggleDailyNewsletter: () =>
+    set((state) => ({ dailyNewsletter: !state.dailyNewsletter })),
 }));
+
+export const usePreferenceSelector = createSelectors(usePreferenceStore);
