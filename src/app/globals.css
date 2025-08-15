@@ -49,6 +49,8 @@
   --soft-green: #edfff7;
   --danger: #e53d00;
   --sage-gray: #aeadae;
+  --flash-white: #f2f2f2;
+  --pale-red: #fff2ee;
 
   /* toggle switch shadow */
   --toggle-active-color: #f2c748;
@@ -124,6 +126,13 @@
   --soft-green: #edfff7;
   --danger: #e53d00;
   --sage-gray: #aeadae;
+  --flash-white: #58bd91;
+  --pale-red: #fff2ee;
+
+  /* toggle switch shadow */
+  --toggle-active-color: #58bd91;
+  --toggle-switch-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 3px 8px 0 rgba(0, 0, 0, 0.15), 0 3px 1px 0 rgba(0, 0, 0, 0.06);
 
   --gradient-lock: 180deg, rgba(0, 0, 0, 0) -7.79%, #000000 97.84%;
 
@@ -222,7 +231,9 @@
   --color-soft-green: var(--soft-green);
   --color-danger: var(--danger);
   --color-sage-gray: var(--sage-gray);
+  --color-flash-white: var(--flash-white);
   --color-toggle-active-color: var(--toggle-active-color);
+  --color-pale-red: var(--pale-red);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

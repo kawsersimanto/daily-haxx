@@ -1,6 +1,6 @@
 import SidebarLayout from "@/components/layout/SidebarLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Preference, ProfileForm } from "@/features/profile";
+import { Preference, ProfileForm, SubscriptionCard } from "@/features/profile";
 
 export const Profile = () => {
   return (
@@ -9,7 +9,7 @@ export const Profile = () => {
         <h1 className="text-[28px] text-primary">Hey, Danial Smith!</h1>
         <p>Manage your profile and subscription preferences</p>
       </div>
-      <SidebarLayout className="py-0 md:gap-6 gap-4">
+      <SidebarLayout className="py-0 md:gap-6 gap-4 items-start">
         <div className="flex flex-col md:gap-6 gap-4">
           <Card className="p-5">
             <CardContent className="p-0">
@@ -22,11 +22,7 @@ export const Profile = () => {
           </Card>
           <Preference />
         </div>
-        <div>
-          <Card className="p-5">
-            <CardContent className="p-0">h3llo</CardContent>
-          </Card>
-        </div>
+        <SubscriptionCard />
       </SidebarLayout>
     </div>
   );
