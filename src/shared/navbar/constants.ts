@@ -2,8 +2,12 @@ import { IMenu } from "./";
 
 export const menu: IMenu[] = [
   {
+    label: "Articles",
+    href: "/article",
+  },
+  {
     label: "Newsletters",
-    href: "/",
+    href: "/newsletter",
   },
   {
     label: "Analysis",
@@ -15,7 +19,7 @@ export const menu: IMenu[] = [
   },
   {
     label: "Polls",
-    href: "/",
+    href: "/poll",
   },
   {
     label: "Resources",
