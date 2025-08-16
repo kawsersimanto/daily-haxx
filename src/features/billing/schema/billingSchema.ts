@@ -32,6 +32,8 @@ export const paymentSchema = z.object({
       const cvvValidation = valid.cvv(value);
       return cvvValidation.isValid;
     }, "Invalid security code"),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email().min(1, "Email is required"),
   country: z
     .string()
     .min(1, "Country is required")

@@ -25,7 +25,6 @@ export const formatCardNumber = (value: string): string => {
     digitGroups.push(group);
   }
 
-  // Return formatted string with spaces, or original cleaned value if no valid groups
   return digitGroups.length > 0 ? digitGroups.join(" ") : cleanedValue;
 };
 

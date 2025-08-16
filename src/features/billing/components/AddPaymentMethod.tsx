@@ -15,6 +15,7 @@ import {
   formatCardNumber,
   formatExpiryDate,
   PaymentFormData,
+  PaymentHeader,
   paymentSchema,
 } from "@/features/billing";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,6 +28,7 @@ export const AddPaymentMethod = () => {
       cardNumber: "",
       expiryDate: "",
       securityCode: "",
+      name: "",
       country: "",
     },
   });
@@ -52,7 +54,8 @@ export const AddPaymentMethod = () => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="max-w-[570px] mx-auto">
+      <PaymentHeader />
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -111,7 +114,7 @@ export const AddPaymentMethod = () => {
             />
             <FormField
               control={form.control}
-              name="country"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
@@ -124,12 +127,12 @@ export const AddPaymentMethod = () => {
             />
             <FormField
               control={form.control}
-              name="country"
+              name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Country</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your country" {...field} />
+                    <Input placeholder="eg. johndoe@gmail.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
