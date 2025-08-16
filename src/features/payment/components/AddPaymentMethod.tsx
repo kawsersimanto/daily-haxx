@@ -24,12 +24,12 @@ export const AddPaymentMethod = () => {
   } = usePaymentForm();
 
   return (
-    <Card className="max-w-[570px] mx-auto gap-10 px-10 py-7.5">
+    <Card className="max-w-[570px] mx-auto md:gap-10 gap-8 md:px-10 px-5 py-7.5">
       <PaymentHeader />
       <CardContent className="p-0">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-start">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 items-start">
               <FormField
                 control={form.control}
                 name="cardNumber"
@@ -37,7 +37,7 @@ export const AddPaymentMethod = () => {
                   <FormItem className="md:col-span-2">
                     <FormLabel>Card Number</FormLabel>
                     <div className="relative">
-                      <FormControl className="py-3 px-5 h-auto">
+                      <FormControl className="md:py-3 py-2 md:text-base text-sm md:px-5 px-3 h-auto">
                         <Input
                           placeholder="1223 1208 0911 1123"
                           {...field}
@@ -65,7 +65,7 @@ export const AddPaymentMethod = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Expiry date</FormLabel>
-                    <FormControl className="py-3 px-5 h-auto">
+                    <FormControl className="md:py-3 py-2 md:text-base text-sm md:px-5 px-3 h-auto">
                       <Input
                         placeholder="MM / YY"
                         {...field}
@@ -85,7 +85,7 @@ export const AddPaymentMethod = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Security Code</FormLabel>
-                    <FormControl className="py-3 px-5 h-auto">
+                    <FormControl className="md:py-3 py-2 md:text-base text-sm md:px-5 px-3 h-auto">
                       <Input
                         placeholder="CVV"
                         {...field}
@@ -102,7 +102,7 @@ export const AddPaymentMethod = () => {
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
                     <FormLabel>Full Name</FormLabel>
-                    <FormControl className="py-3 px-5 h-auto">
+                    <FormControl className="md:py-3 py-2 md:text-base text-sm md:px-5 px-3 h-auto">
                       <Input placeholder="eg. John Doe" {...field} />
                     </FormControl>
                     <FormMessage />
@@ -115,7 +115,7 @@ export const AddPaymentMethod = () => {
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
                     <FormLabel>Email</FormLabel>
-                    <FormControl className="py-3 px-5 h-auto">
+                    <FormControl className="md:py-3 py-2 md:text-base text-sm md:px-5 px-3 h-auto">
                       <Input placeholder="eg. johndoe@gmail.com" {...field} />
                     </FormControl>
                     <FormMessage />
@@ -127,7 +127,7 @@ export const AddPaymentMethod = () => {
             <div className="space-y-3">
               <Button
                 type="submit"
-                className="w-full bg-primary py-2.5 h-auto text-lg"
+                className="w-full bg-primary py-2.5 h-auto md:text-lg text-sm"
               >
                 Add
               </Button>
@@ -135,7 +135,7 @@ export const AddPaymentMethod = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full bg-transparent py-2.5 h-auto text-lg"
+                className="w-full bg-transparent py-2.5 h-auto md:text-lg text-sm"
                 onClick={() => form.reset()}
               >
                 Go Back
