@@ -1,4 +1,4 @@
-import { Unsubscribe } from "@/features/billing";
+import { Unsubscribe } from "@/features/payment";
 
 const UnsubscribePage = () => {
   return (

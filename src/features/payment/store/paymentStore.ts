@@ -1,4 +1,4 @@
-import { PaymentStore } from "@/features/billing";
+import { PaymentStore } from "@/features/payment";
 import { create } from "zustand";
 
 export const usePaymentStore = create<PaymentStore>((set) => ({

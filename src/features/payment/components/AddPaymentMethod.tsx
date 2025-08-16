@@ -18,7 +18,7 @@ import {
   PaymentHeader,
   paymentSchema,
   Privacy,
-} from "@/features/billing";
+} from "@/features/payment";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";

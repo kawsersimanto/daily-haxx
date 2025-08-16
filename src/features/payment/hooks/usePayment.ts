@@ -1,4 +1,4 @@
-export const useBilling = () => {
+export const usePayment = () => {
   // React Query hook logic here
   return {};
 };

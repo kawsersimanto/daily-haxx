@@ -1,4 +1,4 @@
-import { Downgrade } from "@/features/billing";
+import { Downgrade } from "@/features/payment";
 
 const DowngradePage = () => {
   return (
