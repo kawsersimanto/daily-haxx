@@ -31,7 +31,7 @@ export const AddPaymentMethod = () => {
       expiryDate: "",
       securityCode: "",
       name: "",
-      country: "",
+      email: "",
     },
   });
 
@@ -132,7 +132,7 @@ export const AddPaymentMethod = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Full Name</FormLabel>
                     <FormControl className="py-3 px-5 h-auto">
                       <Input placeholder="eg. John Doe" {...field} />
                     </FormControl>
@@ -156,14 +156,17 @@ export const AddPaymentMethod = () => {
             </div>
             <Privacy />
             <div className="space-y-3">
-              <Button type="submit" className="w-full bg-primary">
+              <Button
+                type="submit"
+                className="w-full bg-primary py-2.5 h-auto text-lg"
+              >
                 Add
               </Button>
 
               <Button
                 type="button"
                 variant="outline"
-                className="w-full bg-transparent"
+                className="w-full bg-transparent py-2.5 h-auto text-lg"
                 onClick={() => form.reset()}
               >
                 Go Back

@@ -33,11 +33,7 @@ export const paymentSchema = z.object({
       return cvvValidation.isValid;
     }, "Invalid security code"),
   name: z.string().min(1, "Name is required"),
-  email: z.string().email().min(1, "Email is required"),
-  country: z
-    .string()
-    .min(1, "Country is required")
-    .min(2, "Country must be at least 2 characters"),
+  email: z.email().min(1, "Email is required"),
 });
 
 export type PaymentFormData = z.infer<typeof paymentSchema>;
