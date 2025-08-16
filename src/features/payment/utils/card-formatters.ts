@@ -52,3 +52,17 @@ export const formatExpiryDate = (value: string): string => {
 
   return cleanedValue;
 };
+
+export const handleCardNumberChange = (
+  value: string,
+  onChange: (value: string) => void
+) => {
+  onChange(formatCardNumber(value));
+};
+
+export const handleExpiryDateChange = (
+  value: string,
+  onChange: (value: string) => void
+) => {
+  onChange(formatExpiryDate(value));
+};

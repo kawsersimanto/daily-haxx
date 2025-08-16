@@ -11,56 +11,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  formatCardNumber,
-  formatExpiryDate,
-  PaymentFormData,
-  PaymentHeader,
-  paymentSchema,
-  Privacy,
-} from "@/features/payment";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { PaymentHeader, Privacy, usePaymentForm } from "@/features/payment";
 import Image from "next/image";
-import { useForm } from "react-hook-form";
 
 export const AddPaymentMethod = () => {
-  const form = useForm<PaymentFormData>({
-    resolver: zodResolver(paymentSchema),
-    defaultValues: {
-      cardNumber: "",
-      expiryDate: "",
-      securityCode: "",
-      name: "",
-      email: "",
-    },
-  });
-
-  const handleSubmit = async (data: PaymentFormData) => {
-    console.log(data);
-  };
-
-  const handleCardNumberChange = (
-    value: string,
-    onChange: (value: string) => void
-  ) => {
-    const formattedCardNumber = formatCardNumber(value);
-    onChange(formattedCardNumber);
-  };
-
-  const handleExpiryDateChange = (
-    value: string,
-    onChange: (value: string) => void
-  ) => {
-    const formattedExpiryDate = formatExpiryDate(value);
-    onChange(formattedExpiryDate);
-  };
+  const { form, handleCardNumberChange, handleExpiryDateChange, onSubmit } =
+    usePaymentForm();
 
   return (
     <Card className="max-w-[570px] mx-auto gap-10 px-10 py-7.5">
       <PaymentHeader />
       <CardContent className="p-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-start">
               <FormField
                 control={form.control}
