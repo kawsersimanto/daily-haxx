@@ -1,4 +1,11 @@
-export interface Billing {
-  id: string;
-  // define fields
+interface PaymentState {
+  customerId: string | null;
+  defaultPaymentMethod: string | null;
 }
+
+interface PaymentActions {
+  setCustomerId: (id: string) => void;
+  setDefaultPaymentMethod: (id: string) => void;
+}
+
+export type PaymentStore = PaymentState & PaymentActions;
