@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Privacy = () => {
   return (
-    <div className="text-xs text-muted-foreground space-y-2">
+    <div className="text-xs text-muted-foreground my-6 prose">
       <p>
         By providing your card information, you allow Haxx Inc. to charge your
         card for future payments in accordance with their terms.
