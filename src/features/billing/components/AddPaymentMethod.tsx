@@ -61,7 +61,7 @@ export const AddPaymentMethod = () => {
       <CardContent className="p-0">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)}>
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-start">
               <FormField
                 control={form.control}
                 name="cardNumber"
