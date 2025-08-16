@@ -1,68 +1,70 @@
-/**
- * Payment form formatting utilities
- * Provides functions to format card numbers and expiry dates for user input
- */
+import valid from "card-validator";
 
-/**
- * Formats a card number with spaces every 4 digits
- * @param value - Raw card number input (may contain spaces, letters, etc.)
- * @returns Formatted card number (e.g., "1234 5678 9012 3456")
- *
- * @example
- * formatCardNumber("1234567890123456") // "1234 5678 9012 3456"
- * formatCardNumber("1234 abcd 5678") // "1234 5678"
- */
 export const formatCardNumber = (value: string): string => {
-  const cleanedValue = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-  const digitMatches = cleanedValue.match(/\d{4,16}/g);
-  const validDigits = (digitMatches && digitMatches[0]) || "";
+  const number = value.replace(/\D/g, "");
+  const validation = valid.number(number);
 
-  const digitGroups: string[] = [];
-  const groupSize = 4;
-
-  for (let i = 0; i < validDigits.length; i += groupSize) {
-    const group = validDigits.substring(i, i + groupSize);
-    digitGroups.push(group);
+  if (!validation.card) {
+    return number.substring(0, 16).replace(/(\d{4})(?=\d)/g, "$1 ");
   }
 
-  return digitGroups.length > 0 ? digitGroups.join(" ") : cleanedValue;
+  const type = validation.card.type;
+
+  let formatted = "";
+  let groupSizes: number[] = [];
+
+  switch (type) {
+    case "american-express":
+      groupSizes = [4, 6, 5];
+      break;
+    case "diners-club":
+      groupSizes = [4, 6, 4];
+      break;
+    default:
+      groupSizes = [4, 4, 4, 4];
+  }
+
+  let start = 0;
+  groupSizes.forEach((size) => {
+    if (number.length > start) {
+      const end = Math.min(start + size, number.length);
+      formatted +=
+        number.substring(start, end) + (end < number.length ? " " : "");
+      start = end;
+    }
+  });
+
+  return formatted.trim();
 };
 
-/**
- * Formats expiry date in MM / YY format
- * @param value - Raw expiry date input (may contain spaces, letters, etc.)
- * @returns Formatted expiry date (e.g., "12 / 25")
- *
- * @example
- * formatExpiryDate("1225") // "12 / 25"
- * formatExpiryDate("12") // "12"
- * formatExpiryDate("1") // "1"
- */
 export const formatExpiryDate = (value: string): string => {
-  const cleanedValue = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-  const minimumDigitsForFormatting = 2;
-  const monthDigits = 2;
-  const yearDigits = 2;
+  const digits = value.replace(/\D/g, "").substring(0, 4);
+  if (digits.length <= 2) return digits;
 
-  if (cleanedValue.length >= minimumDigitsForFormatting) {
-    const month = cleanedValue.substring(0, monthDigits);
-    const year = cleanedValue.substring(monthDigits, monthDigits + yearDigits);
-    return `${month} / ${year}`;
-  }
+  const month = digits.substring(0, 2);
+  const year = digits.substring(2);
 
-  return cleanedValue;
+  const validMonth = Math.min(parseInt(month, 10), 12)
+    .toString()
+    .padStart(2, "0");
+
+  return year ? `${validMonth} / ${year}` : validMonth;
 };
 
+export const getCardInfo = (cardNumber: string) => {
+  const cleanNumber = cardNumber.replace(/\s/g, "");
+  const cardValidation = valid.number(cleanNumber);
+  return {
+    type: cardValidation.card?.type || "unknown",
+    cvvLength: cardValidation.card?.code.size || 3,
+  };
+};
 export const handleCardNumberChange = (
   value: string,
-  onChange: (value: string) => void
-) => {
-  onChange(formatCardNumber(value));
-};
+  onChange: (v: string) => void
+) => onChange(formatCardNumber(value));
 
 export const handleExpiryDateChange = (
   value: string,
-  onChange: (value: string) => void
-) => {
-  onChange(formatExpiryDate(value));
-};
+  onChange: (v: string) => void
+) => onChange(formatExpiryDate(value));

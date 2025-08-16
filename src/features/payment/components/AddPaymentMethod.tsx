@@ -15,8 +15,13 @@ import { PaymentHeader, Privacy, usePaymentForm } from "@/features/payment";
 import Image from "next/image";
 
 export const AddPaymentMethod = () => {
-  const { form, handleCardNumberChange, handleExpiryDateChange, onSubmit } =
-    usePaymentForm();
+  const {
+    form,
+    handleCardChange,
+    handleExpiryDateChange,
+    cvvLength,
+    onSubmit,
+  } = usePaymentForm();
 
   return (
     <Card className="max-w-[570px] mx-auto gap-10 px-10 py-7.5">
@@ -37,10 +42,7 @@ export const AddPaymentMethod = () => {
                           placeholder="1223 1208 0911 1123"
                           {...field}
                           onChange={(e) =>
-                            handleCardNumberChange(
-                              e.target.value,
-                              field.onChange
-                            )
+                            handleCardChange(e.target.value, field.onChange)
                           }
                           maxLength={19}
                         />
@@ -84,7 +86,11 @@ export const AddPaymentMethod = () => {
                   <FormItem>
                     <FormLabel>Security Code</FormLabel>
                     <FormControl className="py-3 px-5 h-auto">
-                      <Input placeholder="CVV" {...field} maxLength={4} />
+                      <Input
+                        placeholder="CVV"
+                        {...field}
+                        maxLength={cvvLength}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
