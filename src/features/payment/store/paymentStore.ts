@@ -1,4 +1,5 @@
 import type { PaymentStore } from "@/features/payment";
+import { createSelectors } from "@/lib/createSelector";
 import { create } from "zustand";
 
 export const usePaymentStore = create<PaymentStore>((set) => ({
@@ -96,3 +97,5 @@ export const usePaymentStore = create<PaymentStore>((set) => ({
       ),
     })),
 }));
+
+export const usePaymentSelector = createSelectors(usePaymentStore);
