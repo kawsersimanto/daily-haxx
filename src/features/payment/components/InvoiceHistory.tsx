@@ -14,8 +14,8 @@ export function InvoiceHistory() {
         <h2 className="text-xl font-semibold">Invoice History</h2>
         <p className="text-sm">Manage invoices from here</p>
       </CardHeader>
-      <CardContent className="p-0 overflow-x-scroll">
-        <div className="flex flex-col gap-5 [&>div:last-child]:border-b-0 [&>div:last-child]:pb-0 w-[500px]">
+      <CardContent className="p-0 sm:overflow-x-auto overflow-x-scroll">
+        <div className="flex flex-col gap-5 [&>div:last-child]:border-b-0 [&>div:last-child]:pb-0 sm:w-full w-[500px]">
           {invoices.map((invoice) => (
             <div
               key={invoice.id}
