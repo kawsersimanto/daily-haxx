@@ -51,6 +51,7 @@
   --sage-gray: #aeadae;
   --flash-white: #f2f2f2;
   --pale-red: #fff2ee;
+  --ash-gray: #aeaeae;
 
   /* toggle switch shadow */
   --toggle-active-color: #f2c748;
@@ -128,6 +129,7 @@
   --sage-gray: #aeadae;
   --flash-white: #58bd91;
   --pale-red: #fff2ee;
+  --ash-gray: #aeaeae;
 
   /* toggle switch shadow */
   --toggle-active-color: #58bd91;
@@ -234,6 +236,7 @@
   --color-flash-white: var(--flash-white);
   --color-toggle-active-color: var(--toggle-active-color);
   --color-pale-red: var(--pale-red);
+  --color-ash-gray: var(--ash-gray);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
