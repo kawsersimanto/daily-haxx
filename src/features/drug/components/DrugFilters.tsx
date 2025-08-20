@@ -128,19 +128,19 @@ export const DrugFilters = () => {
               key={index}
               variant="secondary"
               onClick={() => removeFilter(filter.key)}
-              className="cursor-pointer bg-blue-50 text-blue-700 hover:bg-blue-100"
+              className="cursor-pointer"
             >
-              {filter.label}
               <X className="w-3 h-3 ml-1" />
+              {filter.label}
             </Badge>
           ))}
           <Button
             variant="ghost"
             size="sm"
             onClick={clearAllFilters}
-            className="text-gray-600 hover:text-gray-900"
+            className="text-primary text-xs h-full py-1"
           >
-            <X className="w-4 h-4 mr-1" />
+            <X className="w-2 h-2 mr-1" />
             Clear filter
           </Button>
         </div>

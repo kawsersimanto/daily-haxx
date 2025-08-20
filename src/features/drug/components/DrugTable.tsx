@@ -12,7 +12,7 @@ import { drugData, RelatedContentIcons } from "@/features/drug";
 export const DrugTable = () => {
   return (
     <>
-      <Card>
+      <Card className="py-0 border-0">
         <Table>
           <TableHeader>
             <TableRow>
