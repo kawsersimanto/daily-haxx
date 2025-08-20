@@ -1,0 +1,172 @@
+"use client";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useDrugStore } from "@/features/drug";
+import { Filter, X } from "lucide-react";
+
+export function DrugFilters() {
+  const { filters, setFilter, removeFilter, clearAllFilters } = useDrugStore();
+
+  const labels = {
+    diseaseArea: "Disease Area",
+    modality: "Modality",
+    mechanism: "Mechanism",
+    sortBy: "Sort by",
+    salesRange: "LTM Range",
+  };
+
+  const activeFilters = Object.entries(filters)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .filter(([_, value]) => value !== "")
+    .map(([key, value]) => ({
+      key,
+      label: `${labels[key as keyof typeof labels]}: ${value}`,
+      value,
+    }));
+
+  return (
+    <div className="bg-white border-b border-gray-200 p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <Filter className="w-4 h-4 text-gray-600" />
+        <span className="font-medium text-gray-900">Filter & Sort</span>
+      </div>
+      <div className="grid grid-cols-5 gap-4 mb-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Disease Area
+          </label>
+          <Select
+            value={filters.diseaseArea}
+            onValueChange={(value) => setFilter("diseaseArea", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select disease area" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Infectious Disease">
+                Infectious Disease
+              </SelectItem>
+              <SelectItem value="Oncology">Oncology</SelectItem>
+              <SelectItem value="Cardiology">Cardiology</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Modality */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Modality
+          </label>
+          <Select
+            value={filters.modality}
+            onValueChange={(value) => setFilter("modality", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select modality" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Biologic">Biologic</SelectItem>
+              <SelectItem value="Small Molecule">Small Molecule</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Mechanism */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Mechanism
+          </label>
+          <Select
+            value={filters.mechanism}
+            onValueChange={(value) => setFilter("mechanism", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select mechanism" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Agonist">Agonist</SelectItem>
+              <SelectItem value="Antagonist">Antagonist</SelectItem>
+              <SelectItem value="Inhibitor">Inhibitor</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Sort by */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Sort by
+          </label>
+          <Select
+            value={filters.sortBy}
+            onValueChange={(value) => setFilter("sortBy", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Brand name: A-Z">Brand name: A-Z</SelectItem>
+              <SelectItem value="Brand name: Z-A">Brand name: Z-A</SelectItem>
+              <SelectItem value="Company">Company</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* LTM Sales Range */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            LTM Sales range
+          </label>
+          <Select
+            value={filters.salesRange}
+            onValueChange={(value) => setFilter("salesRange", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select range" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="$0.0B - $20.0B">$0.0B - $20.0B</SelectItem>
+              <SelectItem value="$20.0B - $50.0B">$20.0B - $50.0B</SelectItem>
+              <SelectItem value="$50.0B+">$50.0B+</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {activeFilters.length > 0 && (
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-sm font-medium text-gray-700">
+            Active filters:
+          </span>
+          {activeFilters.map((filter, index) => (
+            <Badge
+              key={index}
+              variant="secondary"
+              onClick={() => removeFilter(filter.key)}
+              className="cursor-pointer bg-blue-50 text-blue-700 hover:bg-blue-100"
+            >
+              {filter.label}
+              <X className="w-3 h-3 ml-1" />
+            </Badge>
+          ))}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={clearAllFilters}
+            className="text-gray-600 hover:text-gray-900"
+          >
+            <X className="w-4 h-4 mr-1" />
+            Clear filter
+          </Button>
+        </div>
+      )}
+    </div>
+  );
+}

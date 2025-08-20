@@ -1,4 +1,11 @@
 export interface Drug {
-  id: string;
-  // define fields
+  company: string;
+  brand: string;
+  molecule: string;
+  modality: string;
+  mechanism: string;
+  diseaseArea: string;
+  approvedIndications: string;
+  ltmSales: string;
+  relatedContent: string[];
 }
