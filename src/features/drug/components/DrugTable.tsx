@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import { drugData, RelatedContentIcons } from "@/features/drug";
 
-export function DrugTable() {
+export const DrugTable = () => {
   return (
     <>
       <Card>
@@ -52,4 +52,4 @@ export function DrugTable() {
       </Card>
     </>
   );
-}
+};

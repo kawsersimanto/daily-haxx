@@ -9,28 +9,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useDrugStore } from "@/features/drug";
+import { useDrugFilters } from "@/features/drug";
 import { Filter, X } from "lucide-react";
 
-export function DrugFilters() {
-  const { filters, setFilter, removeFilter, clearAllFilters } = useDrugStore();
-
-  const labels = {
-    diseaseArea: "Disease Area",
-    modality: "Modality",
-    mechanism: "Mechanism",
-    sortBy: "Sort by",
-    salesRange: "LTM Range",
-  };
-
-  const activeFilters = Object.entries(filters)
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .filter(([_, value]) => value !== "")
-    .map(([key, value]) => ({
-      key,
-      label: `${labels[key as keyof typeof labels]}: ${value}`,
-      value,
-    }));
+export const DrugFilters = () => {
+  const { filters, setFilter, removeFilter, clearAllFilters, activeFilters } =
+    useDrugFilters();
 
   return (
     <div className="bg-white border-b border-gray-200 p-6">
@@ -169,4 +153,4 @@ export function DrugFilters() {
       )}
     </div>
   );
-}
+};

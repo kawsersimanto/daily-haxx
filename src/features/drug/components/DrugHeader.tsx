@@ -2,11 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useDrugStore } from "@/features/drug";
+import { useDrugSearch } from "@/features/drug";
 import { Search } from "lucide-react";
 
-export function DrugHeader() {
-  const { searchQuery, setSearchQuery } = useDrugStore();
+export const DrugHeader = () => {
+  const { searchQuery, setSearchQuery } = useDrugSearch();
 
   return (
     <div className="bg-white border-b border-gray-200 p-6">
@@ -29,4 +29,4 @@ export function DrugHeader() {
       </div>
     </div>
   );
-}
+};
