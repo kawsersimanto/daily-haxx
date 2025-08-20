@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, CreditCard, LogOut, Settings, User } from "lucide-react";
+import { ChevronDown, CreditCard, LogOut, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -62,7 +62,7 @@ export const Account = () => {
 
         <DropdownMenuItem asChild>
           <Link
-            href="/"
+            href="/profile"
             className="flex items-center gap-2 py-1.5 cursor-pointer rounded-lg text-sm text-foreground"
           >
             <User className="w-3.5 h-3.5 !text-inherit" />
@@ -72,21 +72,11 @@ export const Account = () => {
 
         <DropdownMenuItem asChild>
           <Link
-            href="/"
+            href="/payment/manage"
             className="flex items-center gap-2 py-1.5 cursor-pointer rounded-lg text-sm text-foreground"
           >
             <CreditCard className="w-3.5 h-3.5 !text-inherit" />
             Billing
-          </Link>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem asChild>
-          <Link
-            href="/"
-            className="flex items-center gap-2 py-1.5 cursor-pointer rounded-lg text-sm text-foreground"
-          >
-            <Settings className="w-3.5 h-3.5 !text-inherit" />
-            Settings
           </Link>
         </DropdownMenuItem>
 
