@@ -1,21 +1,8 @@
+import { DrugStore } from "@/features/drug";
+import { createSelectors } from "@/lib/createSelector";
 import { create } from "zustand";
 
-interface FilterState {
-  searchQuery: string;
-  filters: {
-    diseaseArea: string;
-    modality: string;
-    mechanism: string;
-    sortBy: string;
-    salesRange: string;
-  };
-  setSearchQuery: (query: string) => void;
-  setFilter: (key: string, value: string) => void;
-  removeFilter: (key: string) => void;
-  clearAllFilters: () => void;
-}
-
-export const useDrugStore = create<FilterState>((set) => ({
+export const useDrugStore = create<DrugStore>((set) => ({
   searchQuery: "",
   filters: {
     diseaseArea: "",
@@ -44,3 +31,5 @@ export const useDrugStore = create<FilterState>((set) => ({
       },
     }),
 }));
+
+export const useDrugSelector = createSelectors(useDrugStore);

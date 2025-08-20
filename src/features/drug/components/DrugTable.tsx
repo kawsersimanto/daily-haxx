@@ -11,7 +11,7 @@ import { drugData, RelatedContentIcons } from "@/features/drug";
 
 export function DrugTable() {
   return (
-    <div className="flex-1 p-6 overflow-auto">
+    <>
       <Card>
         <Table>
           <TableHeader>
@@ -50,6 +50,6 @@ export function DrugTable() {
           </TableBody>
         </Table>
       </Card>
-    </div>
+    </>
   );
 }
