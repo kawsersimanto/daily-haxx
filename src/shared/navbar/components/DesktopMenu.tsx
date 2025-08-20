@@ -6,9 +6,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { menu } from "@/shared/navbar";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { menu } from "../";
 
 export const DesktopMenu = () => {
   return (

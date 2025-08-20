@@ -22,8 +22,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { mobileMenu } from "@/shared/navbar";
 import Image from "next/image";
-import { mobileMenu } from "../";
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);

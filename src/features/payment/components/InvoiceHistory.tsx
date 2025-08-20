@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useInvoices } from "@/features/payment";
 import { History } from "lucide-react";
 
-export function InvoiceHistory() {
+export const InvoiceHistory = () => {
   const { invoices } = useInvoices();
 
   return (
@@ -39,4 +39,4 @@ export function InvoiceHistory() {
       </CardContent>
     </Card>
   );
-}
+};

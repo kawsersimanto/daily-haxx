@@ -1,4 +1,4 @@
-import { IMenu } from "./";
+import { IMenu } from "@/shared/navbar";
 
 export const menu: IMenu[] = [
   {
@@ -10,24 +10,14 @@ export const menu: IMenu[] = [
     href: "/newsletter",
   },
   {
-    label: "Analysis",
-    children: [
-      { label: "Market Analysis", href: "/" },
-      { label: "Industry Reports", href: "/" },
-      { label: "Trend Analysis", href: "/" },
-    ],
-  },
-  {
     label: "Polls",
     href: "/poll",
   },
   {
     label: "Resources",
     children: [
-      { label: "Documentation", href: "/" },
-      { label: "Guides", href: "/" },
-      { label: "Templates", href: "/" },
-      { label: "Support", href: "/" },
+      { label: "Drug Database", href: "/resources/drug-database" },
+      { label: "Catalyst Calendar", href: "/resources/catalyst-calendar" },
     ],
   },
 ];
@@ -37,16 +27,15 @@ export const mobileMenu: IMenu[] = [
   {
     label: "Subscribe",
     children: [
-      { label: "Free", href: "/" },
-      { label: "Premium", href: "/" },
+      { label: "Free", href: "/profile" },
+      { label: "Premium", href: "/profile" },
     ],
   },
   {
     label: "My Account",
     children: [
-      { label: "Profile", href: "/" },
-      { label: "Billing", href: "/" },
-      { label: "Settings", href: "/" },
+      { label: "Profile", href: "/profile" },
+      { label: "Billing", href: "/payment/manage" },
       { label: "Logout", isButton: true },
     ],
   },

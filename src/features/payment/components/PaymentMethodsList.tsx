@@ -12,6 +12,7 @@ import {
 import { PaymentMethod, usePaymentMethods } from "@/features/payment";
 import { MoreHorizontal, Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const PaymentMethodIcon = ({ type }: { type: PaymentMethod["type"] }) => {
   const icon =
@@ -86,9 +87,15 @@ export const PaymentMethodsList = () => {
               </DropdownMenu>
             </div>
           ))}
-          <Button variant="outline" className="justify-center gap-2 py-2">
-            <Plus className="w-4 h-4" />
-            Add payment method
+          <Button
+            variant="outline"
+            className="justify-center gap-2 py-2 bg-transparent"
+            asChild
+          >
+            <Link href="/payment">
+              <Plus className="w-4 h-4" />
+              Add payment method
+            </Link>
           </Button>
         </div>
       </CardContent>
