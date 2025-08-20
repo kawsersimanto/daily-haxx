@@ -1,5 +1,7 @@
+import { DrugDatabase } from "@/features/drug";
+
 const DrugDatabasePage = () => {
-  return <div>DrugDatabasePage</div>;
+  return <DrugDatabase />;
 };
 
 export default DrugDatabasePage;

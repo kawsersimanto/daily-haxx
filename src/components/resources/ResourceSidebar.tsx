@@ -24,7 +24,7 @@ export const ResourceSidebar = ({
   activeSegment: string | null;
 }) => {
   return (
-    <div>
+    <div className="shrink-0">
       <h2 className="mb-8">Resources</h2>
       <div className="flex flex-col gap-5">
         {links.map(({ segment, href, label, icon: Icon }) => (
