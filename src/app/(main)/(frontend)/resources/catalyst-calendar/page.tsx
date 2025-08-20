@@ -1,5 +1,7 @@
+import { CatalystCalendar } from "@/features/catalyst";
+
 const CatalystCalendarPage = () => {
-  return <div>CatalystCalendarPage</div>;
+  return <CatalystCalendar />;
 };
 
 export default CatalystCalendarPage;
