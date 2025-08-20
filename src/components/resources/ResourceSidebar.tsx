@@ -25,8 +25,8 @@ export const ResourceSidebar = ({
 }) => {
   return (
     <div className="xl:shrink-0">
-      <h2 className="mb-8">Resources</h2>
-      <div className="flex flex-col gap-5">
+      <h2 className="md:mb-8 mb-4">Resources</h2>
+      <div className="flex flex-col md:gap-5 gap-3">
         {links.map(({ segment, href, label, icon: Icon }) => (
           <Link
             key={href}
@@ -37,7 +37,7 @@ export const ResourceSidebar = ({
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            <Icon className="w-5 h-5 object-contain" />
+            <Icon className="md:w-5 w-4 md:h-5 h-4 object-contain" />
             {label}
           </Link>
         ))}
