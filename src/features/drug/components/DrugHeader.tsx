@@ -9,7 +9,7 @@ export const DrugHeader = () => {
   const { searchQuery, setSearchQuery } = useDrugSearch();
 
   return (
-    <div className="bg-card border-border border-b md:p-6 p-4 rounded-t-xl">
+    <div className="bg-card border-border border-b p-4 rounded-t-xl">
       <div className="flex md:flex-row flex-col md:items-center justify-between gap-4">
         <h1 className="md:text-[28px] text-xl font-semibold font-work-sans text-primary">
           Drug Database

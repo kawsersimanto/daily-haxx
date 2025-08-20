@@ -17,7 +17,7 @@ export const DrugFilters = () => {
     useDrugFilters();
 
   return (
-    <div className="bg-card md:p-6 p-4 rounded-b-xl mb-4">
+    <div className="bg-card p-4">
       <div className="flex items-center gap-2 mb-4">
         <Filter className="w-4 h-4" />
         <span className="font-medium">Filter & Sort</span>
