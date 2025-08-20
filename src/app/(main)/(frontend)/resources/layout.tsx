@@ -13,9 +13,9 @@ const ResourceLayout = ({
   return (
     <section className="pt-5 md:pb-10 pb-6">
       <div className="container">
-        <div className="flex gap-5">
+        <div className="flex xl:flex-row flex-col gap-5">
           <ResourceSidebar activeSegment={segment} />
-          <div className="grow">{children}</div>
+          <div className="xl:grow">{children}</div>
         </div>
       </div>
     </section>
