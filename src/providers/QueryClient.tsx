@@ -11,7 +11,7 @@ interface Props {
 export function QueryClient({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationBoundary state={null}>{children}</HydrationBoundary>
+      <HydrationBoundary>{children}</HydrationBoundary>
     </QueryClientProvider>
   );
 }
