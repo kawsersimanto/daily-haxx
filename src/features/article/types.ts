@@ -1,11 +1,14 @@
 export interface IArticle {
+  id: string;
   title: string;
-  description?: string;
-  category?: string;
-  publisher?: string;
-  date?: string;
+  body: string;
+  slug: string;
+  companyName: string;
+  coverImage: string;
+  readingTime: number;
+  userId: string;
+  updatedAt: string;
   createdAt: string;
-  image?: string;
 }
 
 export interface IArticleProps {

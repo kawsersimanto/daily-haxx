@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export const ArticleCardSkeleton = () => {
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3.5">
+    <>
       <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
         {/* Image placeholder */}
         <div className="overflow-hidden rounded xl:h-[163px] lg:h-[180px] md:h-[200px] sm:h-[243px] h-[200px]">
@@ -150,6 +150,6 @@ export const ArticleCardSkeleton = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </>
   );
 };

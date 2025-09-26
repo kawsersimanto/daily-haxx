@@ -4,23 +4,14 @@ import { FilterDropdown } from "@/components/filter-dropdown/FilterDropdown";
 import { SearchBar } from "@/components/search/Search";
 import { SectionHeader } from "@/components/section-header/SectionHeader";
 import {
-  ArticleCardSkeleton,
   ArticleList,
-  getArticles,
   useArticleCategory,
   useArticleSearch,
 } from "@/features/article";
-import { useQuery } from "@tanstack/react-query";
 
 export const AllArticles = () => {
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["articles"],
-    queryFn: getArticles,
-  });
   const { term, setTerm, triggerSearch } = useArticleSearch();
   const { category, setCategory } = useArticleCategory();
-
-  console.log(data);
 
   return (
     <section className="pt-15 md:pb-20 pb-10">
@@ -55,7 +46,7 @@ export const AllArticles = () => {
             </div>
           </div>
         </div>
-        {isLoading ? <ArticleCardSkeleton /> : <ArticleList />}
+        <ArticleList />
       </div>
     </section>
   );

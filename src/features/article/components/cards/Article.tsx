@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export const Article = ({ data }: IArticleProps) => {
   return (
-    <Link href={`/article/${"pfizer-acquires"}`}>
+    <Link href={`/article/${data?.slug}`}>
       <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
         <div className="overflow-hidden rounded xl:h-[163px] lg:h-[180px] md:h-[200px] sm:h-[243px] h-[200px]">
           <Image
-            src={data?.image || "/placeholder.png"}
+            src={data?.coverImage || "/placeholder.png"}
             alt={data?.title}
             width={800}
             height={800}
@@ -25,14 +25,14 @@ export const Article = ({ data }: IArticleProps) => {
             <span className="xl:text-sm lg:text-xs text-sm capitalize">
               {formatDate(data?.createdAt)}
             </span>
-            {data?.publisher && (
+            {data?.companyName && (
               <>
                 <span>•</span>
                 <span className="xl:text-sm lg:text-xs text-sm block lg:hidden xl:block">
-                  {data?.publisher}
+                  {data?.companyName}
                 </span>
                 <span className="xl:text-sm lg:text-xs text-sm hidden lg:block xl:hidden">
-                  {data?.publisher?.split(" ")[0]}
+                  {data?.companyName?.split(" ")[0]}
                 </span>
               </>
             )}
