@@ -13,6 +13,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { ChevronLeft, TriangleAlert } from "lucide-react";
 import Link from "next/link";
+import { calculatePercentage } from "../utils";
 import { PollDetailsSkeleton } from "./PollDetailsSkeleton";
 
 export const PollDetails = ({ id }: { id: string }) => {
@@ -65,7 +66,8 @@ export const PollDetails = ({ id }: { id: string }) => {
                         key={opt?.id}
                         id={opt?.id}
                         text={opt?.text}
-                        votes={0}
+                        percentage={calculatePercentage(opt?.votes, 100)}
+                        votes={opt?.votes}
                         highlight={selectedOptionId === opt?.id}
                         setSelectedOptionId={setSelectedOptionId}
                       />

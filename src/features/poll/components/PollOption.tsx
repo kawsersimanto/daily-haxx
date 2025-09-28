@@ -1,10 +1,11 @@
+import { Progress } from "@/components/ui/progress";
 import { PollOptionProps } from "@/features/poll";
 import { cn } from "@/lib/utils";
 
 export const PollOption = ({
   id,
   text,
-  // percentage,
+  percentage,
   highlight,
   setSelectedOptionId,
 }: PollOptionProps) => {
@@ -20,14 +21,14 @@ export const PollOption = ({
       <div className="flex flex-col gap-2.5">
         <div className="flex items-center gap-5 justify-between">
           <p className="font-work-sans font-medium">{text}</p>
-          {/* <p className="text-lg font-medium">{percentage}%</p> */}
+          <p className="text-lg font-medium">{percentage}%</p>
         </div>
-        {/* <Progress
+        <Progress
           value={percentage}
           className={cn(
             highlight ? "[&>div]:bg-sea-green" : "[&>div]:bg-primary"
           )}
-        /> */}
+        />
       </div>
     </div>
   );
