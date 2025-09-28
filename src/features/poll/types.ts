@@ -1,27 +1,36 @@
+// Poll Option from API
 export interface IPollOption {
   id: string;
-  label: string;
-  percentage: number;
-  highlight?: boolean;
+  text: string;
+  votes: number;
 }
 
+// Poll for list view
 export interface IPoll {
   id: string;
-  title: string;
-  category?: string;
+  userId: string;
+  categoryId: string;
+  question: string;
+  slug: string;
+  coverImage: string;
+  companyName: string;
   createdAt: string;
-  image?: string;
+  updatedAt: string;
+}
+
+// Poll with details (options, feedback, category info)
+export interface IPollDetails extends Omit<IPoll, "userId" | "categoryId"> {
   options: IPollOption[];
-  totalVotes: number;
-  userHasVoted: boolean;
-  additionalFeedback?: string;
-  selectedOptionId?: string;
+  category: string | null;
+  feedbacks: string;
 }
 
+// Props
 export interface IPollProps {
-  data: IPoll;
+  data: IPoll | IPollDetails;
 }
 
+// Zustand store
 export interface PollState {
   search: string;
   page: number;
@@ -38,6 +47,7 @@ export interface PollActions {
 
 export type PollStore = PollState & PollActions;
 
+// Component props for rendering an option
 export interface PollOptionProps extends IPollOption {
   setSelectedOptionId: (id: string) => void;
 }
