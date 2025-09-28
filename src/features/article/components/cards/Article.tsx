@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export const Article = ({ data }: IArticleProps) => {
   return (
-    <Link href={`/article/${data?.slug}`}>
-      <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none">
+    <Link href={`/article/${data?.slug}`} className="h-full">
+      <Card className="w-full p-2.5 rounded-xl gap-3.5 shadow-none h-full">
         <div className="overflow-hidden rounded xl:h-[163px] lg:h-[180px] md:h-[200px] sm:h-[243px] h-[200px]">
           <Image
             src={data?.coverImage || "/placeholder.png"}
@@ -17,11 +17,11 @@ export const Article = ({ data }: IArticleProps) => {
             className="object-cover w-full h-full"
           />
         </div>
-        <CardContent className="p-0">
+        <CardContent className="p-0 flex flex-col grow">
           <h2 className="text-[17px] font-medium text-foreground mb-3.5 leading-6 line-clamp-2">
             {data?.title || "No Title Found"}
           </h2>
-          <div className="flex items-center text-sm text-light-muted gap-2">
+          <div className="flex items-center text-sm text-light-muted gap-2 mt-auto">
             <span className="xl:text-sm lg:text-xs text-sm capitalize">
               {formatDate(data?.createdAt)}
             </span>

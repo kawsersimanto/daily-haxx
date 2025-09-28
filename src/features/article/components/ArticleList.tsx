@@ -12,9 +12,10 @@ import {
 import { useQuery } from "@tanstack/react-query";
 
 export const ArticleList = () => {
-  const { search } = useArticleSelector.use.search();
+  const search = useArticleSelector.use.search();
+  const category = useArticleSelector.use.category();
   const { page, setPage } = usePagination();
-  const limit = 20;
+  const limit = 5;
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["articles", page, search],
