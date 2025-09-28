@@ -5,12 +5,15 @@ export const getArticles = async ({
   page = 1,
   limit = 20,
   search = "",
+  categoryId,
 }: ApiParams = {}) => {
-  console.log(search);
-  const response = await api.get("/articles", {
-    params: { page, limit, search },
-  });
+  const params: ApiParams = { page, limit, search };
 
+  if (categoryId && categoryId !== "all") {
+    params.categoryId = categoryId;
+  }
+
+  const response = await api.get("/articles", { params });
   return response?.data;
 };
 

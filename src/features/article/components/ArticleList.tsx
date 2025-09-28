@@ -13,13 +13,13 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const ArticleList = () => {
   const search = useArticleSelector.use.search();
-  // const category = useArticleSelector.use.category();
+  const category = useArticleSelector.use.category();
   const limit = 1;
   const { page, setPage } = usePagination();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["articles", page, search],
-    queryFn: () => getArticles({ page, limit, search }),
+    queryKey: ["articles", page, search, category],
+    queryFn: () => getArticles({ page, limit, search, categoryId: category }),
     placeholderData: keepPreviousData,
   });
 
@@ -30,7 +30,16 @@ export const ArticleList = () => {
     <>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3.5">
         {isLoading ? (
-          <ArticleCardSkeleton />
+          <>
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+            <ArticleCardSkeleton />
+          </>
         ) : isError ? (
           <div className="col-span-full text-center text-red-500 py-10">
             {error instanceof Error ? error.message : "Something went wrong"}

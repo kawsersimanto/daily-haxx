@@ -10,4 +10,5 @@ export interface ApiParams {
   limit?: number;
   totalPage?: number;
   search?: string;
+  categoryId?: string | null;
 }
