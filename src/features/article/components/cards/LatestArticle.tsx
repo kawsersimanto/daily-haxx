@@ -1,21 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { IArticleProps } from "@/features/article";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import { formatDate } from "@/utils/date";
 import Image from "next/image";
 import Link from "next/link";
-dayjs.extend(relativeTime);
 
 export const LatestArticle = ({ data }: IArticleProps) => {
   return (
-    <Link
-      href={`/article/${"pfizer-acquires"}`}
-      className="md:col-span-3 col-span-1"
-    >
+    <Link href={`/article/${data?.slug}`} className="md:col-span-3 col-span-1">
       <Card className="w-full p-3.5 rounded-xl gap-3.5 shadow-none">
         <div className="overflow-hidden rounded lg:h-[438px] h-[280px]">
           <Image
-            src={data?.image || "/placeholder.png"}
+            src={data?.coverImage || "/placeholder.png"}
             alt={data?.title}
             width={800}
             height={800}
@@ -27,11 +22,11 @@ export const LatestArticle = ({ data }: IArticleProps) => {
             {data?.title || "No Title Found"}
           </h2>
           <div className="flex items-center text-sm text-light-muted gap-2">
-            <span>{dayjs(data?.createdAt).fromNow()}</span>
-            {data?.publisher && (
+            <span className="capitalize">{formatDate(data?.createdAt)}</span>
+            {data?.companyName && (
               <>
                 <span>•</span>
-                <span>{data?.publisher}</span>
+                <span>{data?.companyName}</span>
               </>
             )}
           </div>

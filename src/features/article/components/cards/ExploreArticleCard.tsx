@@ -1,19 +1,17 @@
 import { IArticleProps } from "@/features/article";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import { formatDate } from "@/utils/date";
 import Image from "next/image";
 import Link from "next/link";
-dayjs.extend(relativeTime);
 
 export const ExploreArticleCard = ({ data }: IArticleProps) => {
   return (
     <Link
-      href="/"
+      href={`/article/${data?.slug}`}
       className="flex md:flex-row flex-col md:items-center gap-7 not-first:pt-[30px] first:pt-0 pb-[30px] not-last:border-b not-last:xborder-border"
     >
       <div className="overflow-hidden rounded-xl md:w-[218px] w-full h-[170px] border border-border shrink-0">
         <Image
-          src={data?.image || "/placeholder.png"}
+          src={data?.coverImage || "/placeholder.png"}
           alt={data?.title}
           width={800}
           height={800}
@@ -21,7 +19,9 @@ export const ExploreArticleCard = ({ data }: IArticleProps) => {
         />
       </div>
       <div className="flex flex-col gap-3">
-        <h3 className="text-sea-green">{data?.category || "Not Available"}</h3>
+        <h3 className="text-sea-green">
+          {data?.companyName || "Not Available"}
+        </h3>
         <h2 className="text-xl font-bold text-foreground leading-6 max-w-[434px] line-clamp-2">
           {data?.title || "No Title Found"}
         </h2>
@@ -30,11 +30,7 @@ export const ExploreArticleCard = ({ data }: IArticleProps) => {
         </p> */}
         <div className="flex items-center text-sm text-light-muted gap-2">
           <span className="xl:text-sm sm:text-xs text-sm">
-            {dayjs(data?.date).format("MMMM D, YYYY")}
-          </span>
-          <span>•</span>
-          <span className="xl:text-sm sm:text-xs text-sm">
-            {dayjs(data?.date).format("MMMM D, YYYY")}
+            {formatDate(data?.createdAt)}
           </span>
         </div>
       </div>
