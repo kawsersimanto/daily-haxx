@@ -21,7 +21,7 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
           </div>
           <div className="flex items-center justify-between mt-3.5">
             <div className="flex items-center sm:gap-3 gap-2">
-              <p className="text-light-muted md:text-base text-sm">
+              <p className="text-light-muted md:text-base text-sm capitalize">
                 {formatDate(data?.createdAt)}
               </p>
               <span className="text-light-muted">•</span>
