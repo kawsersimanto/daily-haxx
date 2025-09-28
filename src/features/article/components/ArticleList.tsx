@@ -22,7 +22,7 @@ export const ArticleList = () => {
     queryFn: () => getArticles({ page, limit, search }),
   });
 
-  const articles = data?.data ?? [];
+  const articles = data?.data?.data ?? [];
   const totalPages = data?.meta?.totalPages ?? 1;
 
   return (
@@ -35,7 +35,7 @@ export const ArticleList = () => {
             {error instanceof Error ? error.message : "Something went wrong"}
           </div>
         ) : (
-          articles.map((article: IArticle) => (
+          articles?.map((article: IArticle) => (
             <Article key={article?.id} data={article} />
           ))
         )}

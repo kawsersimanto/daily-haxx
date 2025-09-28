@@ -11,7 +11,7 @@ export const getArticles = async ({
     params: { page, limit, search },
   });
 
-  return response.data;
+  return response?.data;
 };
 
 export const getArticle = async (slug: string) => {
