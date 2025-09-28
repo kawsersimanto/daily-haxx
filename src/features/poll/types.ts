@@ -14,6 +14,7 @@ export interface IPoll {
   slug: string;
   coverImage: string;
   companyName: string;
+  options: IPollOption[];
   createdAt: string;
   updatedAt: string;
 }

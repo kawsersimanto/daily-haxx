@@ -22,11 +22,10 @@ export const AllPoll = () => {
             category={category}
             setCategory={setCategory}
             options={[
-              "All Polls",
-              "Genetic News",
-              "Medical",
-              "Hospital",
-              "Surgery",
+              {
+                label: "All Polls",
+                value: "All Polls",
+              },
             ]}
           />
         </div>

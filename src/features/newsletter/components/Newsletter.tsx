@@ -33,11 +33,10 @@ export const Newsletter = () => {
               category={category}
               setCategory={setCategory}
               options={[
-                "All Newsletters",
-                "Business",
-                "Finance",
-                "Economics",
-                "Tech",
+                {
+                  label: "All Newsletter",
+                  value: "All Newsletter",
+                },
               ]}
             />
           </div>
