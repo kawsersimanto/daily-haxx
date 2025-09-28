@@ -6,7 +6,7 @@ import { IPoll } from "../types";
 
 export const PollCard = ({ data }: { data: IPoll }) => {
   return (
-    <Link href={`/poll/${"pfizer-acquires"}`}>
+    <Link href={`/poll/${data?.id}`}>
       <Card className="w-full p-2 rounded-[6px] gap-3.5 shadow-none h-full">
         <div className="overflow-hidden rounded xl:h-[248px] lg:h-[240px] md:h-[200px] sm:h-[243px] h-[200px]">
           <Image

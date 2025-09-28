@@ -49,5 +49,6 @@ export type PollStore = PollState & PollActions;
 
 // Component props for rendering an option
 export interface PollOptionProps extends IPollOption {
+  highlight: boolean;
   setSelectedOptionId: (id: string) => void;
 }
