@@ -5,7 +5,9 @@ export interface ApiResponse<T> {
 }
 
 export interface ApiParams {
+  total?: number;
   page?: number;
   limit?: number;
+  totalPage?: number;
   search?: string;
 }

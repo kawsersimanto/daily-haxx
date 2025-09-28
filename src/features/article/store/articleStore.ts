@@ -5,7 +5,7 @@ import { create } from "zustand";
 export const useArticleStore = create<ArticleStore>((set) => ({
   search: "",
   page: 1,
-  category: "All Articles",
+  category: "all",
   setSearch: (search) => set({ search: search.trim(), page: 1 }),
   setPage: (page) => set({ page }),
   setCategory: (category) => set({ category, page: 1 }),

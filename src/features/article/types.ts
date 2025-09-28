@@ -1,3 +1,11 @@
+export interface ArticleCategory {
+  id: string;
+  name: string;
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface IArticle {
   id: string;
   title: string;

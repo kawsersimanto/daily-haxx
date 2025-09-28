@@ -4,14 +4,32 @@ import { FilterDropdown } from "@/components/filter-dropdown/FilterDropdown";
 import { SearchBar } from "@/components/search/Search";
 import { SectionHeader } from "@/components/section-header/SectionHeader";
 import {
+  ArticleCategory,
   ArticleList,
+  getArticleCategories,
   useArticleCategory,
   useArticleSearch,
 } from "@/features/article";
+import { useQuery } from "@tanstack/react-query";
 
 export const AllArticles = () => {
   const { term, setTerm, triggerSearch } = useArticleSearch();
   const { category, setCategory } = useArticleCategory();
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["articleCategories"],
+    queryFn: () => getArticleCategories(),
+  });
+
+  const categories = data?.data;
+
+  const categoryOptions =
+    categories?.map((category: ArticleCategory) => ({
+      label: category?.name,
+      value: category?.slug,
+    })) ?? [];
+
+  const options = [{ label: "All Articles", value: "all" }, ...categoryOptions];
 
   return (
     <section className="pt-15 md:pb-20 pb-10">
@@ -31,17 +49,16 @@ export const AllArticles = () => {
                 />
               </div>
               <div className="md:basis-[200px]">
-                <FilterDropdown
-                  category={category}
-                  setCategory={setCategory}
-                  options={[
-                    "All Articles",
-                    "Business",
-                    "Finance",
-                    "Economics",
-                    "Tech",
-                  ]}
-                />
+                {isError ? (
+                  <p className="text-danger">{error.message}</p>
+                ) : (
+                  <FilterDropdown
+                    category={category}
+                    setCategory={setCategory}
+                    disabled={isLoading}
+                    options={options}
+                  />
+                )}
               </div>
             </div>
           </div>
