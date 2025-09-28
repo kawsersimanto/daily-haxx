@@ -14,7 +14,7 @@ export const getArticles = async ({
   return response.data;
 };
 
-export const getArticle = async (id: string) => {
-  const response = await api.get(`/articles/${id}`);
+export const getArticle = async (slug: string) => {
+  const response = await api.get(`/articles/slug/${slug}`);
   return response?.data;
 };

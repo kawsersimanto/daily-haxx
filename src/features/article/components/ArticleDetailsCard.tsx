@@ -12,7 +12,7 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
         <div>
           <div className="overflow-hidden rounded lg:h-[438px] h-[280px]">
             <Image
-              src={data?.image || "/placeholder.png"}
+              src={data?.coverImage || "/placeholder.png"}
               alt={data?.title || "Placeholder"}
               width={800}
               height={800}
@@ -26,7 +26,7 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
               </p>
               <span className="text-light-muted">•</span>
               <span className="text-light-muted md:text-base text-sm">
-                Newsletter Pro
+                {data?.companyName}
               </span>
             </div>
             <div className="flex items-center sm:gap-5 gap-2">
@@ -67,9 +67,9 @@ export const ArticleDetailsCard = ({ data }: IArticleProps) => {
           <div className="relative">
             <div
               className="text-foreground text-lg prose"
-              dangerouslySetInnerHTML={{ __html: data?.description || "" }}
+              dangerouslySetInnerHTML={{ __html: data?.body || "" }}
             ></div>
-            <div className="absolute bottom-0 left-0 right-0 z-10 bg-linear-(--gradient-lock) h-full"></div>
+            {/* <div className="absolute bottom-0 left-0 right-0 z-10 bg-linear-(--gradient-lock) h-full"></div> */}
           </div>
           <ArticleUnlockCard />
         </CardContent>

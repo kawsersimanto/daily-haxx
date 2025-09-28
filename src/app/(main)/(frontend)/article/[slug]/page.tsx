@@ -1,9 +1,4 @@
-import SidebarLayout from "@/components/layout/SidebarLayout";
-import {
-  ArticleDetailsCard,
-  articles,
-  SidebarArticle,
-} from "@/features/article";
+import { ArticleDetailsPage } from "@/features/article/components/ArticleDetailsPage";
 
 const ArticleDetails = async ({
   params,
@@ -11,18 +6,11 @@ const ArticleDetails = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-  console.log(slug);
+
   return (
     <main>
       <div className="container">
-        <SidebarLayout>
-          <ArticleDetailsCard data={articles[0]} />
-          <div>
-            <div className="sticky top-28">
-              <SidebarArticle />
-            </div>
-          </div>
-        </SidebarLayout>
+        <ArticleDetailsPage slug={slug} />
       </div>
     </main>
   );
