@@ -1,5 +1,7 @@
 "use client";
 
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   getPoll,
@@ -9,6 +11,8 @@ import {
   usePollSelector,
 } from "@/features/poll";
 import { useQuery } from "@tanstack/react-query";
+import { ChevronLeft, TriangleAlert } from "lucide-react";
+import Link from "next/link";
 import { PollDetailsSkeleton } from "./PollDetailsSkeleton";
 
 export const PollDetails = ({ id }: { id: string }) => {
@@ -31,9 +35,22 @@ export const PollDetails = ({ id }: { id: string }) => {
               <PollDetailsSkeleton />
             ) : isError ? (
               <CardContent className="md:px-7.5 px-5">
-                {error instanceof Error
-                  ? error.message
-                  : "Something went wrong"}
+                <div>
+                  <Alert variant="destructive" className="mb-6">
+                    <TriangleAlert className="h-4 w-4" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription>
+                      {error instanceof Error
+                        ? error.message
+                        : "Something went wrong while fetching the article."}
+                    </AlertDescription>
+                  </Alert>
+                  <Button variant={"outline"} asChild>
+                    <Link href="/poll">
+                      <ChevronLeft /> Go Back
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             ) : (
               <CardContent className="md:px-7.5 px-5">
