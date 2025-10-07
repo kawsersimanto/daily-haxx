@@ -9,19 +9,25 @@ import {
   useArticleSelector,
   usePagination,
 } from "@/features/article";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 export const ArticleList = () => {
   const search = useArticleSelector.use.search();
   const category = useArticleSelector.use.category();
-  const limit = 1;
+  const limit = 10;
   const { page, setPage } = usePagination();
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["articles", page, search, category],
-    queryFn: () => getArticles({ page, limit, search, categoryId: category }),
-    placeholderData: keepPreviousData,
+    queryFn: () =>
+      getArticles({ page, limit, searchTerm: search, categoryId: category }),
+    // placeholderData: keepPreviousData,
   });
+
+  useEffect(() => {
+    setPage(1);
+  }, [search, category, setPage]);
 
   const articles = data?.data?.data ?? [];
   const totalPages = data?.data?.meta?.totalPage ?? 1;

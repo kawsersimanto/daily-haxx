@@ -13,16 +13,12 @@ export const useArticleSearch = () => {
 
   useEffect(() => {
     const trimmed = debouncedTerm.trim();
-    if (trimmed !== "") {
-      setSearch(trimmed);
-      console.log("Debounced value:", trimmed);
-    }
+    setSearch(trimmed);
   }, [debouncedTerm, setSearch]);
 
   const triggerSearch = () => {
     const trimmed = term.trim();
     setSearch(trimmed);
-    console.log("Manual search:", trimmed);
   };
 
   return {

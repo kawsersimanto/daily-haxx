@@ -9,6 +9,6 @@ export interface ApiParams {
   page?: number;
   limit?: number;
   totalPage?: number;
-  search?: string;
+  searchTerm?: string;
   categoryId?: string | null;
 }

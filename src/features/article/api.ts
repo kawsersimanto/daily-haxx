@@ -4,10 +4,14 @@ import { ApiParams } from "@/types";
 export const getArticles = async ({
   page = 1,
   limit = 20,
-  search = "",
+  searchTerm = "",
   categoryId,
 }: ApiParams = {}) => {
-  const params: ApiParams = { page, limit, search };
+  const params: ApiParams = { page, limit };
+
+  if (searchTerm && searchTerm.trim() !== "") {
+    params.searchTerm = searchTerm;
+  }
 
   if (categoryId && categoryId !== "all") {
     params.categoryId = categoryId;
