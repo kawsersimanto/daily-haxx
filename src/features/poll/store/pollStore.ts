@@ -6,7 +6,7 @@ export const usePollStore = create<PollStore>((set) => ({
   search: "",
   page: 1,
   selectedOptionId: null,
-  category: "All Polls",
+  category: "all",
   setSearch: (search) => set({ search: search.trim(), page: 1 }),
   setPage: (page) => set({ page }),
   setCategory: (category) => set({ category, page: 1 }),

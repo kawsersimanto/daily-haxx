@@ -18,7 +18,7 @@ import { PollDetailsSkeleton } from "./PollDetailsSkeleton";
 
 export const PollDetails = ({ id }: { id: string }) => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["poll", id],
+    queryKey: ["pollDetails", id],
     queryFn: () => getPoll(id),
   });
 
