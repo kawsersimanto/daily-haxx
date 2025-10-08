@@ -7,10 +7,10 @@ export const getPolls = async ({
   searchTerm = "",
   categoryId,
 }: ApiParams = {}) => {
-  const params: Record<string, string | number> = { page, limit };
+  const params: ApiParams = { page, limit };
 
   if (searchTerm && searchTerm.trim() !== "") {
-    params.question = searchTerm;
+    params.searchTerm = searchTerm;
   }
 
   if (categoryId && categoryId !== "all") {

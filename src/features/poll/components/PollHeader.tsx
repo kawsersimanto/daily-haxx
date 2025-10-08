@@ -10,7 +10,7 @@ export const PollHeader = () => {
   const { category, setCategory } = usePollCategory();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["polls"],
+    queryKey: ["pollCategories"],
     queryFn: () => getPollCategories(),
   });
 

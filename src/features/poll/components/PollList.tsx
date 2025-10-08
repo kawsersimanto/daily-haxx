@@ -10,18 +10,26 @@ import {
 } from "@/features/poll";
 import { PollCardSkeleton } from "@/features/poll/components/PollCardSkeleton";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 export const PollList = () => {
   const search = usePollSelector.use.search();
-  const { page, setPage, totalPages } = usePagination(10);
-  const limit = 5;
+  const category = usePollSelector.use.category();
+  const limit = 10;
+  const { page, setPage } = usePagination();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["polls", page, limit, search],
-    queryFn: () => getPolls({ page, limit, searchTerm: search }),
+    queryKey: ["polls", page, search, category],
+    queryFn: () =>
+      getPolls({ page, limit, searchTerm: search, categoryId: category }),
   });
 
-  const polls = data?.data?.data || [];
+  useEffect(() => {
+    setPage(1);
+  }, [search, category, setPage]);
+
+  const polls = data?.data?.data ?? [];
+  const totalPages = data?.data?.meta?.totalPage ?? 1;
 
   return (
     <>
