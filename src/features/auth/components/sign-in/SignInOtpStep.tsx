@@ -13,13 +13,48 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import { useAuthEmail, useAuthSteps } from "@/features/auth";
+import { Spinner } from "@/components/ui/spinner";
+import {
+  sendOtp,
+  useAuthEmail,
+  useAuthSteps,
+  verifyOtp,
+} from "@/features/auth";
 import { OtpFormValues, otpSchema } from "@/features/auth/schemas/authSchema";
+import { ApiErrorResponse } from "@/types";
+import { handleApiError } from "@/utils/handleApiError";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export const SignInOtpStep = () => {
+  const router = useRouter();
+  const { mutate: sendOtpFn, isPending: isResendingOtp } = useMutation({
+    mutationFn: sendOtp,
+    onSuccess: () => {
+      toast.success("OTP sent successfully!");
+    },
+    onError: (error: AxiosError<ApiErrorResponse>) => {
+      handleApiError(error);
+    },
+  });
+
+  const { mutate: verifyOtpFn, isPending: isVerifying } = useMutation({
+    mutationFn: ({ email, otp }: { email: string; otp: string }) =>
+      verifyOtp(email, otp),
+    onSuccess: () => {
+      toast.success("OTP verified successfully!");
+      router.push("/onboarding");
+    },
+    onError: (error: AxiosError<ApiErrorResponse>) => {
+      handleApiError(error);
+    },
+  });
+
   const { email } = useAuthEmail();
   const { prevStep } = useAuthSteps();
 
@@ -32,7 +67,11 @@ export const SignInOtpStep = () => {
   });
 
   const onSubmit = (data: OtpFormValues) => {
-    console.log(data);
+    if (!email) {
+      toast.error("Email not available");
+      return;
+    }
+    verifyOtpFn({ email, otp: data.otp });
   };
 
   return (
@@ -42,7 +81,8 @@ export const SignInOtpStep = () => {
           Verify your email
         </h2>
         <p className="text-center sm:text-base text-sm">
-          We sent a 6-digit verification code to<br></br>
+          We sent a 6-digit verification code to
+          <br />
           <strong>{email || "Not Available"}</strong>
         </p>
       </div>
@@ -87,11 +127,11 @@ export const SignInOtpStep = () => {
               Previous
             </Button>
             <Button
-              disabled={!form.formState.isValid}
+              disabled={!form.formState.isValid || isVerifying}
               type="submit"
               className="md:text-lg text-sm font-medium text-background h-auto py-2.5 grow"
             >
-              Verify
+              {isVerifying ? <Spinner /> : "Verify"}
             </Button>
           </div>
           <div className="flex items-center justify-center flex-col">
@@ -99,6 +139,8 @@ export const SignInOtpStep = () => {
             <Button
               variant={"link"}
               className="h-auto p-0 font-semibold md:text-lg text-sm text-foreground"
+              onClick={() => sendOtpFn(email)}
+              disabled={isResendingOtp}
             >
               Resend code
             </Button>

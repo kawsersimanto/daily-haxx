@@ -10,6 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Spinner } from "@/components/ui/spinner";
 import {
   EmailFormValues,
   emailSchema,
@@ -17,6 +18,8 @@ import {
   useAuthEmail,
   useAuthSteps,
 } from "@/features/auth";
+import { ApiErrorResponse } from "@/types";
+import { handleApiError } from "@/utils/handleApiError";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
@@ -32,9 +35,8 @@ export const SignInEmailStep = () => {
       toast.success("OTP sent successfully!");
       nextStep();
     },
-    onError: (error: AxiosError) => {
-      toast.error(error.message || "Failed to send OTP");
-      console.error("Failed to send OTP:", error);
+    onError: (error: AxiosError<ApiErrorResponse>) => {
+      handleApiError(error);
     },
   });
 
@@ -106,7 +108,7 @@ export const SignInEmailStep = () => {
             disabled={isPending}
             className="w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
           >
-            {isPending ? "Sending OTP..." : "Next"}
+            {isPending ? <Spinner /> : "Next"}
           </Button>
         </form>
       </Form>
