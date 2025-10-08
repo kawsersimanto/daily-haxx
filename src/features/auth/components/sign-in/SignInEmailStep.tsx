@@ -13,15 +13,31 @@ import { Input } from "@/components/ui/input";
 import {
   EmailFormValues,
   emailSchema,
+  sendOtp,
   useAuthEmail,
   useAuthSteps,
 } from "@/features/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export const SignInEmailStep = () => {
+  const { mutate: sendOtpFn, isPending } = useMutation({
+    mutationFn: sendOtp,
+    onSuccess: () => {
+      toast.success("OTP sent successfully!");
+      nextStep();
+    },
+    onError: (error: AxiosError) => {
+      toast.error(error.message || "Failed to send OTP");
+      console.error("Failed to send OTP:", error);
+    },
+  });
+
   const { email, setEmail, hydrated: emailHydrated } = useAuthEmail();
   const { nextStep } = useAuthSteps();
 
@@ -34,8 +50,7 @@ export const SignInEmailStep = () => {
 
   const onSubmit = (data: EmailFormValues) => {
     setEmail(data?.email);
-    nextStep();
-    console.log(data);
+    sendOtpFn(data?.email);
   };
 
   useEffect(() => {
@@ -88,9 +103,10 @@ export const SignInEmailStep = () => {
           />
           <Button
             type="submit"
+            disabled={isPending}
             className="w-full md:mt-5 mt-4 md:text-lg text-sm font-medium text-background h-auto py-2.5"
           >
-            Next
+            {isPending ? "Sending OTP..." : "Next"}
           </Button>
         </form>
       </Form>
