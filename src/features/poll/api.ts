@@ -4,11 +4,10 @@ import { ApiParams } from "@/types";
 export const getPolls = async ({
   page = 1,
   limit = 20,
-  search = "",
+  searchTerm = "",
 }: ApiParams = {}) => {
-  console.log(search);
   const response = await api.get("/polls", {
-    params: { page, limit, search },
+    params: { page, limit, searchTerm },
   });
 
   return response.data;

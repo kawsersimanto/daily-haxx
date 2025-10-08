@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   getPoll,
+  IPollDetails,
   IPollOption,
   PollOption,
   PollSuccess,
@@ -13,7 +14,6 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { ChevronLeft, TriangleAlert } from "lucide-react";
 import Link from "next/link";
-import { calculatePercentage } from "../utils";
 import { PollDetailsSkeleton } from "./PollDetailsSkeleton";
 
 export const PollDetails = ({ id }: { id: string }) => {
@@ -22,7 +22,7 @@ export const PollDetails = ({ id }: { id: string }) => {
     queryFn: () => getPoll(id),
   });
 
-  const poll = data?.data;
+  const poll: IPollDetails = data?.data;
 
   const setSelectedOptionId = usePollSelector.use.setSelectedOptionId();
   const selectedOptionId = usePollSelector.use.selectedOptionId();
@@ -66,7 +66,7 @@ export const PollDetails = ({ id }: { id: string }) => {
                         key={opt?.id}
                         id={opt?.id}
                         text={opt?.text}
-                        percentage={calculatePercentage(opt?.votes, 100)}
+                        percentage={opt?.percentage}
                         votes={opt?.votes}
                         highlight={selectedOptionId === opt?.id}
                         setSelectedOptionId={setSelectedOptionId}
@@ -75,8 +75,10 @@ export const PollDetails = ({ id }: { id: string }) => {
                   </div>
                 </div>
                 <p className="my-5 text-center">
-                  Total Votes:{" "}
-                  <span className="text-sea-green font-medium">1234</span>
+                  Total Votes:
+                  <span className="text-sea-green font-medium">
+                    {poll?.totalVotes}
+                  </span>
                 </p>
               </CardContent>
             )}

@@ -18,10 +18,10 @@ export const PollList = () => {
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["polls", page, limit, search],
-    queryFn: () => getPolls({ page, limit, search }),
+    queryFn: () => getPolls({ page, limit, searchTerm: search }),
   });
 
-  const polls = data?.data || [];
+  const polls = data?.data?.data || [];
 
   return (
     <>

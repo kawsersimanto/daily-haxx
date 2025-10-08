@@ -3,6 +3,7 @@ export interface IPollOption {
   id: string;
   text: string;
   votes: number;
+  percentage: number;
 }
 
 // Poll for list view
@@ -17,6 +18,7 @@ export interface IPoll {
   options: IPollOption[];
   createdAt: string;
   updatedAt: string;
+  totalVotes: number;
 }
 
 // Poll with details (options, feedback, category info)
